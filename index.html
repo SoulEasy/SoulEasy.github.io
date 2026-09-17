@@ -127,6 +127,12 @@
   }
   .bookmark-btn:hover{border-color:var(--warn);color:var(--warn)}
   .bookmark-btn.on{background:rgba(251,191,36,.15);color:var(--warn);border-color:var(--warn)}
+  .home-btn{
+    background:transparent;border:1px solid var(--border);color:var(--muted);
+    padding:4px 10px;border-radius:8px;cursor:pointer;font-size:12.5px;
+    line-height:1;transition:.15s;font-family:inherit;font-weight:600;
+  }
+  .home-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.08)}
 
   .progress{height:6px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:22px}
   .progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .35s ease}
@@ -388,6 +394,118 @@
   }
   .topic-card.selected .check{display:flex}
 
+  /* ===== Интерактивное обучение ===== */
+  .learn-header{
+    display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;
+  }
+  .learn-step-label{
+    font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+    font-weight:700;
+  }
+  .learn-progress{
+    height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:24px;
+  }
+  .learn-progress span{
+    display:block;height:100%;background:linear-gradient(90deg,#34d399,var(--accent));
+    transition:width .35s ease;
+  }
+  .learn-title{
+    font-size:20px;font-weight:700;margin:0 0 16px;letter-spacing:-.3px;line-height:1.4;
+  }
+  .learn-body{
+    font-size:14.5px;line-height:1.8;color:#d0dbea;
+  }
+  .learn-body p{margin:0 0 12px}
+  .learn-body ul,.learn-body ol{margin:8px 0 14px;padding-left:22px}
+  .learn-body li{margin-bottom:8px}
+  .learn-body code{
+    font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;
+    background:rgba(56,189,248,.12);color:#7dd3fc;
+    padding:2px 7px;border-radius:6px;white-space:nowrap;
+  }
+  .learn-body b{color:#fff}
+  .learn-body .hl{color:#6ee7b7;font-weight:700}
+  .learn-body .warn{color:#fcd34d;font-weight:700}
+
+  .learn-task{
+    padding:16px 18px;border-radius:14px;border:1px solid var(--border);
+    background:rgba(255,255,255,.022);margin-bottom:16px;
+  }
+  .learn-task-prompt{
+    font-size:15.5px;line-height:1.7;color:#e9eefb;margin:0 0 16px;font-weight:500;
+  }
+  .learn-task-prompt code{font-size:14px}
+
+  .learn-hint{
+    margin-top:14px;padding:12px 14px;border-left:3px solid var(--warn);
+    background:rgba(251,191,36,.07);border-radius:0 10px 10px 0;
+    font-size:13.5px;line-height:1.65;color:#fcd34d;animation:fadeIn .25s ease both;
+  }
+  .learn-hint-trigger{
+    background:transparent;border:1px dashed var(--border);color:var(--muted);
+    padding:7px 13px;border-radius:9px;font-size:12.5px;cursor:pointer;
+    font-family:inherit;margin-top:12px;transition:.15s;display:inline-flex;align-items:center;gap:6px;
+  }
+  .learn-hint-trigger:hover{border-color:var(--warn);color:var(--warn);background:rgba(251,191,36,.05)}
+
+  .learn-feedback{
+    margin-top:14px;padding:14px 16px;border-radius:12px;
+    font-size:13.5px;line-height:1.7;animation:fadeIn .25s ease both;
+  }
+  .learn-feedback.ok{
+    border-left:3px solid var(--ok);background:rgba(52,211,153,.08);color:#c9f5e3;
+  }
+  .learn-feedback.no{
+    border-left:3px solid var(--bad);background:rgba(248,113,113,.08);color:#fccfcf;
+  }
+  .learn-feedback b{color:#fff}
+
+  .binary-viz{
+    display:flex;justify-content:center;gap:12px;margin:22px 0 14px;flex-wrap:wrap;
+  }
+  .binary-octet{
+    text-align:center;padding:11px 9px;border-radius:12px;border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+  }
+  .binary-octet .dec{
+    font-family:'SF Mono',Menlo,Consolas,monospace;font-size:15px;font-weight:800;
+    margin-bottom:8px;color:#e9eefb;letter-spacing:.02em;
+  }
+  .binary-octet .bits{
+    display:flex;gap:2px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;
+  }
+  .binary-octet .bit{
+    width:17px;height:22px;display:grid;place-items:center;border-radius:4px;
+    background:rgba(255,255,255,.04);color:#8b98b0;font-weight:700;transition:.2s;
+  }
+  .binary-octet .bit.net-bit{background:rgba(56,189,248,.15);color:#7dd3fc}
+  .binary-octet .bit.net-bit.on{background:rgba(56,189,248,.5);color:#fff;box-shadow:0 0 8px rgba(56,189,248,.5)}
+  .binary-octet .bit.host-bit{background:rgba(251,191,36,.12);color:#fcd34d}
+  .binary-octet .bit.host-bit.on{background:rgba(251,191,36,.45);color:#fff;box-shadow:0 0 8px rgba(251,191,36,.4)}
+
+  .binary-legend{
+    display:flex;justify-content:center;gap:18px;font-size:12.5px;color:var(--muted);
+    margin-bottom:22px;flex-wrap:wrap;
+  }
+  .binary-legend .dot{
+    display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:middle;
+  }
+  .binary-legend .dot.net{background:#38bdf8}
+  .binary-legend .dot.host{background:#fbbf24}
+
+  .learn-done{
+    text-align:center;padding:26px 16px 10px;
+  }
+  .learn-done .big{font-size:64px;margin-bottom:12px;display:block}
+  .learn-done h2{margin:0 0 8px;font-size:24px}
+  .learn-done p{color:var(--muted);margin:0 0 22px;line-height:1.6;font-size:14.5px}
+  .learn-recap{
+    text-align:left;padding:16px 18px;border-radius:14px;border:1px solid var(--border);
+    background:rgba(255,255,255,.022);margin-bottom:22px;font-size:14px;line-height:1.7;
+  }
+  .learn-recap ul{margin:8px 0 0;padding-left:22px}
+  .learn-recap li{margin-bottom:6px}
+
   @media (max-width:560px){
     body{padding:14px 10px 40px}
     .card{padding:20px 16px;border-radius:18px}
@@ -402,6 +520,7 @@
     .term-popup{max-width:calc(100vw - 24px)}
     .grid,.topic-grid{grid-template-columns:1fr 1fr}
     .topic-row .name{min-width:90px;font-size:11.5px}
+    .binary-octet .bit{width:14px;height:19px;font-size:11px}
   }
 </style>
 </head>
@@ -597,7 +716,6 @@ const GLOSSARY = {
   'DLP':'Data Loss Prevention — защита от утечек данных.',
   'NGFW':'Next-Generation Firewall — межсетевой экран нового поколения.',
   'UTM':'Unified Threat Management — комплексная защита в одном устройстве.',
-  'ISO 27001':'Международный стандарт управления информационной безопасностью.',
   'AES':'Advanced Encryption Standard — симметричный блочный шифр.',
   'RSA':'Асимметричный алгоритм шифрования на основе факторизации.',
   'ECC':'Elliptic Curve Cryptography — асимметричная криптография на эллиптических кривых.',
@@ -680,10 +798,9 @@ const DIAGRAMS = {
 };
 
 /* ============================================================
-   ВОПРОСЫ — 12 ТЕМ
+   ВОПРОСЫ
    ============================================================ */
 const QUESTIONS = [
-  /* ОСНОВЫ */
   {topic:'basics',level:'basic',q:'Какая топология соединяет все устройства в одну общую шину?',opts:['Звезда','Кольцо','Шина','Дерево'],a:2,explain:'Шина — все узлы на одном кабеле. Звезда — через центральный коммутатор, кольцо — по цепочке.'},
   {topic:'basics',level:'basic',q:'Что такое LAN?',opts:['Локальная сеть','Глобальная сеть','Городская сеть','Персональная сеть'],a:0,explain:'LAN — Local Area Network (локальная), WAN — глобальная, MAN — городская, PAN — персональная.'},
   {topic:'basics',level:'basic',q:'Какой тип кабеля использует витую пару и разъём RJ-45?',opts:['Коаксиальный','Оптоволокно','Витая пара (UTP/STP)','USB'],a:2,explain:'Витая пара — самый распространённый кабель в LAN. Разъём RJ-45, 8 контактов.'},
@@ -698,7 +815,6 @@ const QUESTIONS = [
   {topic:'basics',level:'advanced',q:'Какой тип оптического волокна лучше для магистралей на десятки километров?',opts:['Многомодовое (MMF)','Одномодовое (SMF)','Коаксиал','Витая пара'],a:1,explain:'SMF имеет малый диаметр сердцевины и малые потери.'},
   {topic:'basics',level:'advanced',q:'Что такое MTBF?',opts:['Максимальная пропускная способность','Среднее время между отказами','Тип порта','Стандарт кабеля'],a:1,explain:'Mean Time Between Failures — оценка надёжности устройства.'},
 
-  /* OSI */
   {topic:'osi',level:'basic',q:'Сколько уровней в модели OSI?',opts:['4','5','6','7'],a:3,explain:'Физический, канальный, сетевой, транспортный, сеансовый, представления, прикладной.',diagram:'osi'},
   {topic:'osi',level:'basic',q:'На каком уровне работает маршрутизация?',opts:['L2','L3','L4','L7'],a:1,explain:'Маршрутизаторы работают на L3 с IP-адресами.',diagram:'osi'},
   {topic:'osi',level:'basic',q:'На каком уровне работает коммутатор?',opts:['L1','L2','L3','L4'],a:1,explain:'Классический коммутатор — L2 с MAC-адресами.'},
@@ -714,7 +830,6 @@ const QUESTIONS = [
   {topic:'osi',level:'advanced',q:'Какой уровень OSI отвечает за установку и завершение сессий?',opts:['Транспортный','Сеансовый','Представления','Прикладной'],a:1,explain:'Сеансовый уровень (Session) управляет сессиями.',diagram:'osi'},
   {topic:'osi',level:'advanced',q:'Зачем используется модель OSI?',opts:['Как реальный протокол','Как эталонная модель для обучения и описания','Как стандарт шифрования','Как оборудование'],a:1,explain:'OSI — эталонная модель. Реальные сети используют TCP/IP.'},
 
-  /* ETHERNET */
   {topic:'ethernet',level:'basic',q:'Каков стандартный MTU Ethernet?',opts:['576 байт','1024 байта','1500 байт','9000 байт'],a:2,explain:'1500 байт — стандарт. Jumbo обычно 9000.'},
   {topic:'ethernet',level:'basic',q:'Что такое MAC-адрес?',opts:['Логический адрес','Аппаратный адрес интерфейса','Номер порта','Адрес сети'],a:1,explain:'48-битный адрес, назначенный производителем. Работает на L2.'},
   {topic:'ethernet',level:'basic',q:'Какой протокол сопоставляет IP-адрес с MAC?',opts:['DNS','ARP','DHCP','RARP'],a:1,explain:'ARP рассылает broadcast «у кого IP X?».'},
@@ -733,7 +848,6 @@ const QUESTIONS = [
   {topic:'ethernet',level:'advanced',q:'Для чего используется LLDP?',opts:['Для маршрутизации','Для обнаружения соседей на L2','Для шифрования','Для NAT'],a:1,explain:'Link Layer Discovery Protocol — аналог CDP.'},
   {topic:'ethernet',level:'advanced',q:'Что делает storm control?',opts:['Шифрует кадры','Ограничивает broadcast/multicast/unknown unicast штормы','Создаёт VLAN','Агрегирует порты'],a:1,explain:'Storm control защищает от штормов.'},
 
-  /* IP */
   {topic:'ip',level:'basic',q:'Сколько бит в IPv4-адресе?',opts:['16','32','64','128'],a:1,explain:'IPv4 — 32 бита, четыре октета.'},
   {topic:'ip',level:'basic',q:'Сколько бит в IPv6-адресе?',opts:['32','64','128','256'],a:2,explain:'IPv6 — 128 бит.'},
   {topic:'ip',level:'basic',q:'Какой из адресов частный (RFC 1918)?',opts:['8.8.8.8','192.168.1.10','172.32.5.1','11.0.0.1'],a:1,explain:'Частные: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.'},
@@ -755,7 +869,6 @@ const QUESTIONS = [
   {topic:'ip',level:'advanced',q:'Какой размер заголовка IPv6 (фиксированный)?',opts:['20','32','40','60'],a:2,explain:'Базовый заголовок IPv6 — 40 байт.'},
   {topic:'ip',level:'advanced',q:'Чем заголовок IPv6 отличается от IPv4?',opts:['Отличий нет','Фиксированный размер, нет контрольной суммы, нет фрагментации на промежуточных','Больше полей','Нет адреса назначения'],a:1,explain:'IPv6 имеет фиксированный заголовок 40 байт.'},
 
-  /* SUBNETTING */
   {topic:'subnetting',level:'basic',q:'Маске 255.255.255.0 соответствует префикс…',opts:['/16','/24','/25','/32'],a:1,explain:'/24, 256 адресов, 254 хоста.',diagram:'subnet'},
   {topic:'subnetting',level:'basic',q:'Сколько хостов в сети /24?',opts:['254','255','256','512'],a:0,explain:'256 адресов минус сеть и broadcast.',diagram:'subnet'},
   {topic:'subnetting',level:'basic',q:'Что такое адрес сети?',opts:['Первый адрес, все хостовые биты нули','Последний адрес','Broadcast','Любой адрес'],a:0,explain:'Адрес сети — первый адрес подсети.'},
@@ -777,7 +890,6 @@ const QUESTIONS = [
   {topic:'subnetting',level:'advanced',type:'input',q:'Сколько всего адресов в /29? Введите число.',answer:8,accept:['8'],explain:'2^(32−29) = 8.'},
   {topic:'subnetting',level:'advanced',q:'Какой префикс для 4 хостов (с запасом)?',opts:['/28','/29','/30','/31'],a:1,explain:'/29 даёт 8 адресов → 6 хостов.'},
 
-  /* ROUTING */
   {topic:'routing',level:'basic',q:'Что такое маршрутизатор?',opts:['Устройство L2 для MAC','Устройство L3, пересылающее пакеты между сетями','Устройство L1','Кабель'],a:1,explain:'Маршрутизатор работает на L3.'},
   {topic:'routing',level:'basic',q:'Что такое шлюз по умолчанию?',opts:['DNS-сервер','Устройство для пакетов вне локальной сети','Коммутатор','Сервер DHCP'],a:1,explain:'Default gateway для адресов вне локальной подсети.'},
   {topic:'routing',level:'basic',q:'Какой маршрут используется по умолчанию?',opts:['Статический','Default route 0.0.0.0/0','Динамический','Локальный'],a:1,explain:'Default route — для любых адресов.'},
@@ -800,7 +912,6 @@ const QUESTIONS = [
   {topic:'routing',level:'advanced',q:'Что такое route redistribution?',opts:['Автоматическая отмена маршрутов','Передача маршрутов между разными протоколами','Балансировка','Шифрование'],a:1,explain:'Redistribution позволяет OSPF узнать маршруты из BGP и наоборот.'},
   {topic:'routing',level:'advanced',q:'Что такое VRF?',opts:['Изолированная таблица маршрутизации','Протокол резервирования','Тип VLAN','Шифрование'],a:0,explain:'VRF изолирует маршрутные таблицы.'},
 
-  /* TRANSPORT */
   {topic:'transport',level:'basic',q:'Какой протокол гарантирует доставку?',opts:['UDP','TCP','ICMP','ARP'],a:1,explain:'TCP устанавливает соединение, нумерует сегменты.'},
   {topic:'transport',level:'basic',q:'Какой протокол НЕ гарантирует доставку?',opts:['TCP','UDP','SCTP','FTP'],a:1,explain:'UDP не устанавливает соединение.'},
   {topic:'transport',level:'basic',q:'Сколько портов у TCP/UDP?',opts:['256','1024','65535','65536'],a:3,explain:'Порт — 16 бит, 0–65535.'},
@@ -822,7 +933,6 @@ const QUESTIONS = [
   {topic:'transport',level:'advanced',q:'Какой размер TCP-заголовка без опций?',opts:['8 байт','16 байт','20 байт','40 байт'],a:2,explain:'Базовый TCP-заголовок — 20 байт.'},
   {topic:'transport',level:'advanced',q:'Что такое SACK в TCP?',opts:['Selective Acknowledgment','Secure ACK','Sequence ACK','Shutdown ACK'],a:0,explain:'SACK подтверждает отдельные диапазоны.'},
 
-  /* APP PROTO */
   {topic:'appproto',level:'basic',q:'Какую задачу решает DNS?',opts:['Шифрует трафик','Преобразует доменные имена в IP','Выдаёт IP','Маршрутизирует пакеты'],a:1,explain:'DNS — «телефонная книга интернета».'},
   {topic:'appproto',level:'basic',q:'Что делает DHCP?',opts:['Сопоставляет IP и MAC','Автоматически выдаёт IP и сетевые параметры','Разрешает имена','Проверяет доступность'],a:1,explain:'DHCP выдаёт IP, маску, шлюз, DNS.'},
   {topic:'appproto',level:'basic',q:'Какой порт у SMTP?',opts:['20','22','25','53'],a:2,explain:'SMTP — 25/TCP.'},
@@ -845,7 +955,6 @@ const QUESTIONS = [
   {topic:'appproto',level:'advanced',q:'Что такое gRPC?',opts:['Язык программирования','RPC-фреймворк поверх HTTP/2 с protobuf','Протокол L2','База данных'],a:1,explain:'gRPC использует HTTP/2 и protobuf.'},
   {topic:'appproto',level:'advanced',q:'Какой порт у SNMP?',opts:['123','161','514','520'],a:1,explain:'SNMP: 161/UDP и 162/UDP.'},
 
-  /* SECURITY */
   {topic:'security',level:'basic',q:'Что такое firewall?',opts:['Кабель','Межсетевой экран','Протокол маршрутизации','Сервер'],a:1,explain:'Firewall фильтрует трафик по правилам.'},
   {topic:'security',level:'basic',q:'Какой протокол шифрует веб-трафик?',opts:['HTTP','HTTPS','FTP','Telnet'],a:1,explain:'HTTPS — HTTP поверх TLS.'},
   {topic:'security',level:'basic',q:'Что такое VPN?',opts:['Публичная сеть','Виртуальная частная сеть с шифрованием','Тип VLAN','Протокол L2'],a:1,explain:'VPN создаёт зашифрованный туннель.'},
@@ -877,7 +986,6 @@ const QUESTIONS = [
   {topic:'security',level:'advanced',q:'Что такое CSRF?',opts:['Подделка межсайтового запроса','Шифрование','DDoS','Тип VPN'],a:0,explain:'CSRF заставляет браузер жертвы отправить запрос.'},
   {topic:'security',level:'advanced',q:'Что такое ARP spoofing?',opts:['Подмена ARP-таблицы для MITM','Маршрутизация','Шифрование','Кэш DNS'],a:0,explain:'Поддельные ARP-ответы перенаправляют трафик.'},
 
-  /* WIRELESS */
   {topic:'wireless',level:'basic',q:'Что такое SSID?',opts:['Тип шифрования','Имя беспроводной сети','MAC точки доступа','Канал'],a:1,explain:'SSID — Service Set Identifier.'},
   {topic:'wireless',level:'basic',q:'Какой стандарт Wi-Fi соответствует 802.11ax?',opts:['Wi-Fi 4','Wi-Fi 5','Wi-Fi 6','Wi-Fi 7'],a:2,explain:'802.11ax = Wi-Fi 6.'},
   {topic:'wireless',level:'basic',q:'На каких частотах работает Wi-Fi?',opts:['2.4 ГГц и 5 ГГц','1 ГГц и 10 ГГц','Только 2.4 ГГц','Только 60 ГГц'],a:0,explain:'Современные Wi-Fi работают на 2.4, 5 и 6 ГГц.'},
@@ -897,7 +1005,6 @@ const QUESTIONS = [
   {topic:'wireless',level:'advanced',q:'Что такое site survey в Wi-Fi?',opts:['Анализ помещения для размещения AP','Шифрование','Протокол','Тип антенны'],a:0,explain:'Site survey — планирование каналов и размещения.'},
   {topic:'wireless',level:'advanced',q:'Что такое captive portal?',opts:['Страница авторизации перед доступом в сеть','Тип шифрования','Протокол','Кабель'],a:0,explain:'Captive portal в отелях, аэропортах.'},
 
-  /* CLOUD/SDN */
   {topic:'cloud_sdn',level:'basic',q:'Что такое VXLAN?',opts:['Протокол маршрутизации','Туннель L2 поверх L3 с инкапсуляцией в UDP','Тип VPN','Стандарт Wi-Fi'],a:1,explain:'VXLAN инкапсулирует L2-кадры в UDP.'},
   {topic:'cloud_sdn',level:'basic',q:'Что такое SDN?',opts:['Software-Defined Networking','Тип кабеля','Стандарт Wi-Fi','Протокол L4'],a:0,explain:'SDN разделяет control plane и data plane.'},
   {topic:'cloud_sdn',level:'basic',q:'Что такое cloud computing?',opts:['Локальный сервер','Предоставление вычислений через интернет как сервис','Протокол L2','Стандарт'],a:1,explain:'IaaS, PaaS, SaaS.'},
@@ -920,7 +1027,6 @@ const QUESTIONS = [
   {topic:'cloud_sdn',level:'advanced',q:'Что такое Terraform?',opts:['IaC-инструмент для описания инфраструктуры кодом','Протокол','Стандарт','Тип шифрования'],a:0,explain:'Terraform описывает сеть, VPC, security groups декларативно.'},
   {topic:'cloud_sdn',level:'advanced',q:'Что такое VRF-lite?',opts:['VRF без MPLS','Протокол L2','Стандарт Wi-Fi','Тип VPN'],a:0,explain:'VRF-lite для сегментации сетей без MPLS.'},
 
-  /* DIAGNOSTICS */
   {topic:'diagnostics',level:'basic',q:'Какая команда проверяет доступность узла?',opts:['ipconfig','ping','netstat','traceroute'],a:1,explain:'ping отправляет ICMP Echo Request.'},
   {topic:'diagnostics',level:'basic',q:'Что показывает ipconfig/ifconfig?',opts:['Маршрут','IP-адрес и параметры интерфейсов','Порты','ARP'],a:1,explain:'ipconfig (Windows) / ip a (Linux).'},
   {topic:'diagnostics',level:'basic',q:'Какая утилита показывает маршрут до узла?',opts:['ping','traceroute/tracert','nslookup','netstat'],a:1,explain:'traceroute/tracert показывает хопы.'},
@@ -962,20 +1068,347 @@ const ACHIEVEMENTS = [
   {id:'term-30',icon:'🔍',t:'Любознательный',d:'30 определений терминов'},
   {id:'all-topics',icon:'🎓',t:'Энциклопедист',d:'Пройти тест по каждой теме'},
   {id:'topics-5',icon:'🧠',t:'Пятиборец',d:'Пройти тесты по 5+ темам'},
-  {id:'topic-complete',icon:'🏅',t:'Тема закрыта',d:'100% по любой теме (мин. 5 вопросов)'}
+  {id:'topic-complete',icon:'🏅',t:'Тема закрыта',d:'100% по любой теме (мин. 5 вопросов)'},
+  {id:'learn-first',icon:'🧑‍🏫',t:'Ученик',d:'Пройден первый интерактивный урок'},
+  {id:'learn-all',icon:'📜',t:'Выпускник',d:'Пройдены все уроки'}
+];
+
+/* ============================================================
+   ИНТЕРАКТИВНЫЕ УРОКИ
+   ============================================================ */
+const TUTORIALS = [
+  {
+    id: 'subnet',
+    icon: '🔢',
+    name: 'Расчёт масок и подсетей',
+    desc: 'Пошагово: адрес сети, broadcast, количество хостов. С практикой',
+    level: 'middle',
+    steps: [
+      {
+        type: 'text',
+        title: 'Что такое маска подсети?',
+        body: `<p>IP-адрес состоит из двух частей: <b>адрес сети</b> и <b>адрес хоста</b>. Разделяет их <b>маска подсети</b>.</p>
+        <p>Возьмём адрес <code>192.168.1.10</code> с маской <code>255.255.255.0</code>:</p>
+        <ul>
+          <li><span class="hl">192.168.1</span> — адрес сети (первые 24 бита)</li>
+          <li><span class="warn">.10</span> — адрес хоста внутри этой сети (последние 8 бит)</li>
+        </ul>
+        <p>Маску часто записывают коротко — <b>префиксом</b>. <code>/24</code> означает «24 единичных бита», то же самое, что <code>255.255.255.0</code>.</p>`
+      },
+      {
+        type: 'binary',
+        title: 'Тот же адрес в бинарном виде',
+        body: `<p>Так выглядит <code>192.168.1.10/24</code> на уровне битов. Синим выделены биты <b>сети</b>, жёлтым — биты <b>хоста</b>:</p>`,
+        ip: '192.168.1.10',
+        prefix: 24,
+        after: `<p>Префикс <code>/24</code> говорит: <span class="hl">24 старших бита</span> — это сеть, <span class="warn">8 младших бит</span> — это хост. Отсюда <b>256</b> адресов в подсети (2⁸), из них <b>254</b> доступны хостам.</p>`
+      },
+      {
+        type: 'choice',
+        title: 'Префикс → маска',
+        prompt: 'Какая маска соответствует префиксу <code>/26</code>?',
+        options: ['255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224'],
+        correct: 2,
+        hint: 'Первые 24 бита — это 255.255.255. Остаётся 2 бита в последнем октете.',
+        explain: 'Два старших бита последнего октета = <b>128 + 64 = 192</b>. Значит, маска <code>255.255.255.192</code>.'
+      },
+      {
+        type: 'input',
+        title: 'Найдите адрес сети',
+        prompt: 'Дан IP-адрес <code>192.168.10.130/26</code>. Какой у него <b>адрес сети</b>?<br><span style="font-size:13px;color:#8b98b0">Введите ответ в формате X.X.X.X</span>',
+        answer: '192.168.10.128',
+        accept: ['192.168.10.128'],
+        hint: 'Префикс /26 = блоки по 64 адреса. Блоки начинаются с .0, .64, .128, .192. Где окажется .130?',
+        explain: '<code>/26</code> — шаг 64. Число 130 попадает в блок <b>.128 – .191</b>. Значит, адрес сети <code>192.168.10.128</code>.'
+      },
+      {
+        type: 'input',
+        title: 'Найдите broadcast',
+        prompt: 'Для сети <code>192.168.10.128/26</code> найдите <b>широковещательный адрес</b> (broadcast).<br><span style="font-size:13px;color:#8b98b0">Формат X.X.X.X</span>',
+        answer: '192.168.10.191',
+        accept: ['192.168.10.191'],
+        hint: 'Broadcast — это последний адрес блока.',
+        explain: 'Блок <code>.128 – .191</code>. Последний адрес — <b>.191</b>. Это и есть broadcast. Адрес сети и broadcast забирают по одному адресу — их нельзя назначить хостам.'
+      },
+      {
+        type: 'input',
+        title: 'Сколько хостов?',
+        prompt: 'Сколько <b>доступных для хостов</b> адресов в подсети <code>/27</code>?<br><span style="font-size:13px;color:#8b98b0">Введите число</span>',
+        answer: '30',
+        accept: ['30'],
+        hint: 'Всего адресов = 2^(32 − префикс). Из них вычтите адрес сети и broadcast.',
+        explain: '<code>32 − 27 = 5</code> хостовых бит → <b>2⁵ = 32</b> адреса. Минус сеть и broadcast = <b>30</b> хостов.'
+      },
+      {
+        type: 'text',
+        title: 'Алгоритм расчёта',
+        body: `<p>Теперь у вас есть готовый алгоритм для любой задачи по подсетям:</p>
+        <ol>
+          <li>Переведите префикс <code>/N</code> в количество <b>хостовых бит</b>: <code>h = 32 − N</code>.</li>
+          <li>Размер блока = <code>2ʰ</code> адресов.</li>
+          <li>Адрес сети = IP, округлённый <b>вниз</b> до начала блока.</li>
+          <li>Broadcast = адрес сети + размер блока − 1.</li>
+          <li>Хостов = размер блока − 2.</li>
+        </ol>
+        <p><span class="warn">Важно:</span> адрес сети и broadcast — зарезервированы и хостам не назначаются.</p>`
+      },
+      {
+        type: 'input',
+        title: 'Финальная задача',
+        prompt: 'Дано: <code>10.20.30.200/28</code>. Сколько <b>хостов</b> доступно в этой подсети?<br><span style="font-size:13px;color:#8b98b0">Введите число</span>',
+        answer: '14',
+        accept: ['14'],
+        hint: '28 — префикс. Хостовых бит = 32 − 28 = 4. Сколько будет 2⁴?',
+        explain: '<code>32 − 28 = 4</code> хостовых бита. <b>2⁴ = 16</b> адресов. Минус сеть и broadcast = <b>14</b> хостов. Кстати, сама сеть здесь — <code>10.20.30.192</code>, а broadcast — <code>10.20.30.207</code>.'
+      }
+    ],
+    recap: `<p>Что мы разобрали:</p><ul>
+      <li>Маска отделяет сеть от хоста. Префикс <code>/N</code> = N единичных бит маски.</li>
+      <li>Хостовых бит: <code>h = 32 − N</code>. Размер блока: <code>2ʰ</code>.</li>
+      <li>Адрес сети — IP, округлённый вниз до начала блока.</li>
+      <li>Broadcast — последний адрес блока.</li>
+      <li>Доступных хостов = размер блока − 2.</li>
+    </ul>`
+  },
+  {
+    id: 'tcp-handshake',
+    icon: '🤝',
+    name: 'TCP three-way handshake',
+    desc: 'Как устанавливается TCP-соединение — по шагам',
+    level: 'basic',
+    steps: [
+      {
+        type: 'text',
+        title: 'Зачем нужно рукопожатие?',
+        body: `<p>TCP — протокол с <b>установкой соединения</b>. Прежде чем передавать данные, клиент и сервер должны договориться:</p>
+        <ul>
+          <li>оба готовы к обмену;</li>
+          <li>у каждого свой начальный номер последовательности (<b>SEQ</b>);</li>
+          <li>подтверждён приём друг друга.</li>
+        </ul>
+        <p>Для этого используется <b>three-way handshake</b> — три пакета с флагами <code>SYN</code>, <code>SYN-ACK</code> и <code>ACK</code>.</p>`
+      },
+      {
+        type: 'diagram',
+        title: 'Три шага на схеме',
+        body: `<p>На схеме — три пакета, которыми обмениваются клиент и сервер. Обратите внимание на <b>флаги</b> и <b>номера последовательности</b>:</p>`,
+        diagram: 'handshake',
+        after: `<p>Соединение установлено, и можно передавать данные. <code>seq=x</code> и <code>seq=y</code> — случайные начальные номера последовательности для надёжной доставки.</p>`
+      },
+      {
+        type: 'choice',
+        title: 'Порядок флагов',
+        prompt: 'Какая последовательность флагов соответствует TCP three-way handshake?',
+        options: ['SYN → ACK → FIN', 'SYN → SYN-ACK → ACK', 'SYN → FIN → ACK', 'ACK → SYN → SYN-ACK'],
+        correct: 1,
+        hint: 'Клиент делает первый шаг, сервер отвечает одновременно и подтверждением, и своим SYN.',
+        explain: 'Клиент отправляет <b>SYN</b>. Сервер отвечает <b>SYN-ACK</b> (сразу два флага в одном пакете). Клиент подтверждает <b>ACK</b>. Соединение установлено.'
+      },
+      {
+        type: 'choice',
+        title: 'Что делает флаг SYN?',
+        prompt: 'Что означает флаг <code>SYN</code> в TCP-заголовке?',
+        options: [
+          'Синхронизация: запрос на установку соединения',
+          'Подтверждение получения данных',
+          'Завершение соединения',
+          'Сброс соединения'
+        ],
+        correct: 0,
+        hint: 'SYN — от англ. synchronize.',
+        explain: '<code>SYN</code> (synchronize) — запрос на <b>установку соединения</b> и синхронизацию начальных номеров последовательности. <code>ACK</code> — подтверждение, <code>FIN</code> — завершение, <code>RST</code> — сброс.'
+      },
+      {
+        type: 'text',
+        title: 'А что дальше?',
+        body: `<p>После установки соединения начинается передача данных. При этом работают:</p>
+        <ul>
+          <li><b>Нумерация сегментов</b> — каждый байт данных пронумерован, чтобы получатель мог собрать их в правильном порядке.</li>
+          <li><b>ACK на каждый сегмент</b> (или группу сегментов) — подтверждение доставки.</li>
+          <li><b>Управление потоком</b> — window size говорит, сколько данных получатель готов принять.</li>
+          <li><b>Управление перегрузкой</b> — slow start и congestion avoidance защищают сеть от перегрузки.</li>
+        </ul>
+        <p>Завершение — тоже четырёхэтапный процесс: <code>FIN → ACK → FIN → ACK</code>. Одна сторона предлагает закрыть, другая подтверждает.</p>`
+      }
+    ],
+    recap: `<p>Ключевые факты:</p><ul>
+      <li>Установка: <code>SYN → SYN-ACK → ACK</code>.</li>
+      <li>Завершение: <code>FIN → ACK → FIN → ACK</code>.</li>
+      <li>Флаги: SYN — установка, ACK — подтверждение, FIN — завершение, RST — сброс.</li>
+      <li>SEQ и ACK — номера последовательности для надёжной доставки.</li>
+    </ul>`
+  },
+  {
+    id: 'osi',
+    icon: '📚',
+    name: 'Модель OSI',
+    desc: 'Семь уровней с примерами и проверкой знаний',
+    level: 'basic',
+    steps: [
+      {
+        type: 'text',
+        title: 'Что такое модель OSI?',
+        body: `<p><b>OSI</b> (Open Systems Interconnection) — эталонная модель из <b>7 уровней</b>, которая описывает, как данные передаются по сети.</p>
+        <p>Уровни идут от низкого (физика) к высокому (приложение):</p>
+        <ol>
+          <li><b>Физический</b> — кабели, сигналы, разъёмы.</li>
+          <li><b>Канальный</b> — MAC-адреса, коммутаторы, Ethernet.</li>
+          <li><b>Сетевой</b> — IP-адреса, маршрутизаторы.</li>
+          <li><b>Транспортный</b> — TCP, UDP, порты.</li>
+          <li><b>Сеансовый</b> — сессии, управление диалогом.</li>
+          <li><b>Представления</b> — шифрование, сжатие, кодировки.</li>
+          <li><b>Прикладной</b> — HTTP, DNS, почта.</li>
+        </ol>
+        <p>Чем выше уровень, тем ближе он к пользователю. Чем ниже — тем ближе к «железу».</p>`
+      },
+      {
+        type: 'diagram',
+        title: 'Слои визуально',
+        body: `<p>Так выглядят семь уровней. Данные при передаче спускаются вниз (инкапсуляция) и поднимаются наверх у получателя (декапсуляция):</p>`,
+        diagram: 'osi',
+        after: `<p>Каждый уровень навешивает свой заголовок: L4 добавляет порты, L3 — IP-адреса, L2 — MAC-адреса. На приёмнике — та же цепочка, но в обратном порядке.</p>`
+      },
+      {
+        type: 'choice',
+        title: 'IP на каком уровне?',
+        prompt: 'На каком уровне модели OSI работает протокол <b>IP</b>?',
+        options: ['Канальный (L2)', 'Сетевой (L3)', 'Транспортный (L4)', 'Прикладной (L7)'],
+        correct: 1,
+        hint: 'IP занимается адресацией и маршрутизацией — каким уровнем это должно быть?',
+        explain: 'IP работает на <b>сетевом уровне (L3)</b>. Он отвечает за адресацию и маршрутизацию пакетов между сетями.'
+      },
+      {
+        type: 'choice',
+        title: 'TCP на каком уровне?',
+        prompt: 'На каком уровне модели OSI работает протокол <b>TCP</b>?',
+        options: ['Сетевой (L3)', 'Транспортный (L4)', 'Сеансовый (L5)', 'Прикладной (L7)'],
+        correct: 1,
+        hint: 'TCP работает с портами, соединениями и надёжностью доставки.',
+        explain: 'TCP — протокол <b>транспортного уровня (L4)</b>. Он устанавливает соединение, нумерует сегменты и подтверждает их получение.'
+      },
+      {
+        type: 'choice',
+        title: 'Где работает коммутатор?',
+        prompt: 'На каком уровне OSI работает классический <b>коммутатор</b>?',
+        options: ['L1 — физический', 'L2 — канальный', 'L3 — сетевой', 'L4 — транспортный'],
+        correct: 1,
+        hint: 'Коммутатор умеет читать MAC-адреса.',
+        explain: 'Классический коммутатор — устройство <b>L2</b>. Он строит таблицу MAC-адресов и передаёт кадры только в нужный порт. Есть и L3-коммутаторы — они уже умеют маршрутизацию.'
+      },
+      {
+        type: 'input',
+        title: 'Сколько уровней?',
+        prompt: 'Сколько всего уровней в эталонной модели <b>OSI</b>?<br><span style="font-size:13px;color:#8b98b0">Введите число</span>',
+        answer: '7',
+        accept: ['7', 'семь'],
+        hint: 'Запомнить список можно по фразе: «Every Layer Provides Service To Applications» — 7 слов.',
+        explain: 'В модели OSI ровно <b>7 уровней</b>: физический, канальный, сетевой, транспортный, сеансовый, представления, прикладной.'
+      }
+    ],
+    recap: `<p>Главное про OSI:</p><ul>
+      <li>7 уровней, от «железа» (L1) до приложения (L7).</li>
+      <li>L2 — MAC-адреса, коммутаторы. L3 — IP-адреса, маршрутизаторы.</li>
+      <li>L4 — TCP/UDP и порты. L7 — HTTP, DNS, почта.</li>
+      <li>При передаче данные <b>инкапсулируются</b> сверху вниз, при приёме — <b>декапсулируются</b> снизу вверх.</li>
+    </ul>`
+  },
+  {
+    id: 'packet-journey',
+    icon: '✈️',
+    name: 'Путь пакета по сети',
+    desc: 'Что происходит от ввода URL до загрузки страницы',
+    level: 'middle',
+    steps: [
+      {
+        type: 'text',
+        title: 'Сценарий',
+        body: `<p>Вы вводите в браузере <code>example.com</code> и нажимаете Enter. За следующие доли секунды в сети происходит целая цепочка событий.</p>
+        <p>Разберём по шагам, какие протоколы и как участвуют в этом путешествии.</p>`
+      },
+      {
+        type: 'choice',
+        title: 'Первый шаг',
+        prompt: 'Что происходит <b>в первую очередь</b>, когда вы вводите доменное имя?',
+        options: [
+          'Отправляется HTTP-запрос на сайт',
+          'Нужно узнать IP-адрес по имени — запрос к DNS',
+          'Открывается TCP-соединение с сайтом',
+          'Отправляется ping на сервер'
+        ],
+        correct: 1,
+        hint: 'Браузер не знает, куда отправлять HTTP-запрос, пока не получит IP-адрес.',
+        explain: 'Сначала браузер должен <b>разрешить имя в IP</b>. Он проверяет кеш, hosts-файл, и если там пусто — отправляет DNS-запрос.'
+      },
+      {
+        type: 'text',
+        title: 'DNS-запрос',
+        body: `<p>DNS-запрос идёт так:</p>
+        <ol>
+          <li>Проверяется <b>локальный кеш</b> браузера и ОС.</li>
+          <li>Если пусто — запрос уходит на <b>рекурсивный резолвер</b> (обычно от провайдера или 8.8.8.8).</li>
+          <li>Резолвер по цепочке спрашивает: корневой сервер → сервер зоны <code>.com</code> → авторитативный сервер домена.</li>
+          <li>В ответ приходит IP-адрес. Он кэшируется на TTL записи.</li>
+        </ol>
+        <p>Теперь браузер знает: <code>example.com</code> → например, <code>93.184.216.34</code>.</p>`
+      },
+      {
+        type: 'choice',
+        title: 'А что делает ARP?',
+        prompt: 'Мы знаем IP сервера. Но для отправки кадра по Ethernet нужен <b>MAC-адрес</b> следующего узла. Кто его находит?',
+        options: [
+          'DNS — он же разрешает имена',
+          'ARP — рассылает broadcast «у кого IP X?»',
+          'DHCP — он выдаёт MAC',
+          'ICMP — он пингует узлы'
+        ],
+        correct: 1,
+        hint: 'Существует специальный протокол для сопоставления IP и MAC внутри локальной сети.',
+        explain: '<b>ARP</b> рассылает broadcast-запрос «у кого IP X? У кого IP шлюза?». Устройство-владелец отвечает своим MAC-адресом. Он кэшируется в ARP-таблице.'
+      },
+      {
+        type: 'text',
+        title: 'Пакет выходит в интернет',
+        body: `<p>Пакет отправляется сначала на <b>шлюз по умолчанию</b> (ваш домашний роутер). Но перед этим срабатывает <b>NAT</b>:</p>
+        <ul>
+          <li>Частный IP <code>192.168.1.10</code> заменяется на <b>публичный</b> IP роутера.</li>
+          <li>Исходный порт подменяется на уникальный — это позволяет роутеру потом понять, какому внутреннему устройству вернуть ответ (<b>PAT</b>).</li>
+        </ul>
+        <p>Дальше пакет идёт по цепочке маршрутизаторов провайдера, каждый из которых смотрит на <b>IP-адрес назначения</b> и уменьшает <b>TTL</b>. Когда доходит до конца — открывается TCP-соединение:</p>
+        <p><code>SYN → SYN-ACK → ACK</code></p>`
+      },
+      {
+        type: 'text',
+        title: 'Запрос уходит на сервер',
+        body: `<p>Когда TCP-соединение установлено (а в случае HTTPS — ещё и TLS-рукопожатие с обменом сертификатами), отправляется HTTP-запрос:</p>
+        <p><code>GET / HTTP/1.1</code></p>
+        <p>Сервер отвечает статусом <code>200 OK</code> и телом страницы. Браузер получает HTML, парсит его, догружает CSS, JS, картинки (снова через DNS, TCP, TLS — но уже быстрее за счёт кешей) и отрисовывает страницу.</p>
+        <p>Вы видите сайт. На всё это ушло, скажем, 200 миллисекунд.</p>`
+      }
+    ],
+    recap: `<p>Путь одного запроса:</p><ul>
+      <li>DNS — имя превращается в IP.</li>
+      <li>ARP — IP превращается в MAC следующего узла.</li>
+      <li>NAT — частный адрес подменяется на публичный.</li>
+      <li>Маршрутизация — пакет идёт через цепочку роутеров (TTL уменьшается).</li>
+      <li>TCP handshake — установка соединения.</li>
+      <li>TLS — шифрование (для HTTPS).</li>
+      <li>HTTP — сам запрос и ответ.</li>
+    </ul>`
+  }
 ];
 
 /* ============================================================
    ХРАНИЛИЩЕ
    ============================================================ */
-const STORAGE_KEY = 'netquiz.v2';
+const STORAGE_KEY = 'netquiz.v3';
 const defaultData = () => ({
   progress: {},
   stats: {
     totalAnswered: 0, totalCorrect: 0, byTopic: {},
     dayStreak: 0, lastVisit: null,
     flashViewed: 0, calcCount: 0, termOpened: 0,
-    topicsDone: {}, subnetStreak: 0, generalDone: false
+    topicsDone: {}, subnetStreak: 0, generalDone: false,
+    learnDone: {}
   },
   achievements: [],
   session: null
@@ -1227,7 +1660,12 @@ const state = {
   calcPrefix: 24,
   flashDeck: [],
   flashIdx: 0,
-  flashFlipped: false
+  flashFlipped: false,
+  tutorialId: null,
+  learnStep: 0,
+  learnAnswer: null,
+  learnChoice: null,
+  learnShowHint: false
 };
 const LEVEL_META = {
   basic:{name:'Базовый',cls:'basic'},
@@ -1252,6 +1690,7 @@ function renderHome(){
   const dueN = dueQuestions().length;
   const hasSession = !!DATA.session;
   const generalDone = s.generalDone;
+  const learnDone = Object.keys(s.learnDone || {}).length;
 
   const continueBtn = hasSession ? `
     <button class="mode" data-go="resume" style="grid-column:1/-1;border-color:rgba(52,211,153,.5);background:linear-gradient(120deg,rgba(52,211,153,.1),rgba(34,211,238,.06))">
@@ -1279,6 +1718,12 @@ function renderHome(){
 
       <div class="grid">
         ${continueBtn}
+
+        <button class="mode" data-go="learn" style="grid-column:1/-1;border-color:rgba(52,211,153,.45);background:linear-gradient(120deg,rgba(52,211,153,.09),rgba(56,189,248,.06))">
+          <span class="ico">🎓</span>
+          <div class="t">Интерактивное обучение ${learnDone?`<span class="badge" style="background:rgba(52,211,153,.2);color:#6ee7b7">${learnDone}/${TUTORIALS.length}</span>`:''}</div>
+          <div class="d">Пошаговые уроки с задачами: расчёт масок, TCP handshake, модель OSI, путь пакета</div>
+        </button>
 
         <button class="mode" data-go="general" style="grid-column:1/-1;border-color:rgba(251,191,36,.45);background:linear-gradient(120deg,rgba(251,191,36,.09),rgba(244,114,182,.06))">
           <span class="ico">📋</span>
@@ -1311,7 +1756,7 @@ function renderHome(){
         </button>
 
         <button class="mode" data-go="exam">
-          <span class="ico">🎓</span>
+          <span class="ico">🏆</span>
           <div class="t">Экзамен</div>
           <div class="d">40 вопросов · 40 минут</div>
         </button>
@@ -1335,7 +1780,7 @@ function renderHome(){
         </button>
 
         <button class="mode" data-go="achievements">
-          <span class="ico">🏆</span>
+          <span class="ico">🎖️</span>
           <div class="t">Достижения</div>
           <div class="d">${DATA.achievements.length} из ${ACHIEVEMENTS.length}</div>
         </button>
@@ -1363,7 +1808,7 @@ function renderHome(){
 }
 
 /* ============================================================
-   НАСТРОЙКА ОБЩЕГО ТЕСТА
+   ОБЩИЙ ТЕСТ
    ============================================================ */
 function renderGeneralSetup(){
   const total = QUESTIONS.length;
@@ -1371,18 +1816,13 @@ function renderGeneralSetup(){
   QUESTIONS.forEach(q => byLevel[q.level]++);
   const byType = {choice:0, input:0};
   QUESTIONS.forEach(q => byType[q.type||'choice']++);
-
-  // сколько уже отвечено в этом банке
   const answered = QUESTIONS.filter(q => DATA.progress[qHash(q)]).length;
-
-  // примерная оценка: 25 сек на выбор, 45 сек на ввод
   const secs = byType.choice * 25 + byType.input * 45;
   const minutes = Math.round(secs / 60);
 
   app.innerHTML = `
     <div class="card">
       <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Общий тест</span></div>
-
       <h2 style="margin-bottom:12px">📋 Полный прогон по всем темам</h2>
       <p class="sub">Все ${total} вопросов из банка, перемешанные в случайном порядке. Это длинный тест — можно прервать в любой момент, прогресс сохранится, и вы сможете продолжить позже с того же места.</p>
 
@@ -1399,20 +1839,18 @@ function renderGeneralSetup(){
           <span class="chip sm" style="cursor:default">Базовых: ${byLevel.basic}</span>
           <span class="chip sm" style="cursor:default">Средних: ${byLevel.middle}</span>
           <span class="chip sm" style="cursor:default">Продвинутых: ${byLevel.advanced}</span>
-          <span class="chip sm" style="cursor:default">С выбором ответа: ${byType.choice}</span>
-          <span class="chip sm" style="cursor:default">С вводом ответа: ${byType.input}</span>
+          <span class="chip sm" style="cursor:default">С выбором: ${byType.choice}</span>
+          <span class="chip sm" style="cursor:default">С вводом: ${byType.input}</span>
         </div>
       </div>
 
       <label class="switch" style="margin-top:20px">
         <input type="checkbox" id="timedToggle" ${state.timed?'checked':''}>
-        <span>Ограничение времени — ${TIME_LIMIT} секунд на вопрос (рекомендуется выключить для длинного теста)</span>
+        <span>Ограничение времени — ${TIME_LIMIT} секунд на вопрос (рекомендуется выключить)</span>
       </label>
 
       <button class="btn primary wide" data-start-general>Начать общий тест</button>
-      <div class="hint">
-        💡 Прогресс автосохраняется. Если закрыть вкладку — на главной появится кнопка «Продолжить тест».
-      </div>
+      <div class="hint">💡 Прогресс автосохраняется. Если закрыть вкладку — на главной появится кнопка «Продолжить тест».</div>
     </div>
   `;
 }
@@ -1577,7 +2015,7 @@ function renderQuiz(){
 
   const examBanner = isExam ? `
     <div class="exam-banner">
-      <span>🎓 Экзамен · до конца <b id="examTimer">${formatTime(state.examSecondsLeft)}</b></span>
+      <span>🏆 Экзамен · до конца <b id="examTimer">${formatTime(state.examSecondsLeft)}</b></span>
       <span>Отвечено: <b>${state.questions.filter(x=>x.answered).length}/${total}</b></span>
     </div>` : '';
 
@@ -1590,6 +2028,7 @@ function renderQuiz(){
   app.innerHTML = `
     <div class="card">
       <div class="topbar">
+        <button class="home-btn" data-quiz-home title="В главное меню">← Меню</button>
         <button class="bookmark-btn ${p.bookmarked?'on':''}" data-bookmark title="В закладки">${p.bookmarked?'★':'☆'}</button>
         ${isGeneral ? `<span class="pill general">📋 Общий</span>` : ''}
         <span class="pill ${meta.cls}">${meta.name}</span>
@@ -1748,17 +2187,13 @@ function finishQuiz(force){
   if(hour >= 2 && hour < 5) unlock('night-owl');
   if(state.mode === 'classic' && state.level === 'advanced' && pct >= 90) unlock('bgp-pro');
 
-  // ОБЩИЙ ТЕСТ: достижение за прохождение
   if(state.mode === 'general'){
-    // Если это полный общий тест из всех вопросов банка
     const wasFullBank = state.questions.length === QUESTIONS.length;
-    // Считаем, что тест пройден, если ответили на все вопросы (или ответили >80% и не бросили)
     const answeredCount = state.questions.filter(x => x.answered).length;
     if(wasFullBank && answeredCount >= Math.floor(QUESTIONS.length * 0.9)){
       DATA.stats.generalDone = true;
       unlock('general-done');
     } else if(answeredCount >= 50){
-      // Иначе отмечаем как «частично», но достижение не даём
       DATA.stats.generalDone = true;
     }
   }
@@ -2160,10 +2595,309 @@ function renderSettings(){
 }
 
 /* ============================================================
+   ИНТЕРАКТИВНОЕ ОБУЧЕНИЕ
+   ============================================================ */
+function renderLearnSetup(){
+  const doneMap = DATA.stats.learnDone || {};
+  const totalDone = Object.keys(doneMap).length;
+  const LEVELS = {basic:'Базовый', middle:'Средний', advanced:'Продвинутый'};
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Интерактивное обучение</span></div>
+      <p class="sub">Пошаговые уроки с задачами и мгновенной обратной связью. В конце каждого — краткий итог.</p>
+
+      <div class="stat-row">
+        <div class="stat"><div class="v">${totalDone}</div><div class="l">Пройдено</div></div>
+        <div class="stat"><div class="v">${TUTORIALS.length}</div><div class="l">Всего уроков</div></div>
+        <div class="stat"><div class="v">${TUTORIALS.reduce((n,t)=>n+t.steps.length,0)}</div><div class="l">Шагов</div></div>
+      </div>
+
+      <div class="grid">
+        ${TUTORIALS.map(t=>{
+          const done = doneMap[t.id];
+          return `
+            <button class="mode" data-learn-start="${t.id}" style="${done?'':'border-color:rgba(56,189,248,.4)'}">
+              <span class="ico">${t.icon}</span>
+              <div class="t">${escapeHtml(t.name)} ${done?'<span class="badge" style="background:rgba(52,211,153,.2);color:#6ee7b7">✓</span>':''}</div>
+              <div class="d">${escapeHtml(t.desc)}</div>
+              <div class="d" style="margin-top:6px;color:#6b7a94;font-size:11.5px">${t.steps.length} шагов · ${LEVELS[t.level]}</div>
+            </button>`;
+        }).join('')}
+      </div>
+
+      <div class="hint" style="text-align:left;margin-top:20px;padding:12px 14px;background:rgba(56,189,248,.05);border-radius:12px;border:1px solid var(--border)">
+        💡 Если тема незнакома — начните с «Модель OSI», затем переходите к «TCP handshake» и «Расчёт масок».
+      </div>
+    </div>
+  `;
+}
+
+function renderBinaryViz(ip, prefix){
+  const octets = ip.split('.').map(n => parseInt(n, 10));
+  let bitsUsed = 0;
+  let html = '<div class="binary-viz">';
+  octets.forEach(o => {
+    const bits = o.toString(2).padStart(8, '0').split('');
+    html += '<div class="binary-octet">';
+    html += `<div class="dec">${o}</div>`;
+    html += '<div class="bits">';
+    bits.forEach((b, bi) => {
+      const bitPos = bitsUsed + bi;
+      const isNet = bitPos < prefix;
+      const isOn = b === '1';
+      const cls = `bit ${isNet ? 'net-bit' : 'host-bit'} ${isOn ? 'on' : ''}`;
+      html += `<span class="${cls}">${b}</span>`;
+    });
+    html += '</div></div>';
+    bitsUsed += 8;
+  });
+  html += '</div>';
+  html += `
+    <div class="binary-legend">
+      <span><span class="dot net"></span>Биты сети — ${prefix}</span>
+      <span><span class="dot host"></span>Биты хоста — ${32 - prefix}</span>
+    </div>`;
+  return html;
+}
+
+function renderLearn(){
+  const t = TUTORIALS.find(x => x.id === state.tutorialId);
+  if(!t){ state.screen = 'learnSetup'; render(); return; }
+
+  if(state.learnStep >= t.steps.length){
+    if(!DATA.stats.learnDone) DATA.stats.learnDone = {};
+    const wasNew = !DATA.stats.learnDone[t.id];
+    DATA.stats.learnDone[t.id] = true;
+    saveData();
+    if(wasNew) unlock('learn-first');
+    if(TUTORIALS.every(x => DATA.stats.learnDone[x.id])) unlock('learn-all');
+
+    app.innerHTML = `
+      <div class="card">
+        <div class="topnav"><button class="back" data-learn-exit>← К урокам</button><span class="title">${escapeHtml(t.name)}</span></div>
+        <div class="learn-done">
+          <span class="big">🎉</span>
+          <h2>Урок пройден!</h2>
+          <p>${escapeHtml(t.desc)}</p>
+        </div>
+        <div class="learn-recap">${t.recap || ''}</div>
+        <div class="actions">
+          <button class="btn primary" data-learn-restart="${t.id}">Пройти заново</button>
+          <button class="btn" data-learn-exit>К списку уроков</button>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const step = t.steps[state.learnStep];
+  const total = t.steps.length;
+  const pct = (state.learnStep / total) * 100;
+  const letters = ['A','B','C','D','E'];
+
+  let contentHtml = '';
+  let actionsHtml = '';
+
+  if(step.type === 'text'){
+    contentHtml = `<div class="learn-body">${linkify(step.body)}</div>`;
+    actionsHtml = `
+      <div class="actions">
+        <button class="btn primary" data-learn-next>
+          ${state.learnStep === total-1 ? 'Завершить урок' : 'Далее →'}
+        </button>
+      </div>`;
+  }
+  else if(step.type === 'binary'){
+    contentHtml = `
+      <div class="learn-body">${linkify(step.body)}</div>
+      ${renderBinaryViz(step.ip, step.prefix)}
+      ${step.after ? `<div class="learn-body" style="margin-top:14px">${linkify(step.after)}</div>` : ''}
+    `;
+    actionsHtml = `
+      <div class="actions">
+        <button class="btn primary" data-learn-next>
+          ${state.learnStep === total-1 ? 'Завершить урок' : 'Далее →'}
+        </button>
+      </div>`;
+  }
+  else if(step.type === 'diagram'){
+    contentHtml = `
+      <div class="learn-body">${linkify(step.body)}</div>
+      <div class="diagram">${DIAGRAMS[step.diagram] || ''}</div>
+      ${step.after ? `<div class="learn-body" style="margin-top:14px">${linkify(step.after)}</div>` : ''}
+    `;
+    actionsHtml = `
+      <div class="actions">
+        <button class="btn primary" data-learn-next>
+          ${state.learnStep === total-1 ? 'Завершить урок' : 'Далее →'}
+        </button>
+      </div>`;
+  }
+  else if(step.type === 'choice'){
+    const answered = state.learnChoice !== null;
+    const chosen = state.learnChoice;
+    const correct = step.correct;
+    const optionsHtml = step.options.map((o, i) => {
+      let cls = 'option';
+      if(answered){
+        cls += ' locked';
+        if(i === correct) cls += ' correct';
+        else if(i === chosen) cls += ' wrong';
+        else cls += ' dim';
+      }
+      return `<button class="${cls}" data-learn-choice="${i}">
+        <span class="letter">${letters[i]}</span>
+        <span>${linkify(o)}</span>
+      </button>`;
+    }).join('');
+
+    const feedbackHtml = answered ? `
+      <div class="learn-feedback ${chosen === correct ? 'ok' : 'no'}">
+        ${chosen === correct ? '✅ <b>Верно!</b> ' : `❌ <b>Неверно.</b> Правильный ответ: <b>${escapeHtml(step.options[correct])}</b>. `}
+        ${linkify(step.explain)}
+      </div>
+    ` : '';
+
+    const hintHtml = (state.learnShowHint && !answered && step.hint)
+      ? `<div class="learn-hint">💡 ${linkify(step.hint)}</div>` : '';
+
+    const hintBtn = (!answered && step.hint && !state.learnShowHint)
+      ? `<button class="learn-hint-trigger" data-learn-hint>💡 Подсказка</button>` : '';
+
+    contentHtml = `
+      <div class="learn-task">
+        <p class="learn-task-prompt">${linkify(step.prompt)}</p>
+        <div class="options">${optionsHtml}</div>
+        ${hintBtn}
+        ${hintHtml}
+        ${feedbackHtml}
+      </div>
+    `;
+
+    actionsHtml = answered ? `
+      <div class="actions">
+        <button class="btn primary" data-learn-next>
+          ${state.learnStep === total-1 ? 'Завершить урок' : 'Далее →'}
+        </button>
+      </div>` : '';
+  }
+  else if(step.type === 'input'){
+    const answered = state.learnAnswer !== null;
+    const isCorrect = answered && step.accept.some(a =>
+      a.toLowerCase().replace(/\s+/g,'') === state.learnAnswer.toLowerCase().replace(/\s+/g,'')
+    );
+    const inputCls = answered ? (isCorrect ? 'ok' : 'no') : '';
+
+    const feedbackHtml = answered ? `
+      <div class="learn-feedback ${isCorrect ? 'ok' : 'no'}">
+        ${isCorrect ? '✅ <b>Верно!</b> ' : `❌ <b>Неверно.</b> Правильный ответ: <b>${escapeHtml(step.answer)}</b>. `}
+        ${linkify(step.explain)}
+      </div>
+    ` : '';
+
+    const hintHtml = (state.learnShowHint && !answered && step.hint)
+      ? `<div class="learn-hint">💡 ${linkify(step.hint)}</div>` : '';
+
+    const hintBtn = (!answered && step.hint && !state.learnShowHint)
+      ? `<button class="learn-hint-trigger" data-learn-hint>💡 Подсказка</button>` : '';
+
+    contentHtml = `
+      <div class="learn-task">
+        <p class="learn-task-prompt">${linkify(step.prompt)}</p>
+        <div class="input-row">
+          <input type="text" id="learnInput" value="${answered ? escapeHtml(state.learnAnswer) : ''}" ${answered?'disabled':''} class="${inputCls}" placeholder="Ваш ответ…">
+          <button class="btn primary" id="learnSubmit" ${answered?'disabled':''}>Проверить</button>
+        </div>
+        ${hintBtn}
+        ${hintHtml}
+        ${feedbackHtml}
+      </div>
+    `;
+
+    actionsHtml = answered ? `
+      <div class="actions">
+        <button class="btn primary" data-learn-next>
+          ${state.learnStep === total-1 ? 'Завершить урок' : 'Далее →'}
+        </button>
+      </div>` : '';
+  }
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-learn-exit>← К урокам</button><span class="title">${t.icon} ${escapeHtml(t.name)}</span></div>
+      <div class="learn-header">
+        <span class="learn-step-label">Шаг ${state.learnStep+1} из ${total}</span>
+        <div class="right-meta"><span class="qcount">${Math.round(pct)}%</span></div>
+      </div>
+      <div class="learn-progress"><span style="width:${pct}%"></span></div>
+
+      <h2 class="learn-title">${linkify(step.title)}</h2>
+      ${contentHtml}
+      ${actionsHtml}
+    </div>
+  `;
+
+  if(step.type === 'input'){
+    const inp = document.getElementById('learnInput');
+    if(inp && !inp.disabled){
+      inp.focus();
+      inp.addEventListener('keydown', e => {
+        if(e.key === 'Enter'){ e.preventDefault(); learnSubmitInput(); }
+      });
+    }
+  }
+}
+
+function learnStart(id){
+  state.tutorialId = id;
+  state.learnStep = 0;
+  state.learnAnswer = null;
+  state.learnChoice = null;
+  state.learnShowHint = false;
+  state.screen = 'learn';
+  render();
+}
+function learnNext(){
+  const t = TUTORIALS.find(x => x.id === state.tutorialId);
+  if(!t) return;
+  const step = t.steps[state.learnStep];
+  if(step && (step.type === 'choice' || step.type === 'input')){
+    const answered = step.type === 'choice' ? state.learnChoice !== null : state.learnAnswer !== null;
+    if(!answered) return;
+  }
+  state.learnStep++;
+  state.learnAnswer = null;
+  state.learnChoice = null;
+  state.learnShowHint = false;
+  render();
+}
+function learnAnswerChoice(i){
+  const t = TUTORIALS.find(x => x.id === state.tutorialId);
+  if(!t) return;
+  if(state.learnChoice !== null) return;
+  state.learnChoice = i;
+  render();
+}
+function learnSubmitInput(){
+  const t = TUTORIALS.find(x => x.id === state.tutorialId);
+  if(!t) return;
+  if(state.learnAnswer !== null) return;
+  const inp = document.getElementById('learnInput');
+  if(!inp) return;
+  const val = inp.value.trim();
+  if(!val) return;
+  state.learnAnswer = val;
+  render();
+}
+
+/* ============================================================
    РЕНДЕР
    ============================================================ */
 function render(){
   if(state.screen === 'home') renderHome();
+  else if(state.screen === 'learnSetup') renderLearnSetup();
+  else if(state.screen === 'learn') renderLearn();
   else if(state.screen === 'generalSetup') renderGeneralSetup();
   else if(state.screen === 'classicSetup') renderClassicSetup();
   else if(state.screen === 'quiz') renderQuiz();
@@ -2181,6 +2915,56 @@ function render(){
    ОБРАБОТЧИКИ
    ============================================================ */
 app.addEventListener('click', (e)=>{
+  // === Интерактивное обучение ===
+  const learnStartBtn = e.target.closest('[data-learn-start]');
+  if(learnStartBtn){ learnStart(learnStartBtn.dataset.learnStart); return; }
+
+  const learnNextBtn = e.target.closest('[data-learn-next]');
+  if(learnNextBtn){ learnNext(); return; }
+
+  const learnChoiceBtn = e.target.closest('[data-learn-choice]');
+  if(learnChoiceBtn){ learnAnswerChoice(Number(learnChoiceBtn.dataset.learnChoice)); return; }
+
+  if(e.target.closest('#learnSubmit')){ learnSubmitInput(); return; }
+
+  if(e.target.closest('[data-learn-hint]')){
+    state.learnShowHint = true;
+    render();
+    return;
+  }
+
+  if(e.target.closest('[data-learn-exit]')){
+    state.screen = 'learnSetup';
+    state.tutorialId = null;
+    render();
+    return;
+  }
+
+  const learnRestart = e.target.closest('[data-learn-restart]');
+  if(learnRestart){ learnStart(learnRestart.dataset.learnRestart); return; }
+
+  // === Возврат в меню из теста ===
+  if(e.target.closest('[data-quiz-home]')){
+    const q = state.questions[state.idx];
+    const unanswered = q && !q.answered;
+    const msg = unanswered
+      ? 'Выйти в главное меню? Текущий вопрос не сохранён, но ответы на остальные — сохранены.'
+      : 'Выйти в главное меню? Прогресс теста сохранён.';
+    if(!confirm(msg)) return;
+    clearInterval(state.timer);
+    clearInterval(state.examTimer);
+    if(state.questions.length && state.screen === 'quiz'){
+      saveSession();
+      toast('💾 Прогресс сохранён');
+    }
+    state.screen = 'home';
+    state.questions = [];
+    state.idx = 0;
+    render();
+    return;
+  }
+
+  // === Термины / linkify ===
   const termIcon = e.target.closest('.term-icon');
   if(termIcon){ e.preventDefault(); e.stopPropagation(); showTermPopup(termIcon.closest('.term')); return; }
 
@@ -2194,6 +2978,7 @@ app.addEventListener('click', (e)=>{
     return;
   }
 
+  // === Ответы ===
   const optBtn = e.target.closest('[data-opt]');
   if(optBtn){ handleAnswer(Number(optBtn.dataset.opt)); return; }
 
@@ -2230,7 +3015,6 @@ app.addEventListener('click', (e)=>{
   }
 
   if(e.target.closest('[data-start-general]')){
-    // Все вопросы из банка, в случайном порядке
     const qs = shuffle(QUESTIONS).map(makeQuestion);
     startQuizQuestions(qs, 'general', {timed: state.timed});
     return;
@@ -2347,6 +3131,7 @@ app.addEventListener('click', (e)=>{
   if(go){
     const dest = go.dataset.go;
     if(dest === 'home'){ state.screen='home'; render(); return; }
+    if(dest === 'learn'){ state.screen='learnSetup'; state.tutorialId=null; render(); return; }
     if(dest === 'general'){ state.screen='generalSetup'; render(); return; }
     if(dest === 'classic'){ state.screen='classicSetup'; render(); return; }
     if(dest === 'flashcards'){
@@ -2422,7 +3207,14 @@ document.addEventListener('keydown', (e)=>{
   if((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('term-icon')){
     e.preventDefault(); showTermPopup(e.target.closest('.term')); return;
   }
-  if(e.key === 'Escape'){ if(!popupEl.hidden){ hideTermPopup(); return; } }
+  if(e.key === 'Escape'){
+    if(!popupEl.hidden){ hideTermPopup(); return; }
+    if(state.screen === 'quiz'){
+      const btn = app.querySelector('[data-quiz-home]');
+      if(btn) btn.click();
+    }
+    return;
+  }
   if(e.target && e.target.closest && (e.target.closest('.term-icon') || e.target.tagName === 'INPUT')) return;
   if(state.screen !== 'quiz') return;
   const q = state.questions[state.idx];
