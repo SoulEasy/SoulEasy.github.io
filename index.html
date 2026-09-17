@@ -24,7 +24,7 @@
       radial-gradient(700px 500px at 50% 100%,rgba(52,211,153,.08),transparent 60%);
     pointer-events:none;z-index:0;
   }
-  #app{width:100%;max-width:840px;position:relative;z-index:1}
+  #app{width:100%;max-width:880px;position:relative;z-index:1}
   .card{
     background:linear-gradient(180deg,rgba(20,28,46,.92),rgba(13,18,32,.94));
     border:1px solid var(--border);border-radius:22px;padding:28px;
@@ -58,7 +58,7 @@
   .stat .v{font-size:19px;font-weight:800;letter-spacing:-.3px}
   .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:11px}
   .mode{
     border:1px solid var(--border);border-radius:14px;padding:15px;background:rgba(255,255,255,.025);
     cursor:pointer;transition:.16s;text-align:left;font-family:inherit;color:inherit;
@@ -82,6 +82,13 @@
   .chip.active.adv{background:linear-gradient(120deg,#f472b6,#a78bfa);color:#1a0716}
   .chip.active.mid{background:linear-gradient(120deg,#38bdf8,#22d3ee);color:#04121d}
   .chip.sm{padding:6px 11px;font-size:12px}
+  .chip.topic-chip{
+    display:flex;align-items:center;gap:8px;
+  }
+  .chip.topic-chip .cnt{
+    background:rgba(0,0,0,.25);font-size:10.5px;padding:1px 6px;border-radius:6px;font-weight:800;
+  }
+  .chip.active .cnt{background:rgba(0,0,0,.15)}
 
   .switch{
     display:flex;align-items:center;gap:11px;padding:13px 15px;border:1px solid var(--border);
@@ -104,10 +111,11 @@
   .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
   .btn.wide{width:100%}
   .btn.ghost{background:transparent}
+  .btn[disabled]{opacity:.4;cursor:not-allowed}
 
   .hint{text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px}
 
-  /* --- quiz --- */
+  /* quiz */
   .topbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
   .pill{font-size:11px;font-weight:800;padding:5px 11px;border-radius:7px;letter-spacing:.04em;text-transform:uppercase}
   .pill.basic{background:rgba(52,211,153,.15);color:#6ee7b7;border:1px solid rgba(52,211,153,.3)}
@@ -175,7 +183,6 @@
     margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;
     font-size:12px;color:var(--muted);animation:fadeIn .25s ease both;
   }
-  .related .chip.sm{cursor:pointer}
   .related .lbl{margin-right:4px}
 
   .difficulty-rate{
@@ -193,7 +200,7 @@
   .actions{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap}
   .actions .btn{flex:1;min-width:150px}
 
-  /* --- result --- */
+  /* result */
   .result-head{display:flex;align-items:center;gap:22px;margin-bottom:22px;flex-wrap:wrap}
   .ring{
     --p:0%;--c:var(--accent);width:140px;height:140px;flex:0 0 140px;border-radius:50%;
@@ -208,14 +215,12 @@
   .pct{font-size:28px;font-weight:800;letter-spacing:-1px}
   .frac{font-size:11.5px;color:var(--muted);margin-top:2px}
 
-  .level-stats{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-  .lstat{font-size:12px;padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:#b9c5da}
   .topic-bar{margin-top:8px}
   .topic-row{
     display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;margin-bottom:5px;
     font-size:12.5px;background:rgba(255,255,255,.025);border:1px solid var(--border);
   }
-  .topic-row .name{flex:0 0 auto;min-width:110px;color:#d0dbea}
+  .topic-row .name{flex:0 0 auto;min-width:150px;color:#d0dbea;font-weight:600}
   .topic-row .bar{flex:1;height:7px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
   .topic-row .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#22d3ee);border-radius:99px;transition:width .4s}
   .topic-row .frac{flex:0 0 auto;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -242,7 +247,7 @@
   .ri-line span.no{color:#fca5a5}
   .ri-exp{margin-top:7px;color:#9fb0c9;font-size:13px;border-top:1px dashed rgba(255,255,255,.08);padding-top:7px}
 
-  /* --- flashcards --- */
+  /* flashcards */
   .flash-wrap{perspective:1400px;margin:24px 0}
   .flash{
     position:relative;width:100%;min-height:240px;cursor:pointer;transform-style:preserve-3d;
@@ -262,7 +267,7 @@
   .flash-hint{margin-top:9px;color:var(--muted);font-size:12.5px}
   .flash-def{font-size:14.5px;line-height:1.7;color:#d0dbea;max-width:520px}
 
-  /* --- glossary --- */
+  /* glossary */
   .search{
     width:100%;padding:12px 15px;border-radius:12px;border:1px solid var(--border);
     background:rgba(255,255,255,.03);color:var(--text);font-size:14.5px;font-family:inherit;
@@ -277,7 +282,7 @@
   .gloss-item .t{font-weight:800;color:var(--accent);margin-bottom:5px;font-size:13.5px}
   .gloss-item .d{color:#c8d4e8}
 
-  /* --- achievements --- */
+  /* achievements */
   .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
   .ach{
     padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.03);
@@ -289,7 +294,7 @@
   .ach .t{font-size:13px;font-weight:700;margin-bottom:3px}
   .ach .d{font-size:11.5px;color:var(--muted);line-height:1.4}
 
-  /* --- calculator --- */
+  /* calculator */
   .calc-inputs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
   .calc-inputs input{
     padding:11px 14px;border-radius:11px;border:1px solid var(--border);background:rgba(255,255,255,.03);
@@ -306,15 +311,13 @@
   .calc-cell .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
   .calc-cell .v{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:14px;color:var(--accent);word-break:break-all}
 
-  /* --- terminal --- */
+  /* terminal */
   .terminal{
     background:#05080d;border:1px solid var(--border);border-radius:13px;padding:14px;
     font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.65;
     height:340px;overflow-y:auto;color:#c8d4e8;margin-bottom:10px;
   }
   .term-line{white-space:pre-wrap;word-break:break-word}
-  .term-prompt{color:#6ee7b7}
-  .term-error{color:#fca5a5}
   .term-info{color:#93c5fd}
   .term-input{
     display:flex;gap:8px;align-items:center;background:#05080d;border:1px solid var(--border);
@@ -326,7 +329,7 @@
     font-size:12.5px;outline:none;padding:0;
   }
 
-  /* --- toast --- */
+  /* toast */
   #toast{
     position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:2000;pointer-events:none;
     display:flex;flex-direction:column;gap:8px;align-items:center;
@@ -340,7 +343,7 @@
   @keyframes toastIn{from{opacity:0;transform:translateY(-10px) scale(.95)}to{opacity:1;transform:none}}
   @keyframes toastOut{to{opacity:0;transform:translateY(-10px)}}
 
-  /* --- popup --- */
+  /* term popup */
   .term{border-bottom:1px dashed rgba(56,189,248,.5);cursor:help;padding-bottom:1px}
   .term-icon{
     display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;
@@ -371,13 +374,35 @@
   }
   .term-popup-close:hover{background:rgba(255,255,255,.15);color:#fff}
 
-  /* --- exam --- */
   .exam-banner{
     padding:11px 14px;border-radius:11px;background:linear-gradient(120deg,rgba(244,114,182,.15),rgba(167,139,250,.13));
     border:1px solid rgba(244,114,182,.4);font-size:13.5px;margin-bottom:16px;color:#f9a8d4;
     display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
   }
   .exam-banner b{color:#fff;font-variant-numeric:tabular-nums}
+
+  /* topic start setup */
+  .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:11px;margin-bottom:20px}
+  .topic-card{
+    border:1px solid var(--border);border-radius:14px;padding:14px;background:rgba(255,255,255,.025);
+    cursor:pointer;transition:.16s;text-align:left;font-family:inherit;color:inherit;position:relative;
+  }
+  .topic-card:hover{background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.4);transform:translateY(-2px)}
+  .topic-card.selected{background:linear-gradient(140deg,rgba(56,189,248,.16),rgba(129,140,248,.1));border-color:rgba(56,189,248,.6)}
+  .topic-card .ico{font-size:20px;margin-bottom:6px;display:block}
+  .topic-card .t{font-weight:700;font-size:14px;margin-bottom:4px}
+  .topic-card .d{font-size:12px;color:var(--muted);line-height:1.45}
+  .topic-card .stat-mini{
+    margin-top:8px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;
+  }
+  .topic-card .stat-mini .bar{flex:1;height:4px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+  .topic-card .stat-mini .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#22d3ee)}
+  .topic-card .check{
+    position:absolute;top:10px;right:10px;width:20px;height:20px;border-radius:50%;
+    background:var(--accent);color:#04121d;display:none;align-items:center;justify-content:center;
+    font-size:12px;font-weight:800;
+  }
+  .topic-card.selected .check{display:flex}
 
   @media (max-width:560px){
     body{padding:14px 10px 40px}
@@ -389,10 +414,10 @@
     .ring-inner{width:92px;height:92px}
     .pct{font-size:24px}
     .result-text{width:100%}
-    .level-stats,.topic-bar{justify-content:center}
     .flash-term{font-size:22px}
     .term-popup{max-width:calc(100vw - 24px)}
-    .grid{grid-template-columns:1fr 1fr}
+    .grid,.topic-grid{grid-template-columns:1fr 1fr}
+    .topic-row .name{min-width:90px;font-size:11.5px}
   }
 </style>
 </head>
@@ -407,10 +432,29 @@
 
 <script>
 /* ============================================================
+   ТЕМЫ
+   ============================================================ */
+const TOPICS = [
+  {id:'basics',       icon:'📶', name:'Основы сетей',           desc:'Топологии, виды сетей, стандарты, оборудование'},
+  {id:'osi',          icon:'📚', name:'Модель OSI и TCP/IP',    desc:'Уровни, инкапсуляция, соответствие моделей'},
+  {id:'ethernet',     icon:'🔌', name:'Ethernet и коммутация',  desc:'MAC, кадры, коммутаторы, VLAN, STP, LACP'},
+  {id:'ip',           icon:'🌐', name:'IP-адресация',           desc:'IPv4, IPv6, классы, частные диапазоны, TTL'},
+  {id:'subnetting',   icon:'🔢', name:'Подсети и CIDR',         desc:'Маски, префиксы, расчёт сетей и хостов'},
+  {id:'routing',      icon:'🧭', name:'Маршрутизация',          desc:'Статика, OSPF, BGP, EIGRP, ECMP, атрибуты'},
+  {id:'transport',    icon:'🚚', name:'Транспортный уровень',   desc:'TCP, UDP, порты, окна, перегрузка, QUIC'},
+  {id:'appproto',     icon:'📨', name:'Прикладные протоколы',   desc:'DNS, DHCP, HTTP, HTTPS, SSH, FTP, SMTP'},
+  {id:'security',     icon:'🔒', name:'Безопасность сетей',     desc:'Шифрование, VPN, IPSec, TLS, атаки, ACL, firewall'},
+  {id:'wireless',     icon:'📡', name:'Беспроводные сети',      desc:'Wi-Fi, стандарты 802.11, WPA, безопасность'},
+  {id:'cloud_sdn',    icon:'☁️', name:'Облака, SDN, виртуализация', desc:'VXLAN, EVPN, VRF, SDN, NFV, оверлеи'},
+  {id:'diagnostics',  icon:'🔍', name:'Диагностика и утилиты',  desc:'ping, traceroute, tcpdump, Wireshark, netstat'}
+];
+
+/* ============================================================
    ГЛОССАРИЙ
    ============================================================ */
 const GLOSSARY = {
   'OSI':'Open Systems Interconnection — эталонная модель сетевого взаимодействия из 7 уровней.',
+  'TCP/IP':'Стек протоколов, на котором работает интернет: 4 уровня (доступ к сети, интернет, транспорт, прикладной).',
   'TCP':'Transmission Control Protocol — транспортный протокол с установкой соединения и гарантией доставки.',
   'UDP':'User Datagram Protocol — транспортный протокол без соединения и без гарантий доставки.',
   'IP':'Internet Protocol — межсетевой протокол адресации и маршрутизации.',
@@ -418,23 +462,43 @@ const GLOSSARY = {
   'IPv6':'Internet Protocol version 6 — 128-битные адреса.',
   'IP-адрес':'Уникальный числовой адрес устройства в IP-сети.',
   'ICMP':'Internet Control Message Protocol — служебный протокол диагностики (ping, traceroute).',
+  'IGMP':'Internet Group Management Protocol — управление multicast-группами.',
   'ARP':'Address Resolution Protocol — сопоставляет IP и MAC внутри локальной сети.',
+  'RARP':'Reverse ARP — обратное сопоставление MAC → IP.',
   'DNS':'Domain Name System — преобразует доменные имена в IP-адреса.',
+  'DNSSEC':'Расширение DNS с криптоподписью записей — защита от подмены.',
   'DHCP':'Dynamic Host Configuration Protocol — автоматически выдаёт IP, маску, шлюз и DNS.',
-  'HTTPS':'HTTP Secure — HTTP поверх TLS, порт 443.',
   'HTTP':'HyperText Transfer Protocol — протокол передачи гипертекста, порт 80.',
+  'HTTPS':'HTTP Secure — HTTP поверх TLS, порт 443.',
   'SSH':'Secure Shell — защищённый удалённый доступ, порт 22.',
   'FTP':'File Transfer Protocol — передача файлов, порты 20/21.',
+  'SFTP':'SSH File Transfer Protocol — FTP поверх SSH, порт 22.',
   'SMTP':'Simple Mail Transfer Protocol — отправка почты, порт 25.',
-  'NAT':'Network Address Translation — трансляция сетевых адресов между частной и публичной сетью.',
+  'IMAP':'Internet Message Access Protocol — доступ к почтовым ящикам, порт 143.',
+  'POP3':'Post Office Protocol v3 — получение почты, порт 110.',
+  'NTP':'Network Time Protocol — синхронизация времени, порт 123/UDP.',
+  'SNMP':'Simple Network Management Protocol — мониторинг устройств, порты 161/162.',
+  'Syslog':'Протокол передачи логов, порт 514.',
+  'Telnet':'Незашифрованный удалённый доступ, порт 23.',
+  'TFTP':'Trivial File Transfer Protocol — упрощённый FTP, порт 69/UDP.',
+  'TLS':'Transport Layer Security — шифрование транспортного уровня.',
+  'SSL':'Предшественник TLS, устаревший.',
+  'IPSec':'Набор протоколов шифрования на уровне IP (AH, ESP).',
+  'IKE':'Internet Key Exchange — протокол обмена ключами в IPSec.',
+  'AH':'Authentication Header — заголовок аутентификации в IPSec.',
+  'ESP':'Encapsulating Security Payload — шифрование и аутентификация в IPSec.',
+  'VPN':'Virtual Private Network — виртуальная частная сеть.',
+  'NAT':'Network Address Translation — трансляция сетевых адресов.',
   'PAT':'Port Address Translation — NAT с трансляцией портов.',
   'VLAN':'Virtual Local Area Network — логическое разделение L2 на изолированные сегменты.',
   'STP':'Spanning Tree Protocol — защита от петель на канальном уровне.',
   'RSTP':'Rapid Spanning Tree Protocol (802.1w) — быстрая сходимость.',
+  'MSTP':'Multiple Spanning Tree Protocol (802.1s) — несколько деревьев.',
   'OSPF':'Open Shortest Path First — внутренний протокол маршрутизации, алгоритм Дейкстры.',
   'BGP':'Border Gateway Protocol — протокол маршрутизации между автономными системами, TCP/179.',
   'RIP':'Routing Information Protocol — дистанционно-векторный протокол.',
   'EIGRP':'Enhanced Interior Gateway Routing Protocol — проприетарный Cisco.',
+  'IS-IS':'Intermediate System to Intermediate System — протокол маршрутизации, стандарт ISO.',
   'MTU':'Maximum Transmission Unit — максимальный размер кадра. Ethernet: 1500 байт.',
   'MSS':'Maximum Segment Size — максимальный размер полезной нагрузки TCP-сегмента.',
   'PMTUD':'Path MTU Discovery — определение минимального MTU на пути.',
@@ -450,9 +514,13 @@ const GLOSSARY = {
   'PTR':'Pointer — обратная DNS-запись IP → имя.',
   'MX':'Mail Exchange — почтовые серверы домена.',
   'NS':'Name Server — авторитативные серверы зоны.',
+  'TXT':'DNS-запись с текстом (SPF, DKIM, DMARC).',
   'SYN':'Synchronize — флаг TCP для установки соединения.',
   'ACK':'Acknowledgment — флаг TCP подтверждения.',
   'FIN':'Finish — флаг TCP завершения соединения.',
+  'RST':'Reset — флаг TCP сброса соединения.',
+  'PSH':'Push — флаг TCP «сразу к приложению».',
+  'URG':'Urgent — флаг TCP для срочных данных.',
   'cwnd':'Congestion Window — окно перегрузки TCP.',
   'ssthresh':'Slow Start Threshold — порог перехода к congestion avoidance.',
   'slow start':'Начальная фаза TCP с экспоненциальным ростом окна.',
@@ -460,7 +528,6 @@ const GLOSSARY = {
   'MPLS':'Multiprotocol Label Switching — коммутация по меткам.',
   'LSR':'Label Switch Router — маршрутизатор меток.',
   'LSP':'Label Switched Path — путь по меткам в MPLS.',
-  'VPN':'Virtual Private Network — виртуальная частная сеть.',
   'BFD':'Bidirectional Forwarding Detection — быстрая детекция отказа (мс).',
   'IGP':'Interior Gateway Protocol — внутренний протокол (OSPF, IS-IS, EIGRP).',
   'EGP':'Exterior Gateway Protocol — внешний протокол (BGP).',
@@ -471,9 +538,11 @@ const GLOSSARY = {
   'SLAAC':'Stateless Address Autoconfiguration — автоконфигурация IPv6 без DHCP.',
   'RA':'Router Advertisement — сообщение IPv6-маршрутизатора.',
   'DAD':'Duplicate Address Detection — проверка уникальности IPv6-адреса.',
+  'NDP':'Neighbor Discovery Protocol — аналог ARP для IPv6.',
   'TCAM':'Ternary CAM — память для параллельного поиска (ACL, FIB).',
   'ACL':'Access Control List — список контроля доступа.',
   'FIB':'Forwarding Information Base — таблица пересылки.',
+  'RIB':'Routing Information Base — таблица маршрутизации.',
   'VRF':'Virtual Routing and Forwarding — изолированная таблица маршрутизации.',
   'VXLAN':'Virtual Extensible LAN — L2-туннель поверх L3 с инкапсуляцией в UDP.',
   'VNI':'VXLAN Network Identifier — 24-битный идентификатор сегмента.',
@@ -482,18 +551,20 @@ const GLOSSARY = {
   'IMET':'Inclusive Multicast Ethernet Tag — маршрут EVPN для BUM.',
   'ECMP':'Equal-Cost Multi-Path — балансировка по равнозначным маршрутам.',
   'QUIC':'Quick UDP Internet Connections — транспорт поверх UDP с TLS 1.3.',
-  'TLS':'Transport Layer Security — шифрование транспортного уровня.',
   '0-RTT':'Режим QUIC/TLS с нулевым RTT.',
   'head-of-line blocking':'Блокировка всех потоков из-за одного медленного.',
   'LACP':'Link Aggregation Control Protocol (802.3ad) — агрегация линков.',
   'VRRP':'Virtual Router Redundancy Protocol — резервирование шлюза.',
+  'HSRP':'Hot Standby Router Protocol — проприетарный Cisco аналог VRRP.',
   'RPKI':'Resource Public Key Infrastructure — проверка прав на анонс префиксов.',
   'ROA':'Route Origin Authorization — разрешение на анонс префикса.',
   'IRR':'Internet Routing Registry — реестр маршрутных объектов.',
   'CUBIC':'Алгоритм контроля перегрузки TCP, дефолт в Linux.',
   'Reno':'Классический алгоритм контроля перегрузки TCP.',
+  'BBR':'Bottleneck Bandwidth and RTT — алгоритм Google для TCP.',
   'anycast':'Один адрес анонсируется из нескольких точек; трафик идёт к ближайшей.',
   'multicast':'Групповая адресация: один отправитель, много получателей.',
+  'unicast':'Один отправитель, один получатель.',
   'broadcast':'Широковещательный адрес — всем узлам подсети.',
   'loopback':'Петлевой интерфейс, 127.0.0.1 — не покидает устройство.',
   'шлюз по умолчанию':'Default gateway — куда идут пакеты вне локальной сети.',
@@ -506,11 +577,85 @@ const GLOSSARY = {
   'хоп':'Один переход между маршрутизаторами на пути пакета.',
   'фрагментация':'Разбиение пакета на части, если он больше MTU.',
   'инкапсуляция':'Вложение пакета одного протокола внутрь другого.',
-  'октет':'8-битная часть IP-адреса (0–255).'
+  'октет':'8-битная часть IP-адреса (0–255).',
+  /* security */
+  'firewall':'Межсетевой экран — фильтрует трафик по правилам.',
+  'IDS':'Intrusion Detection System — обнаруживает атаки по сигнатурам/аномалиям.',
+  'IPS':'Intrusion Prevention System — обнаруживает и блокирует атаки.',
+  'SIEM':'Security Information and Event Management — сбор и анализ событий ИБ.',
+  'DMZ':'Demilitarized Zone — изолированная подсеть для публичных сервисов.',
+  'PKI':'Public Key Infrastructure — инфраструктура открытых ключей.',
+  'CA':'Certificate Authority — удостоверяющий центр.',
+  'CSR':'Certificate Signing Request — запрос на подпись сертификата.',
+  'X.509':'Стандарт формата цифровых сертификатов.',
+  'DoS':'Denial of Service — атака отказа в обслуживании.',
+  'DDoS':'Distributed DoS — распределённая атака отказа.',
+  'MITM':'Man-in-the-Middle — атака «человек посередине».',
+  'XSS':'Cross-Site Scripting — внедрение скрипта в веб-страницу.',
+  'SQLi':'SQL Injection — внедрение SQL-кода через ввод.',
+  'CSRF':'Cross-Site Request Forgery — подделка запроса от имени пользователя.',
+  'phishing':'Фишинг — выманивание учётных данных через поддельные сайты/письма.',
+  'spoofing':'Подмена адреса отправителя (IP, MAC, DNS).',
+  'sniffing':'Перехват трафика в сети.',
+  'WPA2':'Wi-Fi Protected Access 2 — стандарт шифрования Wi-Fi (AES-CCMP).',
+  'WPA3':'Wi-Fi Protected Access 3 — современный стандарт с SAE.',
+  'WEP':'Wired Equivalent Privacy — устаревший и небезопасный Wi-Fi-стандарт.',
+  'SAE':'Simultaneous Authentication of Equals — защита от перебора пароля в WPA3.',
+  'PSK':'Pre-Shared Key — предварительно распределённый ключ в Wi-Fi.',
+  '802.1X':'Стандарт аутентификации в сетях (EAP over LAN).',
+  'EAP':'Extensible Authentication Protocol — расширяемый протокол аутентификации.',
+  'RADIUS':'Протокол централизованной аутентификации, авторизации и учёта.',
+  'TACACS+':'Проприетарный Cisco аналог RADIUS.',
+  'SSO':'Single Sign-On — единый вход.',
+  'MFA':'Multi-Factor Authentication — многофакторная аутентификация.',
+  'OTP':'One-Time Password — одноразовый пароль.',
+  'Zero Trust':'Модель безопасности «никому не доверяй по умолчанию».',
+  'SASE':'Secure Access Service Edge — облачная модель сетевой безопасности.',
+  'DLP':'Data Loss Prevention — защита от утечек данных.',
+  'NGFW':'Next-Generation Firewall — межсетевой экран нового поколения.',
+  'UTM':'Unified Threat Management — комплексная защита в одном устройстве.',
+  'ISO 27001':'Международный стандарт управления информационной безопасностью.',
+  'AES':'Advanced Encryption Standard — симметричный блочный шифр.',
+  'RSA':'Асимметричный алгоритм шифрования на основе факторизации.',
+  'ECC':'Elliptic Curve Cryptography — асимметричная криптография на эллиптических кривых.',
+  'DH':'Diffie-Hellman — протокол обмена ключами.',
+  'SHA':'Secure Hash Algorithm — семейство криптографических хешей.',
+  'HMAC':'Hash-based Message Authentication Code — код аутентификации сообщения.',
+  'MD5':'Устаревший криптографический хеш (сломан).',
+  /* wireless */
+  'Wi-Fi':'Беспроводная сеть по стандартам IEEE 802.11.',
+  '802.11':'Семейство стандартов беспроводных сетей.',
+  '802.11ax':'Wi-Fi 6 — современный стандарт с OFDMA и MU-MIMO.',
+  '802.11be':'Wi-Fi 7 — ещё более высокая пропускная способность.',
+  'SSID':'Имя беспроводной сети.',
+  'BSSID':'MAC-адрес точки доступа.',
+  'AP':'Access Point — точка доступа.',
+  'WLC':'Wireless LAN Controller — контроллер беспроводных точек.',
+  'OFDM':'Ортогональное частотное мультиплексирование.',
+  'OFDMA':'OFDMA — вариант OFDM с разделением по поднесущим.',
+  'MU-MIMO':'Multi-User MIMO — одновременная передача нескольким клиентам.',
+  'MIMO':'Multiple-Input Multiple-Output — несколько антенн.',
+  'Roaming':'Переключение клиента между точками доступа.',
+  /* cloud/sdn */
+  'SDN':'Software-Defined Networking — разделение control plane и data plane.',
+  'NFV':'Network Functions Virtualization — виртуализация сетевых функций.',
+  'VNF':'Virtual Network Function — виртуальная сетевая функция.',
+  'CNF':'Cloud-Native Network Function — контейнерная сетевая функция.',
+  'overlay':'Оверлейная сеть — виртуальная сеть поверх физической.',
+  'underlay':'Физическая сеть, поверх которой строится оверлей.',
+  'VTEP':'VXLAN Tunnel Endpoint — точка инкапсуляции/декапсуляции VXLAN.',
+  'VPC':'Virtual Private Cloud — изолированная сеть в облаке.',
+  'IaaS':'Infrastructure as a Service.',
+  'PaaS':'Platform as a Service.',
+  'SaaS':'Software as a Service.',
+  'Kubernetes':'Оркестратор контейнеров.',
+  'CNI':'Container Network Interface — плагин сети в Kubernetes.',
+  'SD-WAN':'Software-Defined WAN — программно-определяемая глобальная сеть.',
+  'Zero Trust Network':'Модель сети, где никто не доверяется по умолчанию.'
 };
 
 /* ============================================================
-   SVG-ДИАГРАММЫ
+   ДИАГРАММЫ
    ============================================================ */
 const DIAGRAMS = {
   handshake: `<svg viewBox="0 0 380 170" xmlns="http://www.w3.org/2000/svg">
@@ -527,7 +672,6 @@ const DIAGRAMS = {
     <line x1="62" y1="125" x2="316" y2="125" stroke="#34d399" stroke-width="1.5" marker-end="url(#ar)"/>
     <text x="165" y="118" fill="#6ee7b7" font-size="11.5" font-family="sans-serif">ACK (ack=y+1)</text>
   </svg>`,
-
   osi: `<svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
     ${[
       ['7','Прикладной','#f472b6'],
@@ -543,7 +687,6 @@ const DIAGRAMS = {
       <text x="70" y="${30+i*34}" fill="#e9eefb" font-size="13">${l[1]}</text>
     `).join('')}
   </svg>`,
-
   subnet: `<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
     <text x="10" y="20" fill="#8b98b0" font-size="11.5">192.168.10.0/24</text>
     <rect x="10" y="30" width="380" height="34" rx="8" fill="#38bdf8" opacity="0.14" stroke="#38bdf8" stroke-opacity="0.4"/>
@@ -551,89 +694,271 @@ const DIAGRAMS = {
     <text x="140" y="52" fill="#e9eefb" font-size="12">Хосты: .1 – .254</text>
     <text x="310" y="52" fill="#fca5a5" font-size="12">Bcast: .255</text>
     <rect x="10" y="82" width="380" height="34" rx="8" fill="#34d399" opacity="0.1" stroke="#34d399" stroke-opacity="0.35"/>
-    <text x="20" y="104" fill="#6ee7b7" font-size="12">Всего 256 адресов · 254 хоста · маска 255.255.255.0</text>
+    <text x="20" y="104" fill="#6ee7b7" font-size="12">256 адресов · 254 хоста · маска 255.255.255.0</text>
   </svg>`
 };
 
 /* ============================================================
-   БАНК ВОПРОСОВ
+   ВОПРОСЫ — РАЗБИТЫ ПО ТЕМАМ
    ============================================================ */
 const QUESTIONS = [
-  /* -------- БАЗОВЫЙ -------- */
-  {level:'basic',topic:'IP',q:'Сколько бит содержится в IPv4-адресе?',opts:['16 бит','32 бита','64 бита','128 бит'],a:1,explain:'IPv4-адрес — 32 бита, четыре октета по 8 бит (например, 192.168.0.1). 128 бит — это уже IPv6.'},
-  {level:'basic',topic:'TCP/UDP',q:'Какой протокол транспортного уровня обеспечивает гарантированную доставку данных?',opts:['UDP','TCP','ICMP','ARP'],a:1,explain:'TCP устанавливает соединение, нумерует сегменты и подтверждает получение (ACK). UDP работает без гарантий.'},
-  {level:'basic',topic:'Порты',q:'Какой порт по умолчанию используется протоколом HTTPS?',opts:['21','80','443','8080'],a:2,explain:'HTTPS — 443/TCP, HTTP — 80/TCP. Порт 21 — FTP, 8080 часто используется как альтернативный HTTP-порт.'},
-  {level:'basic',topic:'DNS',q:'Какую задачу решает DNS?',opts:['Шифрует трафик','Преобразует доменные имена в IP-адреса','Автоматически выдаёт IP-адреса','Маршрутизирует пакеты'],a:1,explain:'DNS — «телефонная книга интернета»: по имени находит IP-адрес. Выдачей адресов занимается DHCP.'},
-  {level:'basic',topic:'Модель OSI',q:'На каком уровне модели OSI работает маршрутизация?',opts:['Канальный (L2)','Сетевой (L3)','Транспортный (L4)','Прикладной (L7)'],a:1,explain:'Маршрутизаторы работают на L3 с IP-адресами. Коммутаторы — на L2 с MAC-адресами.',diagram:'osi'},
-  {level:'basic',topic:'Модель OSI',q:'Сколько уровней в эталонной модели OSI?',opts:['4','5','6','7'],a:3,explain:'Физический, канальный, сетевой, транспортный, сеансовый, представления и прикладной — всего 7.',diagram:'osi'},
-  {level:'basic',topic:'Подсети',q:'Какой из перечисленных адресов является частным (RFC 1918)?',opts:['8.8.8.8','192.168.1.10','172.32.5.1','11.0.0.1'],a:1,explain:'Частные: 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), 192.168.0.0/16. Адрес 172.32.5.1 — уже публичный.'},
-  {level:'basic',topic:'DHCP',q:'Что делает DHCP?',opts:['Сопоставляет IP и MAC','Автоматически выдаёт IP-адрес и сетевые параметры','Разрешает доменные имена','Проверяет доступность узлов'],a:1,explain:'DHCP выдаёт клиенту IP, маску, шлюз и адреса DNS-серверов.'},
-  {level:'basic',topic:'Порты',q:'Какой порт по умолчанию у SSH?',opts:['20','22','23','25'],a:1,explain:'SSH — 22/TCP. Порт 23 — Telnet, 25 — SMTP, 20/21 — FTP.'},
-  {level:'basic',topic:'Ethernet',q:'Что такое MAC-адрес?',opts:['Логический адрес, назначаемый администратором','Уникальный аппаратный адрес сетевого интерфейса','Адрес сети в интернете','Номер порта приложения'],a:1,explain:'MAC — 48-битный адрес, назначенный производителем. Работает на L2 и не маршрутизируется между сетями.'},
-  {level:'basic',topic:'Подсети',q:'Маске 255.255.255.0 соответствует префикс…',opts:['/16','/24','/25','/32'],a:1,explain:'255.255.255.0 — 24 единичных бита, то есть /24. 256 адресов, из них 254 доступны хостам.',diagram:'subnet'},
-  {level:'basic',topic:'TCP/UDP',q:'Какой протокол НЕ гарантирует доставку данных?',opts:['TCP','UDP','SCTP','FTP'],a:1,explain:'UDP не устанавливает соединение и не подтверждает получение. Поверх него работают DNS, DHCP и QUIC.'},
-  {level:'basic',topic:'IP',q:'Что означает адрес 127.0.0.1?',opts:['Адрес шлюза','Loopback-адрес локального узла','Публичный адрес','Широковещательный адрес'],a:1,explain:'Вся сеть 127.0.0.0/8 — loopback. Пакеты не покидают устройство.'},
-  {level:'basic',topic:'Маршрутизация',q:'Что такое шлюз по умолчанию (default gateway)?',opts:['DNS-сервер провайдера','Устройство для пакетов к узлам вне локальной сети','Коммутатор доступа','Сервер DHCP'],a:1,explain:'Если адрес назначения вне локальной подсети, пакет отправляется на шлюз.'},
-  {level:'basic',topic:'DNS',q:'Какой порт используется службой DNS по умолчанию?',opts:['53','67','123','161'],a:0,explain:'DNS — 53-й порт: UDP для запросов, TCP для зонных передач.'},
-  {level:'basic',topic:'Подсети',q:'Сколько хостов можно адресовать в сети /24?',opts:['254','255','256','512'],a:0,explain:'2⁸ = 256 адресов. Минус адрес сети и broadcast → 254 хоста.',diagram:'subnet'},
-  {level:'basic',topic:'DNS',q:'Что такое запись A в DNS?',opts:['Соответствие имени IPv6-адресу','Соответствие имени IPv4-адресу','Почтовый сервер домена','Псевдоним имени'],a:1,explain:'A → IPv4, AAAA → IPv6, MX → почтовые серверы, CNAME → псевдоним, PTR → обратная зона.'},
-  {level:'basic',topic:'Диагностика',q:'Какой протокол используется утилитой ping?',opts:['TCP','UDP','ICMP','IGMP'],a:2,explain:'ping отправляет ICMP Echo Request и ждёт Echo Reply.'},
-  {level:'basic',topic:'Общие',q:'Что такое пропускная способность (bandwidth)?',opts:['Объём данных за сессию','Максимальная скорость передачи по каналу','Задержка пакета','Количество потерь'],a:1,explain:'Bandwidth — теоретический максимум. Реальная скорость — throughput.'},
+  /* ==================== ОСНОВЫ СЕТЕЙ ==================== */
+  {topic:'basics',level:'basic',q:'Какая топология соединяет все устройства в одну общую шину?',opts:['Звезда','Кольцо','Шина','Дерево'],a:2,explain:'Шина — все узлы на одном кабеле. Звезда — через центральный коммутатор, кольцо — по цепочке.'},
+  {topic:'basics',level:'basic',q:'Что такое LAN?',opts:['Локальная сеть','Глобальная сеть','Городская сеть','Персональная сеть'],a:0,explain:'LAN — Local Area Network (локальная), WAN — глобальная, MAN — городская, PAN — персональная.'},
+  {topic:'basics',level:'basic',q:'Какой тип кабеля использует витую пару и разъём RJ-45?',opts:['Коаксиальный','Оптоволокно','Витая пара (UTP/STP)','Патч-корд USB'],a:2,explain:'Витая пара — самый распространённый кабель в LAN. Разъём RJ-45, 8 контактов.'},
+  {topic:'basics',level:'basic',q:'Сколько жил обычно используется в кабеле UTP для передачи 1000BASE-T?',opts:['2','4','8','16'],a:2,explain:'Все 8 жил задействованы для 1000BASE-T (гигабит по меди).'},
+  {topic:'basics',level:'basic',q:'Что такое коллизия?',opts:['Потеря пакета на маршрутизаторе','Одновременная передача двух узлов в общем сегменте','Сбой DNS','Задержка в коммутаторе'],a:1,explain:'Коллизии возникают в разделяемой среде (хаб, шина). Коммутаторы изолируют коллизии по портам.'},
+  {topic:'basics',level:'basic',q:'Какой длины может быть сегмент кабеля UTP для 100BASE-TX?',opts:['100 м','200 м','500 м','1 км'],a:0,explain:'Стандарт Ethernet по витой паре ограничивает длину сегмента 100 метрами.'},
+  {topic:'basics',level:'basic',q:'Что такое full-duplex режим?',opts:['Передача только в одну сторону','Одновременная передача в обе стороны','Режим с коллизиями','Режим энергосбережения'],a:1,explain:'Full-duplex — оба узла передают и принимают одновременно. Half-duplex работает по очереди, с коллизиями.'},
+  {topic:'basics',level:'middle',q:'Чем коммутатор (switch) отличается от хаба (hub)?',opts:['Хаб умнее коммутатора','Коммутатор читает MAC и передаёт только нужному порту, хаб рассылает всем','Они одинаковы','Коммутатор работает только по Wi-Fi'],a:1,explain:'Коммутатор L2 смотрит MAC-адрес получателя и отправляет кадр только в нужный порт. Хаб дублирует во все порты.'},
+  {topic:'basics',level:'middle',q:'Что такое PoE?',opts:['Протокол маршрутизации','Питание через Ethernet-кабель','Тип оптоволокна','Стандарт Wi-Fi'],a:1,explain:'Power over Ethernet (802.3af/at/bt) — питание устройств (IP-камеры, точки доступа) по сетевому кабелю.'},
+  {topic:'basics',level:'middle',q:'Сколько бит у MAC-адреса?',opts:['32','48','64','128'],a:1,explain:'MAC — 48 бит. Первые 24 бита — идентификатор производителя (OUI), вторые — уникальный номер.'},
+  {topic:'basics',level:'middle',q:'Что такое автосогласование (autonegotiation)?',opts:['Автоматический выбор скорости и duplex на линке','Автоматическое назначение IP','Автоматическое создание VLAN','Автоматическое шифрование'],a:0,explain:'Autonegotiation позволяет портам автоматически согласовать скорость (10/100/1000) и режим duplex.'},
+  {topic:'basics',level:'advanced',q:'Какой тип оптического волокна лучше подходит для магистралей на десятки километров?',opts:['Многомодовое (MMF)','Одномодовое (SMF)','Коаксиал','Витая пара'],a:1,explain:'SMF (Single-Mode Fiber) имеет малый диаметр сердцевины и малые потери — до 10+ км без усилителей.'},
+  {topic:'basics',level:'advanced',q:'Что такое MTBF в контексте сетевого оборудования?',opts:['Максимальная пропускная способность','Среднее время между отказами','Тип порта','Стандарт кабеля'],a:1,explain:'Mean Time Between Failures — статистическая оценка надёжности устройства.'},
 
-  /* -------- СРЕДНИЙ -------- */
-  {level:'middle',topic:'Подсети',q:'Сколько доступных для хостов адресов в подсети /26?',opts:['30','62','64','126'],a:1,explain:'2^(32−26)=64 адреса. Минус сеть и broadcast → 62 хоста. /27 даёт 30, /25 — 126.'},
-  {level:'middle',topic:'Ethernet',q:'Какой протокол сопоставляет IP-адрес с MAC-адресом в локальной сети?',opts:['DNS','ARP','DHCP','RARP'],a:1,explain:'ARP рассылает broadcast «у кого IP X?» и получает в ответ MAC.'},
-  {level:'middle',topic:'TCP/UDP',q:'Какая последовательность флагов соответствует TCP three-way handshake?',opts:['SYN → ACK → FIN','SYN → SYN-ACK → ACK','SYN → FIN → ACK','ACK → SYN → ACK'],a:1,explain:'Клиент → SYN, сервер → SYN-ACK, клиент → ACK. Соединение установлено.',diagram:'handshake'},
-  {level:'middle',topic:'IP',q:'Для чего служит поле TTL в IP-заголовке?',opts:['Для шифрования','Для ограничения времени жизни пакета и защиты от петель','Для порта','Для фрагментации'],a:1,explain:'Каждый маршрутизатор уменьшает TTL на 1. При нуле пакет отбрасывается — так работает traceroute.'},
-  {level:'middle',topic:'NAT',q:'Что такое NAT?',opts:['Протокол маршрутизации','Трансляция адресов между частной и публичной сетью','Шифрование трафика','Разделение на VLAN'],a:1,explain:'NAT подменяет частные адреса на публичный IP. С PAT один внешний адрес обслуживает тысячи устройств.'},
-  {level:'middle',topic:'Маршрутизация',q:'Какой протокол маршрутизации использует алгоритм Дейкстры (SPF)?',opts:['RIP','OSPF','BGP','EIGRP'],a:1,explain:'OSPF строит LSDB и вычисляет пути по Дейкстре. RIP — Беллман-Форд, EIGRP — DUAL.'},
-  {level:'middle',topic:'VLAN',q:'Что такое VLAN?',opts:['Объединение коммутаторов','Логическое разделение сети на изолированные сегменты L2','Протокол маршрутизации','Тип кабеля'],a:1,explain:'VLAN создаёт отдельные широковещательные домены. Трафик между VLAN идёт через L3.'},
-  {level:'middle',topic:'Ethernet',q:'Каков стандартный MTU Ethernet?',opts:['576 байт','1024 байта','1500 байт','9000 байт'],a:2,explain:'1500 байт — стандартная нагрузка кадра Ethernet. Jumbo обычно 9000.'},
-  {level:'middle',topic:'DNS',q:'Какая DNS-запись указывает IPv6-адрес?',opts:['A','AAAA','PTR','NS'],a:1,explain:'AAAA хранит 128-битный адрес. PTR — обратная зона, NS — авторитативные серверы.'},
-  {level:'middle',topic:'Подсети',q:'Какая маска соответствует префиксу /30?',opts:['255.255.255.0','255.255.255.192','255.255.255.248','255.255.255.252'],a:3,explain:'/30 = 255.255.255.252 → 4 адреса, 2 хоста. Классика для point-to-point.'},
-  {level:'middle',topic:'Подсети',q:'Какой адрес будет широковещательным для сети 192.168.10.0/24?',opts:['192.168.10.0','192.168.10.1','192.168.10.255','192.168.11.0'],a:2,explain:'Первый — адрес сети, последний — широковещательный.',diagram:'subnet'},
-  {level:'middle',topic:'Коммутация',q:'Какой протокол предотвращает образование петель на канальном уровне?',opts:['OSPF','STP','LACP','VRRP'],a:1,explain:'STP (802.1D) блокирует избыточные порты. RSTP (802.1w) делает то же за секунды.'},
-  {level:'middle',topic:'TCP/UDP',q:'Что описывает размер TCP-окна (window size)?',opts:['Максимальный размер сегмента','Объём данных для приёма без подтверждения','Количество повторных передач','Время ожидания ACK'],a:1,explain:'Window size — управление потоком: отправитель не может послать больше окна получателя.'},
-  {level:'middle',topic:'Диагностика',q:'Что показывает утилита traceroute?',opts:['Скорость скачивания','Маршрут до узла и задержки на каждом хопе','Открытые порты','ARP-таблицу'],a:1,explain:'traceroute увеличивает TTL и собирает ответы ICMP Time Exceeded от маршрутизаторов.'},
-  {level:'middle',topic:'UDP',q:'Какой протокол прикладного уровня работает поверх UDP?',opts:['HTTP','FTP','DHCP','SMTP'],a:2,explain:'DHCP — UDP 67/68. HTTP, FTP и SMTP — поверх TCP.'},
-  {level:'middle',topic:'DHCP',q:'Какой порт слушает DHCP-сервер?',opts:['53','67','68','69'],a:1,explain:'Сервер — 67/UDP, клиент — 68/UDP. Порт 69 — TFTP.'},
-  {level:'middle',topic:'Ethernet',q:'Чем широковещательный домен отличается от домена коллизий?',opts:['Это одно и то же','Broadcast-домен ограничивается маршрутизатором/VLAN, домен коллизий — портом коммутатора','Broadcast-домен только в Wi-Fi','Домен коллизий ограничен VLAN'],a:1,explain:'Коммутатор разбивает домены коллизий, но пропускает broadcast. Границу задаёт VLAN или L3.'},
-  {level:'middle',topic:'Подсети',q:'Что такое CIDR?',opts:['Протокол шифрования','Бесклассовая адресация с длиной префикса','Тип NAT','Метод сжатия'],a:1,explain:'CIDR позволяет гибко делить адреса: 192.168.0.0/22 вместо жёстких классов.'},
-  {level:'middle',topic:'Подсети',q:'Какая маска у префикса /26?',opts:['255.255.255.0','255.255.255.128','255.255.255.192','255.255.255.224'],a:2,explain:'/26 — два единичных бита в последнем октете: 128+64=192.'},
+  /* ==================== МОДЕЛЬ OSI ==================== */
+  {topic:'osi',level:'basic',q:'Сколько уровней в модели OSI?',opts:['4','5','6','7'],a:3,explain:'Физический, канальный, сетевой, транспортный, сеансовый, представления, прикладной.',diagram:'osi'},
+  {topic:'osi',level:'basic',q:'На каком уровне работает маршрутизация?',opts:['L2','L3','L4','L7'],a:1,explain:'Маршрутизаторы работают на сетевом уровне L3 с IP-адресами.',diagram:'osi'},
+  {topic:'osi',level:'basic',q:'На каком уровне работает коммутатор?',opts:['L1','L2','L3','L4'],a:1,explain:'Классический коммутатор — устройство канального уровня L2 с MAC-адресами.'},
+  {topic:'osi',level:'basic',q:'На каком уровне работает TCP?',opts:['Сетевой','Транспортный','Сеансовый','Прикладной'],a:1,explain:'TCP и UDP — протоколы транспортного уровня L4.'},
+  {topic:'osi',level:'basic',q:'На каком уровне работают HTTP и DNS?',opts:['Транспортный','Сеансовый','Прикладной','Канальный'],a:2,explain:'Это прикладной уровень L7 — самый высокий.'},
+  {topic:'osi',level:'basic',q:'На каком уровне модели OSI работает IP?',opts:['Канальный','Сетевой','Транспортный','Сеансовый'],a:1,explain:'IP — протокол сетевого уровня L3.'},
+  {topic:'osi',level:'middle',q:'Сколько уровней в модели TCP/IP?',opts:['3','4','5','7'],a:1,explain:'TCP/IP: доступ к сети, интернет, транспорт, прикладной — 4 уровня.'},
+  {topic:'osi',level:'middle',q:'Как называется процесс добавления заголовков при передаче данных?',opts:['Декапсуляция','Инкапсуляция','Фрагментация','Маршрутизация'],a:1,explain:'Инкапсуляция — вложение данных верхнего уровня в пакет нижнего. Обратный процесс — декапсуляция.'},
+  {topic:'osi',level:'middle',q:'Какой уровень OSI отвечает за шифрование и сжатие?',opts:['Прикладной','Представления','Сеансовый','Транспортный'],a:1,explain:'Уровень представления (Presentation) отвечает за формат данных: шифрование, сжатие, кодировки.',diagram:'osi'},
+  {topic:'osi',level:'middle',q:'Какому уровню OSI соответствует уровень «доступ к сети» в TCP/IP?',opts:['Физический и канальный','Сетевой','Транспортный','Сеансовый'],a:0,explain:'«Доступ к сети» в TCP/IP объединяет физический и канальный уровни OSI.'},
+  {topic:'osi',level:'middle',q:'Что такое PDU для сетевого уровня?',opts:['Кадр','Пакет','Сегмент','Бит'],a:1,explain:'L2 — кадр (frame), L3 — пакет (packet), L4 — сегмент (segment)/датаграмма.'},
+  {topic:'osi',level:'advanced',q:'На каком уровне OSI работает протокол LACP?',opts:['L1','L2','L3','L4'],a:1,explain:'LACP — канальный уровень L2, управляет агрегацией портов.'},
+  {topic:'osi',level:'advanced',q:'Какой уровень OSI отвечает за установку, управление и завершение сессий?',opts:['Транспортный','Сеансовый','Представления','Прикладной'],a:1,explain:'Сеансовый уровень (Session) управляет диалогами, сессиями между приложениями.',diagram:'osi'},
+  {topic:'osi',level:'advanced',q:'Что такое OSI-модель используется как?',opts:['Реальный протокол','Эталонная модель для обучения и описания','Стандарт шифрования','Оборудование'],a:1,explain:'OSI — эталонная модель. Реальные сети используют стек TCP/IP.'},
 
-  /* -------- ПРОДВИНУТЫЙ -------- */
-  {level:'advanced',topic:'BGP',q:'Какой протокол маршрутизации связывает автономные системы в интернете?',opts:['OSPF','IS-IS','BGP','EIGRP'],a:2,explain:'BGP-4 — внешняя маршрутизация (EGP), TCP/179, обмен префиксами с атрибутами.'},
-  {level:'advanced',topic:'BGP',q:'Что означает более короткий AS_PATH при выборе маршрута BGP?',opts:['Маршрут менее предпочтителен','Маршрут более предпочтителен','Маршрут игнорируется','Атрибут не влияет'],a:1,explain:'После Weight и Local Preference выигрывает короткий AS_PATH. Плюс защита от петель.'},
-  {level:'advanced',topic:'VXLAN',q:'Сколько бит занимает идентификатор VNI в VXLAN?',opts:['12','16','24','32'],a:2,explain:'VNI — 24 бита, ~16,7 млн сегментов против 4094 у VLAN.'},
-  {level:'advanced',topic:'QUIC',q:'Поверх какого протокола работает QUIC?',opts:['TCP','UDP','SCTP','ICMP'],a:1,explain:'QUIC поверх UDP: TLS 1.3, мультиплексирование без head-of-line blocking, 0-RTT.'},
-  {level:'advanced',topic:'Маршрутизация',q:'Что такое ECMP?',opts:['Резервный маршрут','Балансировка по равнозначным маршрутам','Протокол шифрования','Тип QoS'],a:1,explain:'Equal-Cost Multi-Path распределяет потоки по nexthop с одинаковой метрикой. Хеш по 5-tuple.'},
-  {level:'advanced',topic:'Маршрутизация',q:'Что такое anycast?',opts:['Один адрес — много получателей','Один адрес анонсируется из нескольких точек; трафик идёт к ближайшей','Адрес для multicast','Групповой адрес'],a:1,explain:'Anycast используют корневые DNS и CDN: BGP приводит клиента к ближайшей точке.'},
-  {level:'advanced',topic:'TCP',q:'Как ведёт себя cwnd на старте TCP slow start?',opts:['Растёт линейно','Растёт экспоненциально до ssthresh','Постоянен','Уменьшается вдвое'],a:1,explain:'В slow start окно перегрузки удваивается каждый RTT, затем переходит в congestion avoidance.'},
-  {level:'advanced',topic:'TCP',q:'Для чего применяется MSS clamping?',opts:['Для сжатия заголовков','Чтобы подменить MSS в SYN и избежать фрагментации в туннелях','Для шифрования','Для балансировки'],a:1,explain:'Если PMTUD блокируется, большие пакеты теряются в туннеле. Clamping уменьшает MSS.'},
-  {level:'advanced',topic:'BGP',q:'Что такое BGP hijacking?',opts:['Атака на DNS','Анонс чужого префикса от имени другой AS','Подмена MAC','DDoS'],a:1,explain:'Анонсируются чужие префиксы, трафик уходит не туда. Защита — RPKI/ROA, IRR-фильтры.'},
-  {level:'advanced',topic:'MPLS',q:'Что лежит в основе MPLS?',opts:['IP-адресация','Коммутация по меткам (label switching)','MAC-адресация','Шифрование'],a:1,explain:'LSR продвигает пакеты по меткам, не разбирая IP-заголовок. Путь называется LSP.'},
-  {level:'advanced',topic:'Маршрутизация',q:'Зачем нужен BFD?',opts:['Для обнаружения сбоев за миллисекунды','Для маршрутизации между AS','Для шифрования','Для NAT'],a:0,explain:'BFD даёт быструю детекцию отказа независимо от таймеров IGP/BGP.'},
-  {level:'advanced',topic:'STP',q:'В чём ключевое отличие RSTP (802.1w) от классического STP?',opts:['Отличий нет','Быстрая сходимость за счёт новых ролей портов и proposal/agreement','RSTP не блокирует порты','RSTP на L3'],a:1,explain:'RSTP вводит альтернативные/резервные порты — сходимость за секунды вместо 30–50.'},
-  {level:'advanced',topic:'Мультикаст',q:'Как работает PIM Sparse Mode?',opts:['Рассылает всем узлам','Использует Rendezvous Point и явное присоединение получателей','Без мультикаст-маршрутизации','Только в IPv6'],a:1,explain:'Получатели отправляют join к RP, строится RPT, затем — SPT switchover.'},
-  {level:'advanced',topic:'IPv6',q:'Что такое SLAAC в IPv6?',opts:['Протокол шифрования','Автоконфигурация адреса по RA без DHCP','Статическая маршрутизация','Тип туннеля'],a:1,explain:'Узел формирует адрес из префикса в RA и своего идентификатора, проверяя уникальность через DAD.'},
-  {level:'advanced',topic:'Коммутация',q:'Зачем в коммутаторах нужна память TCAM?',opts:['Для конфигураций','Для параллельного поиска по ACL и FIB за один такт','Для буферизации','Для питания'],a:1,explain:'Ternary CAM ищет по маскам (0/1/don\'t care) за одну операцию.'},
-  {level:'advanced',topic:'VRF',q:'Что такое VRF?',opts:['Виртуальный маршрутизатор с отдельной таблицей на одном устройстве','Протокол резервирования шлюза','Тип VLAN','Технология шифрования'],a:0,explain:'VRF изолирует маршрутные таблицы, позволяя использовать пересекающиеся адреса.'},
-  {level:'advanced',topic:'EVPN',q:'Что такое BUM-трафик в контексте EVPN/VXLAN?',opts:['Broadcast, Unknown unicast, Multicast','Backup, Update, Management','Протокол BGP','Тип маршрута'],a:0,explain:'BUM во VXLAN распространяется через multicast или ingress replication. В EVPN — через IMET.'},
-  {level:'advanced',topic:'Коммутация',q:'Что делает LACP?',opts:['Шифрует канал','Объединяет физические линки в один логический','Маршрутизирует между VLAN','Блокирует порты'],a:1,explain:'LACP (802.3ad) согласует агрегацию: растёт пропускная способность и отказоустойчивость.'},
-  {level:'advanced',topic:'TCP',q:'Какой алгоритм контроля перегрузки TCP дефолтный в Linux?',opts:['Reno','CUBIC','Vegas','Tahoe'],a:1,explain:'CUBIC — дефолт в Linux с 2.6.19. Кубическая функция роста окна, хорошо на длинных каналах.'},
-  {level:'advanced',topic:'BGP',q:'Что такое RPKI в контексте BGP?',opts:['Протокол маршрутизации','Инфраструктура криптопроверки прав на анонс префиксов','VPN-туннель','Метод сжатия'],a:1,explain:'RPKI проверяет по ROA, что AS имеет право анонсировать префикс. Защита от hijacking.'},
+  /* ==================== ETHERNET И КОММУТАЦИЯ ==================== */
+  {topic:'ethernet',level:'basic',q:'Каков стандартный MTU Ethernet?',opts:['576 байт','1024 байта','1500 байт','9000 байт'],a:2,explain:'1500 байт — стандартная нагрузка кадра Ethernet. Jumbo обычно 9000.'},
+  {topic:'ethernet',level:'basic',q:'Что такое MAC-адрес?',opts:['Логический адрес','Аппаратный адрес интерфейса','Номер порта','Адрес сети'],a:1,explain:'48-битный адрес, назначенный производителем. Работает на L2.'},
+  {topic:'ethernet',level:'basic',q:'Какой протокол сопоставляет IP-адрес с MAC?',opts:['DNS','ARP','DHCP','RARP'],a:1,explain:'ARP рассылает broadcast-запрос «у кого IP X?» и получает в ответ MAC.'},
+  {topic:'ethernet',level:'basic',q:'Сколько байт в MAC-адресе?',opts:['4','6','8','16'],a:1,explain:'MAC — 6 байт (48 бит), записывается как AA:BB:CC:DD:EE:FF.'},
+  {topic:'ethernet',level:'basic',q:'Что такое широковещательный MAC-адрес?',opts:['00:00:00:00:00:00','FF:FF:FF:FF:FF:FF','01:00:5E:00:00:01','AA:BB:CC:DD:EE:FF'],a:1,explain:'FF:FF:FF:FF:FF:FF — broadcast, все узлы сегмента получают такой кадр.'},
+  {topic:'ethernet',level:'middle',q:'Что такое VLAN?',opts:['Объединение коммутаторов','Логическое разделение сети L2','Протокол маршрутизации','Тип кабеля'],a:1,explain:'VLAN создаёт отдельные широковещательные домены. Трафик между VLAN идёт через L3.'},
+  {topic:'ethernet',level:'middle',q:'Какой протокол предотвращает петли L2?',opts:['OSPF','STP','LACP','VRRP'],a:1,explain:'STP (802.1D) блокирует избыточные порты. RSTP (802.1w) делает это за секунды.'},
+  {topic:'ethernet',level:'middle',q:'Что такое native VLAN на транковом порту 802.1Q?',opts:['VLAN с наибольшим ID','VLAN, чей трафик идёт без тега','VLAN только для management','VLAN с шифрованием'],a:1,explain:'Кадры native VLAN передаются без 802.1Q-тега. По умолчанию — VLAN 1.'},
+  {topic:'ethernet',level:'middle',q:'Что описывает VLAN trunk?',opts:['Порт только для одной VLAN','Порт, передающий трафик нескольких VLAN с тегами','Порт для PoE','Порт для стека'],a:1,explain:'Trunk передаёт несколько VLAN между коммутаторами через 802.1Q-теги.'},
+  {topic:'ethernet',level:'middle',q:'Как расшифровывается MAC?',opts:['Media Access Control','Multiple Access Channel','Machine Address Code','Managed Access Class'],a:0,explain:'Media Access Control — управление доступом к среде.'},
+  {topic:'ethernet',level:'middle',q:'Что такое link aggregation (LAG)?',opts:['Разделение VLAN','Объединение нескольких физических линков в один логический','Резервирование маршрутизатора','Кэширование MAC'],a:1,explain:'LAG (LACP, 802.3ad) даёт рост полосы и отказоустойчивость.'},
+  {topic:'ethernet',level:'advanced',q:'Что такое BPDU в STP?',opts:['Маршрут к корню','Bridge Protocol Data Unit — кадр для обмена информацией STP','Broadcast-пакет','Тип VLAN-тега'],a:1,explain:'BPDU передаются между коммутаторами для выбора root bridge и ролей портов.'},
+  {topic:'ethernet',level:'advanced',q:'Как выбирается root bridge в STP?',opts:['По наименьшему MAC','По наивысшему priority','По наименьшему Bridge ID (priority + MAC)','По количеству портов'],a:2,explain:'Выигрывает коммутатор с наименьшим Bridge ID = priority (по умолчанию 32768) + MAC.'},
+  {topic:'ethernet',level:'advanced',q:'Какое состояние порта в RSTP позволяет быстро включиться в передачу?',opts:['Blocking','Listening','Learning','Discarding/Forwarding через proposal/agreement'],a:3,explain:'RSTP использует механизм proposal/agreement для быстрого перехода в Forwarding.'},
+  {topic:'ethernet',level:'advanced',q:'Что такое QinQ (802.1ad)?',opts:['Двойное шифрование','Двойной VLAN-тег (stacked VLAN)','Протокол маршрутизации','Тип туннеля IPSec'],a:1,explain:'QinQ добавляет внешний S-VLAN поверх внутреннего C-VLAN — для провайдерских сетей.'},
+  {topic:'ethernet',level:'advanced',q:'Для чего используется LLDP?',opts:['Для маршрутизации','Для обнаружения соседей на L2','Для шифрования','Для NAT'],a:1,explain:'Link Layer Discovery Protocol — аналог CDP у вендоров, обмен информацией о соседях.'},
+  {topic:'ethernet',level:'advanced',q:'Что делает storm control?',opts:['Шифрует кадры','Ограничивает broadcast/multicast/unknown unicast штормы','Создаёт VLAN','Агрегирует порты'],a:1,explain:'Storm control защищает от штормов, ограничивая полосу для «широких» типов трафика.'},
 
-  /* -------- ПРАКТИЧЕСКИЕ (ввод ответа) -------- */
-  {level:'middle',topic:'Подсети',type:'input',q:'Дано: 10.5.7.100/28. Сколько хостов доступно в этой подсети? Введите число.',
-    answer:14,accept:['14','14 хостов','14 хоста'],explain:'2^(32−28)=16 адресов. Минус сеть и broadcast → 14 хостов.'},
-  {level:'middle',topic:'Подсети',type:'input',q:'Дано: 192.168.10.50/25. Какой адрес широковещательный? Введите в формате X.X.X.X',
-    answer:'192.168.10.127',accept:['192.168.10.127'],explain:'/25 — маска 255.255.255.128. Сеть: 192.168.10.0, broadcast: 192.168.10.127.'},
-  {level:'middle',topic:'Подсети',type:'input',q:'Какой префикс нужен, чтобы в подсети помещалось ровно 50 хостов? Введите в формате /NN',
-    answer:'/26',accept:['/26','26'],explain:'/26 = 64 адреса → 62 хоста. /27 даёт только 30 — не хватит.'},
-  {level:'middle',topic:'Подсети',type:'input',q:'Дано: 172.16.20.30/22. Какой адрес сети? Введите в формате X.X.X.X',
-    answer:'172.16.20.0',accept:['172.16.20.0'],explain:'/22 = 255.255.252.0. Последние 10 бит — хосты, значит, сеть 172.16.20.0.'},
-  {level:'advanced',topic:'Подсети',type:'input',q:'Сколько подсетей /24 помещается в один блок /20? Введите число.',
-    answer:16,accept:['16','16 подсетей'],explain:'/20 − /24 = 4 бита → 2⁴ = 16 подсетей /24.'}
+  /* ==================== IP-АДРЕСАЦИЯ ==================== */
+  {topic:'ip',level:'basic',q:'Сколько бит в IPv4-адресе?',opts:['16','32','64','128'],a:1,explain:'IPv4 — 32 бита, четыре октета по 8 бит.'},
+  {topic:'ip',level:'basic',q:'Сколько бит в IPv6-адресе?',opts:['32','64','128','256'],a:2,explain:'IPv6 — 128 бит, записывается в hex через двоеточия.'},
+  {topic:'ip',level:'basic',q:'Какой из адресов частный (RFC 1918)?',opts:['8.8.8.8','192.168.1.10','172.32.5.1','11.0.0.1'],a:1,explain:'Частные: 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), 192.168.0.0/16.'},
+  {topic:'ip',level:'basic',q:'Что означает адрес 127.0.0.1?',opts:['Шлюз','Loopback','Публичный','Broadcast'],a:1,explain:'Loopback — пакеты не покидают устройство.'},
+  {topic:'ip',level:'basic',q:'Для чего служит TTL?',opts:['Шифрование','Ограничение времени жизни пакета','Указание порта','Фрагментация'],a:1,explain:'TTL уменьшается на каждом маршрутизаторе, защищает от петель.'},
+  {topic:'ip',level:'basic',q:'Какой диапазон — link-local в IPv4?',opts:['127.0.0.0/8','169.254.0.0/16','224.0.0.0/4','192.168.0.0/16'],a:1,explain:'169.254.0.0/16 (APIPA) назначается автоматически, если DHCP не отвечает.'},
+  {topic:'ip',level:'basic',q:'Что такое октет?',opts:['8 бит','4 бита','16 бит','32 бита'],a:0,explain:'Октет = 8 бит. IPv4 состоит из четырёх октетов.'},
+  {topic:'ip',level:'middle',q:'Сколько адресов в IPv6-префиксе /64?',opts:['2^32','2^64','2^96','2^128'],a:1,explain:'/64 означает 128−64=64 хостовых бита → 2^64 адресов в подсети.'},
+  {topic:'ip',level:'middle',q:'Какой адрес является multicast в IPv4?',opts:['10.0.0.1','224.0.0.1','127.0.0.1','192.168.1.1'],a:1,explain:'224.0.0.0/4 — multicast. 224.0.0.1 — all hosts, 224.0.0.2 — all routers.'},
+  {topic:'ip',level:'middle',q:'Что такое APIPA?',opts:['Протокол DNS','Автоматическое назначение адреса из 169.254.0.0/16 при недоступности DHCP','Протокол маршрутизации','Тип шифрования'],a:1,explain:'Automatic Private IP Addressing — self-assigned адрес, когда DHCP-сервер не отвечает.'},
+  {topic:'ip',level:'middle',q:'Что такое subnet mask 255.255.0.0 в префиксной нотации?',opts:['/8','/16','/24','/32'],a:1,explain:'255.255.0.0 — 16 единичных бит, /16.'},
+  {topic:'ip',level:'middle',q:'Чем IPv6 лучше IPv4?',opts:['Быстрее всегда','Больше адресное пространство, встроенный SLAAC, нет NAT','Дешевле','Не нужны маршрутизаторы'],a:1,explain:'Основные причины перехода: нехватка IPv4-адресов, автоконфигурация, упрощение заголовка.'},
+  {topic:'ip',level:'middle',q:'Что такое link-local адрес в IPv6?',opts:['fd00::/8','fe80::/10','2001:db8::/32','::1'],a:1,explain:'fe80::/10 — link-local, действует только в пределах одного линка.'},
+  {topic:'ip',level:'middle',q:'Какой адрес в IPv6 loopback?',opts:['::','::1','fe80::1','2001::1'],a:1,explain:'::1 — loopback. :: — unspecified (аналог 0.0.0.0).'},
+  {topic:'ip',level:'advanced',q:'Сколько адресов IPv6 в /48-префиксе, выданном провайдером?',opts:['2^16','2^80','2^64','2^48'],a:1,explain:'/48 → 128−48=80 хостовых бита. Обычно делится на 2^16 подсетей /64.'},
+  {topic:'ip',level:'advanced',q:'Что такое anycast в IPv6?',opts:['Широковещательная рассылка','Один адрес анонсируется несколькими узлами, трафик идёт ближайшему','Multicast для маршрутизаторов','Только для DNS'],a:1,explain:'Anycast используется для корневых DNS, CDN, а также для адресации шлюзов в IPv6.'},
+  {topic:'ip',level:'advanced',q:'Что такое DHCPv6?',opts:['Устаревший протокол','Версия DHCP для IPv6','Только для SLAAC','Протокол маршрутизации'],a:1,explain:'DHCPv6 выдаёт IPv6-адреса, префиксы, DNS. Может работать вместе с SLAAC.'},
+  {topic:'ip',level:'advanced',q:'Что такое scoped-адресация в IPv6?',opts:['Деление на линк, site, global','Шифрование','Маршрутизация','Только публичные адреса'],a:0,explain:'Link-local, site-local (устарел), global — разные области действия адресов.'},
+  {topic:'ip',level:'advanced',q:'Какой размер заголовка IPv6 в байтах (фиксированный)?',opts:['20','32','40','60'],a:2,explain:'Базовый заголовок IPv6 — 40 байт (в 2 раза больше IPv4), но проще и без опций.'},
+  {topic:'ip',level:'advanced',q:'Чем заголовок IPv6 отличается от IPv4?',opts:['Отличий нет','Фиксированный размер, нет контрольной суммы, нет фрагментации на промежуточных узлах','Больше полей','Нет адреса назначения'],a:1,explain:'IPv6 имеет фиксированный заголовок 40 байт, убрал checksum (есть на L4), фрагментация только у отправителя.'},
+
+  /* ==================== ПОДСЕТИ И CIDR ==================== */
+  {topic:'subnetting',level:'basic',q:'Маске 255.255.255.0 соответствует префикс…',opts:['/16','/24','/25','/32'],a:1,explain:'255.255.255.0 — 24 единичных бита, /24. 256 адресов, 254 хоста.',diagram:'subnet'},
+  {topic:'subnetting',level:'basic',q:'Сколько хостов в сети /24?',opts:['254','255','256','512'],a:0,explain:'256 адресов минус сеть и broadcast = 254.',diagram:'subnet'},
+  {topic:'subnetting',level:'basic',q:'Что такое адрес сети?',opts:['Первый адрес, все хостовые биты нули','Последний адрес','Broadcast','Любой адрес'],a:0,explain:'Адрес сети — первый адрес подсети, где все хостовые биты равны 0.'},
+  {topic:'subnetting',level:'middle',q:'Сколько хостов в /26?',opts:['30','62','64','126'],a:1,explain:'2^(32−26)=64 адреса минус сеть и broadcast = 62.'},
+  {topic:'subnetting',level:'middle',q:'Какая маска у /30?',opts:['255.255.255.0','255.255.255.192','255.255.255.248','255.255.255.252'],a:3,explain:'/30 = 255.255.255.252 → 4 адреса, 2 хоста. Классика для point-to-point.'},
+  {topic:'subnetting',level:'middle',q:'Какой broadcast для сети 192.168.10.0/24?',opts:['192.168.10.0','192.168.10.1','192.168.10.255','192.168.11.0'],a:2,explain:'Последний адрес подсети — широковещательный.',diagram:'subnet'},
+  {topic:'subnetting',level:'middle',q:'Какая маска у /26?',opts:['255.255.255.0','255.255.255.128','255.255.255.192','255.255.255.224'],a:2,explain:'/26 = 128+64 = 192. Маска 255.255.255.192.'},
+  {topic:'subnetting',level:'middle',q:'Что такое CIDR?',opts:['Протокол шифрования','Бесклассовая адресация с длиной префикса','Тип NAT','Метод сжатия'],a:1,explain:'CIDR — гибкое деление адресного пространства через префиксы.'},
+  {topic:'subnetting',level:'middle',q:'Какой адрес сети для 10.5.7.100/28?',opts:['10.5.7.0','10.5.7.96','10.5.7.100','10.5.7.112'],a:1,explain:'/28 = 16 адресов. 100 кратно 96 (96+16=112), значит, сеть 10.5.7.96.'},
+  {topic:'subnetting',level:'middle',q:'Сколько подсетей /24 помещается в /22?',opts:['2','4','8','16'],a:1,explain:'/22 − /24 = 2 бита, 2^2 = 4 подсети.'},
+  {topic:'subnetting',level:'middle',type:'input',q:'Дано 10.5.7.100/28. Сколько хостов доступно? Введите число.',answer:14,accept:['14'],explain:'2^4=16 адресов минус сеть и broadcast = 14 хостов.'},
+  {topic:'subnetting',level:'middle',type:'input',q:'Какой префикс нужен, чтобы в подсети было ровно 50 хостов? Введите /NN.',answer:'/26',accept:['/26','26'],explain:'/26 = 64 адреса → 62 хоста. /27 даёт только 30 — не хватит.'},
+  {topic:'subnetting',level:'middle',type:'input',q:'Дано 192.168.10.50/25. Какой broadcast? Введите X.X.X.X',answer:'192.168.10.127',accept:['192.168.10.127'],explain:'/25 = 255.255.255.128. Сеть 192.168.10.0, broadcast 192.168.10.127.'},
+  {topic:'subnetting',level:'advanced',q:'Сколько адресов в /31 в современной практике?',opts:['0','2 (point-to-point)','4','254'],a:1,explain:'/31 (RFC 3021) — 2 адреса, специально для point-to-point линков без адреса сети и broadcast.'},
+  {topic:'subnetting',level:'advanced',type:'input',q:'Сколько подсетей /24 помещается в один /20? Введите число.',answer:16,accept:['16'],explain:'/20 − /24 = 4 бита → 2^4 = 16 подсетей.'},
+  {topic:'subnetting',level:'advanced',q:'Что такое VLSM?',opts:['Протокол шифрования','Variable Length Subnet Mask — использование масок разной длины в одной сети','Тип туннеля','Стандарт Wi-Fi'],a:1,explain:'VLSM позволяет эффективно распределять адреса: маленькие подсети для point-to-point, большие — для офиса.'},
+  {topic:'subnetting',level:'advanced',q:'Какой размер хостовой части у /126 в IPv6?',opts:['2','4','6','8'],a:0,explain:'128−126=2 бита → 4 адреса, из которых 2 доступны (аналог IPv4 /30).'},
+  {topic:'subnetting',level:'advanced',q:'Что такое supernetting?',opts:['Дополнительная защита','Объединение нескольких подсетей в одну через уменьшение префикса','Шифрование','Тип VLAN'],a:1,explain:'Supernetting (агрегация маршрутов) — обратная операция к subnetting, например, 4 подсети /24 → один анонс /22.'},
+  {topic:'subnetting',level:'advanced',type:'input',q:'Сколько всего адресов в /29? Введите число.',answer:8,accept:['8'],explain:'2^(32−29) = 2^3 = 8 адресов, из которых 6 хостов.'},
+  {topic:'subnetting',level:'advanced',q:'Какой префикс для 4 хостов (минимум, но с запасом)?',opts:['/28','/29','/30','/31'],a:1,explain:'/29 даёт 8 адресов → 6 хостов. /30 — только 2, не хватит.'},
+
+  /* ==================== МАРШРУТИЗАЦИЯ ==================== */
+  {topic:'routing',level:'basic',q:'Что такое маршрутизатор?',opts:['Устройство L2 для MAC','Устройство L3, пересылающее пакеты между сетями по IP','Устройство L1','Кабель'],a:1,explain:'Маршрутизатор работает на L3, выбирает путь по таблице маршрутизации.'},
+  {topic:'routing',level:'basic',q:'Что такое шлюз по умолчанию?',opts:['DNS-сервер','Устройство для пакетов вне локальной сети','Коммутатор','Сервер DHCP'],a:1,explain:'Если адрес назначения вне локальной подсети, пакет идёт на default gateway.'},
+  {topic:'routing',level:'basic',q:'Какой маршрут используется, если нет более точного совпадения?',opts:['Статический','Default route 0.0.0.0/0','Динамический','Локальный'],a:1,explain:'Default route (0.0.0.0/0) — «маршрут по умолчанию» для любых адресов.'},
+  {topic:'routing',level:'basic',q:'Что такое статическая маршрутизация?',opts:['Автоматическая','Ручное задание маршрутов администратором','Шифрование','Тип NAT'],a:1,explain:'Статические маршруты задаются вручную, не меняются автоматически при изменении топологии.'},
+  {topic:'routing',level:'middle',q:'Какой протокол использует алгоритм Дейкстры (SPF)?',opts:['RIP','OSPF','BGP','EIGRP'],a:1,explain:'OSPF строит LSDB и вычисляет пути по Дейкстре.'},
+  {topic:'routing',level:'middle',q:'Что такое ECMP?',opts:['Резервный маршрут','Балансировка по равнозначным маршрутам','Протокол шифрования','Тип QoS'],a:1,explain:'Equal-Cost Multi-Path распределяет потоки по nexthop с одинаковой метрикой.'},
+  {topic:'routing',level:'middle',q:'Какова административная дистанция (AD) у статического маршрута в Cisco?',opts:['1','90','110','120'],a:0,explain:'Статический — 1, EIGRP — 90, OSPF — 110, RIP — 120. Меньше — приоритетнее.'},
+  {topic:'routing',level:'middle',q:'Что такое administrative distance?',opts:['Скорость','Мера доверия к источнику маршрута','Размер пакета','Тип шифрования'],a:1,explain:'AD — «вес доверия» к источнику маршрута. Чем меньше, тем приоритетнее.'},
+  {topic:'routing',level:'middle',q:'Какую метрику использует RIP?',opts:['Bandwidth','Hop count','Delay','Cost'],a:1,explain:'RIP считает хопы. Максимум 15 — 16 считается «бесконечностью» (недостижимо).'},
+  {topic:'routing',level:'middle',q:'На каком порту работает BGP?',opts:['TCP 179','UDP 179','TCP 89','UDP 520'],a:0,explain:'BGP использует TCP порт 179.'},
+  {topic:'routing',level:'middle',q:'Что такое OSPF area 0?',opts:['Область для гостей','Backbone-область, к которой подключаются остальные','Область только для IPv6','Область для Wi-Fi'],a:1,explain:'Area 0 — магистральная область OSPF. Все остальные области должны иметь связь с ней.'},
+  {topic:'routing',level:'advanced',q:'Какой протокол маршрутизации связывает автономные системы?',opts:['OSPF','IS-IS','BGP','EIGRP'],a:2,explain:'BGP-4 — EGP, используется для маршрутизации между AS.'},
+  {topic:'routing',level:'advanced',q:'Что означает короткий AS_PATH в BGP?',opts:['Менее предпочтителен','Более предпочтителен','Не влияет','Игнорируется'],a:1,explain:'После Weight и Local Pref выигрывает короткий AS_PATH. Плюс защита от петель.'},
+  {topic:'routing',level:'advanced',q:'Что такое BGP hijacking?',opts:['Атака на DNS','Анонс чужого префикса от имени другой AS','Подмена MAC','DDoS'],a:1,explain:'Анонсируются чужие префиксы, трафик уходит не туда. Защита — RPKI, IRR.'},
+  {topic:'routing',level:'advanced',q:'Что такое RPKI?',opts:['Протокол маршрутизации','Инфраструктура проверки прав на анонс префиксов','VPN','Метод сжатия'],a:1,explain:'RPKI проверяет по ROA, что AS имеет право анонсировать префикс.'},
+  {topic:'routing',level:'advanced',q:'Что такое BFD?',opts:['Для обнаружения сбоев за миллисекунды','Для маршрутизации между AS','Для шифрования','Для NAT'],a:0,explain:'BFD даёт быструю детекцию отказа независимо от таймеров IGP/BGP.'},
+  {topic:'routing',level:'advanced',q:'Что такое MPLS?',opts:['Маршрутизация по IP','Коммутация по меткам','Тип VPN','Протокол L2'],a:1,explain:'MPLS продвигает пакеты по меткам, не разбирая IP-заголовок. Путь — LSP.'},
+  {topic:'routing',level:'advanced',q:'Что такое LSA в OSPF?',opts:['Link State Advertisement — объявление о состоянии канала','Тип шифрования','Порт','Протокол UDP'],a:0,explain:'LSA распространяются между OSPF-маршрутизаторами, образуя LSDB.'},
+  {topic:'routing',level:'advanced',q:'Чем iBGP отличается от eBGP?',opts:['Ничем','iBGP — внутри одной AS, eBGP — между AS','iBGP — только IPv6','eBGP — устаревший'],a:1,explain:'iBGP внутри AS (AD=200), eBGP между AS (AD=20). Разные правила работы с next-hop и TTL.'},
+  {topic:'routing',level:'advanced',q:'Что такое route redistribution?',opts:['Автоматическая отмена маршрутов','Передача маршрутов между разными протоколами','Балансировка','Шифрование'],a:1,explain:'Redistribution позволяет OSPF «узнать» маршруты из BGP, EIGRP и наоборот. Требует настройки метрик.'},
+  {topic:'routing',level:'advanced',q:'Что такое VRF?',opts:['Изолированная таблица маршрутизации на одном устройстве','Протокол резервирования','Тип VLAN','Шифрование'],a:0,explain:'VRF изолирует маршрутные таблицы, позволяя использовать пересекающиеся адреса.'},
+
+  /* ==================== ТРАНСПОРТНЫЙ УРОВЕНЬ ==================== */
+  {topic:'transport',level:'basic',q:'Какой протокол гарантирует доставку?',opts:['UDP','TCP','ICMP','ARP'],a:1,explain:'TCP устанавливает соединение, нумерует сегменты, подтверждает (ACK).'},
+  {topic:'transport',level:'basic',q:'Какой протокол НЕ гарантирует доставку?',opts:['TCP','UDP','SCTP','FTP'],a:1,explain:'UDP не устанавливает соединение и не подтверждает получение.'},
+  {topic:'transport',level:'basic',q:'Сколько портов у TCP/UDP?',opts:['256','1024','65535','65536'],a:3,explain:'Порт — 16-битное число, диапазон 0–65535 (всего 65536 значений).'},
+  {topic:'transport',level:'basic',q:'Что такое well-known порты?',opts:['Порты 0–1023','Порты 1024–49151','Порты 49152–65535','Все'],a:0,explain:'0–1023 — системные (well-known), 1024–49151 — регистрируемые, 49152–65535 — динамические.'},
+  {topic:'transport',level:'basic',q:'Какой порт у DNS?',opts:['53','67','80','443'],a:0,explain:'DNS — 53/UDP (запросы) и 53/TCP (зоны).'},
+  {topic:'transport',level:'middle',q:'Какая последовательность флагов соответствует TCP three-way handshake?',opts:['SYN → ACK → FIN','SYN → SYN-ACK → ACK','SYN → FIN → ACK','ACK → SYN → ACK'],a:1,explain:'Клиент → SYN, сервер → SYN-ACK, клиент → ACK.',diagram:'handshake'},
+  {topic:'transport',level:'middle',q:'Что описывает window size в TCP?',opts:['Максимальный сегмент','Объём данных без подтверждения','Число повторов','Время ожидания'],a:1,explain:'Window size — управление потоком: сколько можно отправить без ACK.'},
+  {topic:'transport',level:'middle',q:'Что делает флаг RST в TCP?',opts:['Устанавливает соединение','Сбрасывает соединение','Подтверждает','Завершает'],a:1,explain:'RST — reset, немедленно разрывает соединение (например, при попытке подключиться к закрытому порту).'},
+  {topic:'transport',level:'middle',q:'Как расшифровывается UDP?',opts:['Universal Data Protocol','User Datagram Protocol','Unified Data Port','User Data Packet'],a:1,explain:'User Datagram Protocol — протокол пользовательских датаграмм.'},
+  {topic:'transport',level:'middle',q:'Какой порт у HTTPS?',opts:['80','443','8080','8443'],a:1,explain:'HTTPS — 443/TCP. HTTP — 80/TCP.'},
+  {topic:'transport',level:'middle',q:'Какой порт у SSH?',opts:['22','23','25','53'],a:0,explain:'SSH — 22/TCP. Telnet — 23/TCP.'},
+  {topic:'transport',level:'advanced',q:'Что такое TCP slow start?',opts:['Медленная передача','Фаза, где cwnd растёт экспоненциально','Протокол','Тип шифрования'],a:1,explain:'В slow start окно перегрузки удваивается каждый RTT, пока не достигнет ssthresh.'},
+  {topic:'transport',level:'advanced',q:'Что такое MSS clamping?',opts:['Сжатие заголовков','Подмена MSS в SYN, чтобы избежать фрагментации в туннелях','Шифрование','Балансировка'],a:1,explain:'Применяется, когда PMTUD блокируется ICMP.'},
+  {topic:'transport',level:'advanced',q:'Какой алгоритм контроля перегрузки TCP дефолтный в Linux?',opts:['Reno','CUBIC','Vegas','BBR'],a:1,explain:'CUBIC — дефолт в Linux с версии 2.6.19. BBR — разработка Google.'},
+  {topic:'transport',level:'advanced',q:'Что такое head-of-line blocking в TCP?',opts:['Потеря пакета','Блокировка всех потоков одного TCP-соединения из-за потери в одном','Перегрузка канала','Шифрование'],a:1,explain:'В TCP потери блокируют всё соединение. HTTP/2 мультиплексирует в одном TCP — проблема заметна. HTTP/3 на QUIC решает через UDP.'},
+  {topic:'transport',level:'advanced',q:'Что даёт QUIC по сравнению с TCP?',opts:['Ничего','Мультиплексирование без HOL, 0-RTT, встроенный TLS 1.3','Только шифрование','Только сжатие'],a:1,explain:'QUIC работает поверх UDP и решает проблемы TCP в вебе. Используется в HTTP/3.'},
+  {topic:'transport',level:'advanced',q:'Что такое congestion avoidance?',opts:['Линейный рост cwnd после ssthresh','Шифрование','Завершение соединения','Установка соединения'],a:0,explain:'После slow start TCP переходит в congestion avoidance с линейным ростом окна (по +1 MSS за RTT).'},
+  {topic:'transport',level:'advanced',q:'Что такое TCP Fast Open?',opts:['Ускорение за счёт отправки данных в SYN','Шифрование','Сжатие','Тип NAT'],a:0,explain:'TFO позволяет отправить данные уже в первом SYN, экономя RTT при повторном подключении.'},
+  {topic:'transport',level:'advanced',q:'Какой размер TCP-заголовка без опций?',opts:['8 байт','16 байт','20 байт','40 байт'],a:2,explain:'Базовый TCP-заголовок — 20 байт, с опциями до 60.'},
+  {topic:'transport',level:'advanced',q:'Что такое SACK в TCP?',opts:['Selective Acknowledgment — выборочное подтверждение','Secure ACK','Sequence ACK','Shutdown ACK'],a:0,explain:'SACK позволяет подтверждать отдельные диапазоны, ускоряя восстановление при потерях.'},
+
+  /* ==================== ПРИКЛАДНЫЕ ПРОТОКОЛЫ ==================== */
+  {topic:'appproto',level:'basic',q:'Какую задачу решает DNS?',opts:['Шифрует трафик','Преобразует доменные имена в IP','Выдаёт IP','Маршрутизирует пакеты'],a:1,explain:'DNS — «телефонная книга интернета».'},
+  {topic:'appproto',level:'basic',q:'Что делает DHCP?',opts:['Сопоставляет IP и MAC','Автоматически выдаёт IP и сетевые параметры','Разрешает имена','Проверяет доступность'],a:1,explain:'DHCP выдаёт клиенту IP, маску, шлюз, DNS.'},
+  {topic:'appproto',level:'basic',q:'Какой порт у SMTP?',opts:['20','22','25','53'],a:2,explain:'SMTP — 25/TCP. SMTPS — 465, submission — 587.'},
+  {topic:'appproto',level:'basic',q:'Какой порт у FTP (управление)?',opts:['20','21','22','23'],a:1,explain:'FTP: 21 — управление, 20 — данные (в active mode).'},
+  {topic:'appproto',level:'basic',q:'Что такое HTTP-метод GET?',opts:['Отправка данных','Запрос данных','Удаление','Изменение'],a:1,explain:'GET — получение ресурса. POST — отправка, PUT — замена, DELETE — удаление.'},
+  {topic:'appproto',level:'basic',q:'Какой порт у NTP?',opts:['53','123','161','514'],a:1,explain:'NTP — 123/UDP. SNMP — 161/162, Syslog — 514.'},
+  {topic:'appproto',level:'middle',q:'Какая DNS-запись указывает IPv6?',opts:['A','AAAA','PTR','MX'],a:1,explain:'A — IPv4, AAAA — IPv6, PTR — обратная, MX — почта.'},
+  {topic:'appproto',level:'middle',q:'Что такое DNS-запись CNAME?',opts:['IPv4-адрес','IPv6-адрес','Псевдоним','Почтовый сервер'],a:2,explain:'CNAME — псевдоним. Например, www.example.com → example.com.'},
+  {topic:'appproto',level:'middle',q:'Что такое DHCP relay?',opts:['Перенаправление DHCP-запросов между подсетями','Шифрование','Тип NAT','Протокол L2'],a:0,explain:'DHCP relay (ip helper-address) позволяет одному DHCP-серверу обслуживать несколько подсетей.'},
+  {topic:'appproto',level:'middle',q:'Какой процесс у DHCP?',opts:['DISCOVER → OFFER → REQUEST → ACK','SYN → SYN-ACK → ACK','GET → POST','PUSH → PULL'],a:0,explain:'DORA: Discover, Offer, Request, Acknowledge.'},
+  {topic:'appproto',level:'middle',q:'Что такое HTTP/2?',opts:['То же, что HTTP/1','Бинарный протокол с мультиплексированием в одном TCP','Только HTTPS','Протокол L4'],a:1,explain:'HTTP/2 — бинарный, мультиплексирует потоки, сжимает заголовки (HPACK). Работает поверх TCP.'},
+  {topic:'appproto',level:'middle',q:'Что такое REST?',opts:['Протокол шифрования','Архитектурный стиль для HTTP API','Тип БД','Формат данных'],a:1,explain:'REST — стиль построения API с ресурсами, методами HTTP, stateless.'},
+  {topic:'appproto',level:'middle',q:'Какая запись DNS используется для обратного преобразования?',opts:['A','AAAA','PTR','MX'],a:2,explain:'PTR — обратная зона in-addr.arpa / ip6.arpa.'},
+  {topic:'appproto',level:'advanced',q:'Что такое DNS-запись TXT?',opts:['Только комментарий','Произвольный текст, используется для SPF, DKIM, DMARC','Псевдоним','IPv4'],a:1,explain:'TXT часто служит для проверки владения доменом и антиспам-настроек.'},
+  {topic:'appproto',level:'advanced',q:'Что такое DNSSEC?',opts:['Шифрование DNS','Криптоподпись DNS-записей для защиты от подмены','Протокол L2','Тип резолвера'],a:1,explain:'DNSSEC подписывает записи приватным ключом зоны. Резолвер проверяет подпись.'},
+  {topic:'appproto',level:'advanced',q:'Что такое DoH (DNS over HTTPS)?',opts:['DNS поверх HTTPS','Протокол шифрования','Почтовый протокол','Кэш DNS'],a:0,explain:'DoH инкапсулирует DNS-запрос в HTTPS (443), защищая от прослушивания и подмены.'},
+  {topic:'appproto',level:'advanced',q:'Что такое DHCP snooping?',opts:['Защита от поддельных DHCP-серверов','Шифрование','Ускорение','Тип NAT'],a:0,explain:'DHCP snooping разрешает DHCP-ответы только с доверенного порта.'},
+  {topic:'appproto',level:'advanced',q:'В чём разница между SMTP, IMAP, POP3?',opts:['Ни в чём','SMTP — отправка, IMAP/POP3 — получение','Все для отправки','Все для получения'],a:1,explain:'SMTP отправляет почту, IMAP хранит на сервере с синхронизацией, POP3 скачивает и обычно удаляет.'},
+  {topic:'appproto',level:'advanced',q:'Что такое WebSocket?',opts:['Почтовый протокол','Протокол двунаправленной связи поверх TCP, использует HTTP-upgrade','Протокол шифрования','Тип HTTP-метода'],a:1,explain:'WebSocket устанавливает постоянное двустороннее соединение через Upgrade-заголовок HTTP.'},
+  {topic:'appproto',level:'advanced',q:'Что такое gRPC?',opts:['Язык программирования','RPC-фреймворк поверх HTTP/2 с protobuf','Протокол L2','База данных'],a:1,explain:'gRPC использует HTTP/2 для мультиплексирования и protobuf для сериализации.'},
+  {topic:'appproto',level:'advanced',q:'Какой порт у SNMP?',opts:['123','161','514','520'],a:1,explain:'SNMP: 161/UDP — запросы, 162/UDP — traps.'},
+
+  /* ==================== БЕЗОПАСНОСТЬ ==================== */
+  {topic:'security',level:'basic',q:'Что такое firewall?',opts:['Кабель','Межсетевой экран, фильтрующий трафик','Протокол маршрутизации','Сервер'],a:1,explain:'Firewall пропускает/блокирует трафик по правилам (по портам, адресам, приложениям).'},
+  {topic:'security',level:'basic',q:'Какой протокол шифрует веб-трафик?',opts:['HTTP','HTTPS','FTP','Telnet'],a:1,explain:'HTTPS — HTTP поверх TLS. Порт 443.'},
+  {topic:'security',level:'basic',q:'Что такое VPN?',opts:['Публичная сеть','Виртуальная частная сеть с шифрованием','Тип VLAN','Протокол L2'],a:1,explain:'VPN создаёт зашифрованный туннель между узлами через публичную сеть.'},
+  {topic:'security',level:'basic',q:'Какой протокол НЕ шифрует данные?',opts:['SSH','HTTPS','Telnet','SFTP'],a:2,explain:'Telnet передаёт всё в открытом виде, включая пароли. Устарел, заменён SSH.'},
+  {topic:'security',level:'basic',q:'Что такое аутентификация?',opts:['Предоставление прав','Проверка, что пользователь тот, за кого себя выдаёт','Шифрование','Резервное копирование'],a:1,explain:'Аутентификация — проверка личности. Авторизация — предоставление прав.'},
+  {topic:'security',level:'basic',q:'Что такое хеширование?',opts:['Обратимое шифрование','Необратимое преобразование данных в хеш','Сжатие','Кодирование'],a:1,explain:'Хеш — односторонняя функция. Используется для паролей, проверки целостности.'},
+  {topic:'security',level:'basic',q:'Что такое двухфакторная аутентификация?',opts:['Два пароля','Пароль + второй фактор (SMS, OTP, ключ)','Только пароль','Только отпечаток'],a:1,explain:'2FA/MFA комбинирует разные типы факторов: знание, владение, биометрия.'},
+  {topic:'security',level:'middle',q:'Что такое DMZ?',opts:['Внутренняя сеть','Изолированная подсеть для публичных сервисов','Тип VPN','Протокол'],a:1,explain:'DMZ — «демилитаризованная зона», где размещают веб-серверы, доступные извне, но отделённые от внутренней сети.'},
+  {topic:'security',level:'middle',q:'Что такое MITM-атака?',opts:['Атака через почту','Человек посередине: перехват и подмена трафика','Атака на Wi-Fi','DDoS'],a:1,explain:'MITM — злоумышленник вклинивается между двумя сторонами и может читать/менять трафик.'},
+  {topic:'security',level:'middle',q:'Что такое DDoS?',opts:['Атака с одного узла','Распределённая атака отказа в обслуживании','Шифрование','Сканирование портов'],a:1,explain:'DDoS — множество источников заваливают цель трафиком, делая сервис недоступным.'},
+  {topic:'security',level:'middle',q:'Что такое IDS/IPS?',opts:['Протокол маршрутизации','Система обнаружения/предотвращения вторжений','Тип VPN','Формат данных'],a:1,explain:'IDS обнаруживает атаки, IPS дополнительно их блокирует.'},
+  {topic:'security',level:'middle',q:'Что такое ACL в контексте сетей?',opts:['Access Control List — список правил фильтрации','Протокол шифрования','Тип NAT','Кэш'],a:0,explain:'ACL фильтрует трафик по адресам, портам, протоколам на маршрутизаторе или firewall.'},
+  {topic:'security',level:'middle',q:'Что такое фишинг?',opts:['Сетевой сканер','Выманивание данных через поддельные сайты/письма','Шифрование','Резервное копирование'],a:1,explain:'Фишинг — атака социальной инженерии. Пользователя заманивают на поддельную страницу для ввода пароля.'},
+  {topic:'security',level:'middle',q:'Что такое симметричное шифрование?',opts:['Один ключ для шифрования и расшифровки','Два разных ключа','Без ключа','Только для Wi-Fi'],a:0,explain:'Симметричное (AES) — быстрее, но требует безопасной передачи ключа. Асимметричное (RSA) — медленнее, решает проблему обмена.'},
+  {topic:'security',level:'middle',q:'Что такое IPsec?',opts:['Протокол маршрутизации','Набор протоколов для шифрования и аутентификации на уровне IP','Тип NAT','Стандарт Wi-Fi'],a:1,explain:'IPsec включает AH (аутентификация), ESP (шифрование), IKE (обмен ключами).'},
+  {topic:'security',level:'middle',q:'Что делает IPSec в transport mode?',opts:['Шифрует только полезную нагрузку IP, оставляя исходный IP-заголовок','Шифрует весь пакет целиком','Не шифрует','Только аутентификация'],a:0,explain:'Transport mode — между хостами. Tunnel mode — весь IP-пакет инкапсулируется в новый, используется в VPN.'},
+  {topic:'security',level:'advanced',q:'Что такое PKI?',opts:['Протокол маршрутизации','Инфраструктура открытых ключей','Тип VPN','Метод сжатия'],a:1,explain:'PKI — система управления сертификатами: CA, регистрация, отзыв (CRL/OCSP).'},
+  {topic:'security',level:'advanced',q:'Что такое X.509?',opts:['Стандарт сертификатов','Протокол L2','Формат IP','Тип NAT'],a:0,explain:'X.509 — формат цифровых сертификатов, используемых в TLS/HTTPS.'},
+  {topic:'security',level:'advanced',q:'Что такое EAP в 802.1X?',opts:['Протокол L3','Extensible Authentication Protocol — расширяемый протокол аутентификации','Тип шифрования','Стандарт Wi-Fi'],a:1,explain:'EAP работает поверх 802.1X для аутентификации на порту: PEAP, EAP-TLS, EAP-TTLS.'},
+  {topic:'security',level:'advanced',q:'Что такое RADIUS?',opts:['Централизованная аутентификация, авторизация и учёт','Протокол маршрутизации','Тип VPN','Кэш'],a:0,explain:'RADIUS — AAA-сервер для 802.1X, VPN, dial-up. Порт 1812/UDP.'},
+  {topic:'security',level:'advanced',q:'Что такое zero-day уязвимость?',opts:['Старая уязвимость','Уязвимость, о которой вендор ещё не знает, патча нет','Вирус','Тип шифрования'],a:1,explain:'Zero-day — эксплуатируется до того, как вендор выпустил патч.'},
+  {topic:'security',level:'advanced',q:'Что такое Zero Trust?',opts:['Модель, где никто не доверяется по умолчанию, даже внутри периметра','Отсутствие безопасности','Только для облака','Тип VPN'],a:0,explain:'Zero Trust подразумевает постоянную проверку каждого запроса: identity, device, context.'},
+  {topic:'security',level:'advanced',q:'Чем WPA3 отличается от WPA2?',opts:['Ничем','SAE вместо PSK-хендшейка, защита от офлайн-перебора','Только скорость','Только для Wi-Fi 6'],a:1,explain:'WPA3 использует SAE (Dragonfly) — устойчиво к офлайн-атакам на пароль.'},
+  {topic:'security',level:'advanced',q:'Что такое Security Group в облаке?',opts:['Виртуальный firewall на уровне экземпляра','Группа пользователей','Тип шифрования','Протокол L2'],a:0,explain:'Security Groups — stateful ACL, привязанные к инстансам в AWS/Azure.'},
+  {topic:'security',level:'advanced',q:'Что делает DLP?',opts:['Ускоряет трафик','Защищает от утечек конфиденциальных данных','Шифрует файлы','Маршрутизирует'],a:1,explain:'Data Loss Prevention отслеживает и блокирует передачу чувствительных данных (номера карт, документы).'},
+  {topic:'security',level:'advanced',q:'Что такое NGFW?',opts:['Обычный firewall','Firewall нового поколения с DPI, IPS, app-aware','Протокол L3','VPN'],a:1,explain:'NGFW умеет распознавать приложения, пользователей, интегрировать IPS и threat intelligence.'},
+  {topic:'security',level:'advanced',q:'Что такое SQL-инъекция?',opts:['Атака на базу данных через ввод SQL','Сетевой сканер','DDoS','MITM'],a:0,explain:'SQLi — внедрение SQL-кода через невалидированный ввод для получения данных или выполнения команд.'},
+  {topic:'security',level:'advanced',q:'Что такое XSS?',opts:['Межсайтовый скриптинг','Атака на сеть','DDoS','VPN'],a:0,explain:'Cross-Site Scripting — внедрение JS-кода, исполняемого в браузере жертвы.'},
+  {topic:'security',level:'advanced',q:'Что такое CSRF?',opts:['Подделка межсайтового запроса от имени аутентифицированного пользователя','Шифрование','DDoS','Тип VPN'],a:0,explain:'CSRF заставляет браузер жертвы отправить запрос к доверенному сайту. Защита — CSRF-токены, SameSite cookies.'},
+  {topic:'security',level:'advanced',q:'Что такое ARP spoofing?',opts:['Подмена ARP-таблицы для MITM','Маршрутизация','Шифрование','Кэш DNS'],a:0,explain:'Злоумышленник рассылает поддельные ARP-ответы, чтобы перенаправить трафик через себя.'},
+
+  /* ==================== БЕСПРОВОДНЫЕ СЕТИ ==================== */
+  {topic:'wireless',level:'basic',q:'Что такое SSID?',opts:['Тип шифрования','Имя беспроводной сети','MAC точки доступа','Канал'],a:1,explain:'SSID — Service Set Identifier, имя Wi-Fi-сети.'},
+  {topic:'wireless',level:'basic',q:'Какой стандарт Wi-Fi соответствует 802.11ax?',opts:['Wi-Fi 4','Wi-Fi 5','Wi-Fi 6','Wi-Fi 7'],a:2,explain:'802.11ax = Wi-Fi 6. 802.11ac = Wi-Fi 5, 802.11n = Wi-Fi 4.'},
+  {topic:'wireless',level:'basic',q:'На каких частотах работает Wi-Fi?',opts:['2.4 ГГц и 5 ГГц','1 ГГц и 10 ГГц','Только 2.4 ГГц','Только 60 ГГц'],a:0,explain:'Современные Wi-Fi работают на 2.4, 5 и 6 ГГц (Wi-Fi 6E).'},
+  {topic:'wireless',level:'basic',q:'Какой стандарт шифрования Wi-Fi НЕ рекомендуется?',opts:['WPA2','WPA3','WEP','Enterprise'],a:2,explain:'WEP давно взломан, использовать нельзя. Даже WPA (TKIP) устарел.'},
+  {topic:'wireless',level:'basic',q:'Что такое точка доступа (AP)?',opts:['Клиент','Устройство, к которому подключаются Wi-Fi-клиенты','Кабель','Тип шифрования'],a:1,explain:'Access Point — точка доступа, обеспечивает беспроводной доступ.'},
+  {topic:'wireless',level:'middle',q:'Чем WPA3 отличается от WPA2?',opts:['Ничем','SAE вместо PSK, forward secrecy','Только скорость','Только для Wi-Fi 5'],a:1,explain:'WPA3 использует SAE (Simultaneous Authentication of Equals) — защита от офлайн-перебора.'},
+  {topic:'wireless',level:'middle',q:'Что такое roaming в Wi-Fi?',opts:['Переключение между точками доступа без разрыва','Тип шифрования','Стандарт','Роутер'],a:0,explain:'Roaming позволяет клиенту переключаться между AP, сохраняя сессию (802.11r — fast roaming).'},
+  {topic:'wireless',level:'middle',q:'Что такое MIMO?',opts:['Multiple-Input Multiple-Output — несколько антенн','Тип шифрования','Протокол L2','Стандарт'],a:0,explain:'MIMO увеличивает пропускную способность за счёт нескольких антенн.'},
+  {topic:'wireless',level:'middle',q:'Что такое MU-MIMO?',opts:['MIMO для нескольких клиентов одновременно','Шифрование','Протокол L3','Тип кабеля'],a:0,explain:'MU-MIMO — Multi-User MIMO, позволяет AP обслуживать несколько клиентов одновременно.'},
+  {topic:'wireless',level:'middle',q:'Что такое BSSID?',opts:['Имя сети','MAC-адрес точки доступа','Пароль','Канал'],a:1,explain:'BSSID — MAC-адрес радиоинтерфейса точки доступа.'},
+  {topic:'wireless',level:'middle',q:'Что такое WLC?',opts:['Wireless LAN Controller — контроллер точек доступа','Кабель','Стандарт шифрования','Тип антенны'],a:0,explain:'WLC централизованно управляет множеством точек доступа.'},
+  {topic:'wireless',level:'advanced',q:'Что такое 802.1X в Wi-Fi?',opts:['Шифрование','Аутентификация через EAP/RADIUS','Протокол L3','Стандарт Wi-Fi 6'],a:1,explain:'802.1X — стандарт аутентификации на порту: клиент → AP → RADIUS.'},
+  {topic:'wireless',level:'advanced',q:'Что такое OFDMA в Wi-Fi 6?',opts:['Модуляция с разделением по поднесущим','Шифрование','Протокол L2','Тип кабеля'],a:0,explain:'OFDMA позволяет делить канал на поднесущие и обслуживать несколько клиентов в одном кадре.'},
+  {topic:'wireless',level:'advanced',q:'Что такое BSS coloring в Wi-Fi 6?',opts:['Цветовая маркировка для уменьшения интерференции между соседними BSS','Тип шифрования','Протокол','Метод сжатия'],a:0,explain:'BSS coloring позволяет устройствам игнорировать кадры от «чужих» BSS, уменьшая коллизии.'},
+  {topic:'wireless',level:'advanced',q:'Что такое Wi-Fi 6E?',opts:['Только для Европы','Wi-Fi 6 в диапазоне 6 ГГц','Устаревший стандарт','Только для IoT'],a:1,explain:'6E — расширение Wi-Fi 6 на диапазон 6 ГГц с большим числом каналов.'},
+  {topic:'wireless',level:'advanced',q:'Что такое band steering?',opts:['Перенаправление клиентов на 5/6 ГГц для разгрузки 2.4','Тип шифрования','Стандарт','Кабель'],a:0,explain:'Band steering — AP предпочитает подключать двухдиапазонные клиенты к 5 ГГц.'},
+  {topic:'wireless',level:'advanced',q:'Что такое site survey в Wi-Fi?',opts:['Анализ помещения для оптимального размещения AP','Шифрование','Протокол','Тип антенны'],a:0,explain:'Site survey включает измерение уровня сигнала и планирование каналов/размещения точек.'},
+  {topic:'wireless',level:'advanced',q:'Что такое captive portal?',opts:['Страница авторизации перед доступом в сеть','Тип шифрования','Протокол','Кабель'],a:0,explain:'Captive portal используется в отелях, аэропортах: сначала логин/оплата, потом интернет.'},
+
+  /* ==================== ОБЛАКА, SDN ==================== */
+  {topic:'cloud_sdn',level:'basic',q:'Что такое VXLAN?',opts:['Протокол маршрутизации','Туннель L2 поверх L3 с инкапсуляцией в UDP','Тип VPN','Стандарт Wi-Fi'],a:1,explain:'VXLAN инкапсулирует L2-кадры в UDP, позволяя строить оверлеи поверх L3.'},
+  {topic:'cloud_sdn',level:'basic',q:'Что такое SDN?',opts:['Software-Defined Networking','Тип кабеля','Стандарт Wi-Fi','Протокол L4'],a:0,explain:'SDN разделяет control plane (централизованный контроллер) и data plane (устройства).'},
+  {topic:'cloud_sdn',level:'basic',q:'Что такое cloud computing?',opts:['Локальный сервер','Предоставление вычислений через интернет как сервис','Протокол L2','Стандарт'],a:1,explain:'IaaS, PaaS, SaaS — уровни облачных сервисов.'},
+  {topic:'cloud_sdn',level:'basic',q:'Что такое underlay в контексте оверлеев?',opts:['Физическая сеть, поверх которой строится оверлей','Тип шифрования','Протокол','Кабель'],a:0,explain:'Underlay — транспортная сеть (обычно L3 IP), оверлей (VXLAN) — виртуальная поверх.'},
+  {topic:'cloud_sdn',level:'middle',q:'Сколько бит у VNI в VXLAN?',opts:['12','16','24','32'],a:2,explain:'VNI — 24 бита, ~16,7 млн сегментов против 4094 у VLAN.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое VTEP?',opts:['VXLAN Tunnel Endpoint — точка инкапсуляции VXLAN','Протокол маршрутизации','Тип NAT','Шифрование'],a:0,explain:'VTEP инкапсулирует/декапсулирует VXLAN-трафик.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое EVPN?',opts:['BGP-сигнализация для VXLAN и других оверлеев','Тип VPN','Протокол L2','Стандарт Wi-Fi'],a:0,explain:'EVPN использует BGP для распространения MAC/IP-информации между VTEP.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое IaaS?',opts:['Infrastructure as a Service — виртуальные машины, сети, хранилище','Тип шифрования','Протокол','Кабель'],a:0,explain:'IaaS — базовый уровень: пользователь управляет ОС и выше. PaaS — платформа, SaaS — готовое приложение.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое SD-WAN?',opts:['Программно-определяемая WAN','Протокол L2','Стандарт Wi-Fi','Тип VPN'],a:0,explain:'SD-WAN оптимизирует трафик между офисами через разные каналы (MPLS, интернет, LTE).'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое VRF?',opts:['Изолированная таблица маршрутизации','Протокол','Шифрование','Кабель'],a:0,explain:'VRF позволяет на одном устройстве иметь несколько независимых маршрутных таблиц.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое NFV?',opts:['Network Functions Virtualization','Тип кабеля','Стандарт','Протокол L4'],a:0,explain:'NFV виртуализирует сетевые функции (firewall, router) как программы на стандартных серверах.'},
+  {topic:'cloud_sdn',level:'middle',q:'Что такое VPC?',opts:['Virtual Private Cloud — изолированная виртуальная сеть в облаке','Протокол','Стандарт','Шифрование'],a:0,explain:'VPC позволяет создавать сети с подсетями, маршрутами, firewall прямо в облаке.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое BUM-трафик в EVPN?',opts:['Broadcast, Unknown unicast, Multicast','Backup, Update, Management','Тип BGP','Протокол'],a:0,explain:'BUM распространяется через multicast или ingress replication. В EVPN — IMET-маршруты.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что делает CNI в Kubernetes?',opts:['Отвечает за сеть подов','Хранит логи','Запускает контейнеры','Планирует задачи'],a:0,explain:'Container Network Interface — плагин, реализующий сеть подов (Calico, Cilium, Flannel).'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое service mesh?',opts:['Инфраструктурный слой для управления сервис-сервис взаимодействием','Протокол L2','Тип облака','Стандарт Wi-Fi'],a:0,explain:'Service mesh (Istio, Linkerd) обеспечивает mTLS, балансировку, телеметрию без изменения кода.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое multi-cloud?',opts:['Использование нескольких облачных провайдеров','Тип облака','Протокол','Стандарт'],a:0,explain:'Multi-cloud снижает зависимость от одного вендора, но усложняет сеть и безопасность.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое Kubernetes NetworkPolicy?',opts:['Правила фильтрации трафика между подами','Протокол маршрутизации','Стандарт Wi-Fi','Тип хранилища'],a:0,explain:'NetworkPolicy — L3/L4-ACL для подов. Реализуется CNI-плагином.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое SASE?',opts:['Secure Access Service Edge — облачная модель сетевой безопасности','Протокол L4','Тип кабеля','Стандарт'],a:0,explain:'SASE объединяет SD-WAN, firewall-as-a-service, CASB, zero trust в облачном сервисе.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое Anycast в облаке?',opts:['Один и тот же IP анонсируется из разных регионов','Шифрование','Протокол L2','VPN'],a:0,explain:'Anycast используется для глобальных сервисов (DNS, CDN, load balancer), приводя клиента к ближайшей точке.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое Terraform в контексте сетей?',opts:['IaC-инструмент для описания инфраструктуры кодом','Протокол','Стандарт','Тип шифрования'],a:0,explain:'Terraform описывает сеть, VPC, security groups декларативно и управляет их созданием.'},
+  {topic:'cloud_sdn',level:'advanced',q:'Что такое VRF-lite?',opts:['VRF без MPLS','Протокол L2','Стандарт Wi-Fi','Тип VPN'],a:0,explain:'VRF-lite позволяет использовать VRF без MPLS, часто для сегментации сетей на одном устройстве.'},
+
+  /* ==================== ДИАГНОСТИКА ==================== */
+  {topic:'diagnostics',level:'basic',q:'Какая команда проверяет доступность узла?',opts:['ipconfig','ping','netstat','traceroute'],a:1,explain:'ping отправляет ICMP Echo Request.'},
+  {topic:'diagnostics',level:'basic',q:'Что показывает ipconfig/ifconfig?',opts:['Маршрут','IP-адрес и параметры интерфейсов','Порты','ARP'],a:1,explain:'ipconfig (Windows) / ifconfig или ip a (Linux) показывают адреса, маски, шлюз.'},
+  {topic:'diagnostics',level:'basic',q:'Какая утилита показывает маршрут до узла?',opts:['ping','traceroute/tracert','nslookup','netstat'],a:1,explain:'traceroute (Linux) / tracert (Windows) показывает хопы и задержки.'},
+  {topic:'diagnostics',level:'basic',q:'Что делает nslookup?',opts:['Проверяет DNS-записи','Скачивает файлы','Пингует','Смотрит маршруты'],a:0,explain:'nslookup/dig запрашивают DNS-записи домена.'},
+  {topic:'diagnostics',level:'basic',q:'Какой протокол используется ping?',opts:['TCP','UDP','ICMP','IGMP'],a:2,explain:'ping использует ICMP Echo Request/Reply.'},
+  {topic:'diagnostics',level:'middle',q:'Что показывает netstat?',opts:['ARP-таблицу','Активные соединения и порты','Маршруты','DNS-записи'],a:1,explain:'netstat -an показывает открытые порты, соединения, слушающие сокеты.'},
+  {topic:'diagnostics',level:'middle',q:'Какой утилитой посмотреть ARP-таблицу?',opts:['arp -a','route print','netstat','dig'],a:0,explain:'arp -a (Windows) или ip neigh (Linux) показывают ARP-кэш.'},
+  {topic:'diagnostics',level:'middle',q:'Что такое Wireshark?',opts:['Анализатор трафика','Firewall','Антивирус','Маршрутизатор'],a:0,explain:'Wireshark — сниффер пакетов с графическим интерфейсом.'},
+  {topic:'diagnostics',level:'middle',q:'Что такое tcpdump?',opts:['Графический анализатор','Консольный анализатор пакетов','Firewall','VPN'],a:1,explain:'tcpdump — CLI-сниффер, часто используется на серверах.'},
+  {topic:'diagnostics',level:'middle',q:'Какая команда покажет таблицу маршрутизации в Linux?',opts:['ip route','ifconfig','arp -a','ss -tuln'],a:0,explain:'ip route (или route -n) показывает таблицу маршрутизации.'},
+  {topic:'diagnostics',level:'middle',q:'Что покажет команда ss -tuln?',opts:['Маршруты','Слушающие TCP/UDP-сокеты','ARP-таблицу','DNS-записи'],a:1,explain:'ss (замена netstat) с флагами -t -u -l -n показывает слушающие сокеты.'},
+  {topic:'diagnostics',level:'advanced',q:'Что делает команда mtr?',opts:['Объединяет ping и traceroute в реальном времени','Шифрует','Копирует файлы','Настраивает firewall'],a:0,explain:'mtr запускает traceroute и непрерывно пингует каждый хоп.'},
+  {topic:'diagnostics',level:'advanced',q:'Что такое SPAN/RSPAN в Cisco?',opts:['Зеркалирование трафика с порта/удалённого порта для анализа','Шифрование','Протокол L2','Тип NAT'],a:0,explain:'SPAN — локальное зеркалирование, RSPAN — через VLAN, ERSPAN — GRE-туннель.'},
+  {topic:'diagnostics',level:'advanced',q:'Что покажет tcpdump -i eth0 port 80?',opts:['Весь трафик на eth0','Трафик на 80-м порту','ARP','DNS'],a:1,explain:'Фильтр port 80 ограничивает вывод HTTP-трафиком.'},
+  {topic:'diagnostics',level:'advanced',q:'Что такое flow-экспорт (NetFlow/IPFIX)?',opts:['Агрегированные данные о потоках для анализа','Шифрование','Протокол L2','Тип NAT'],a:0,explain:'NetFlow/IPFIX экспортируют метаданные потоков (5-tuple, объём, время) для мониторинга.'},
+  {topic:'diagnostics',level:'advanced',q:'Что такое SNMP trap?',opts:['Уведомление от устройства менеджеру о событии','Запрос','Протокол L2','Тип NAT'],a:0,explain:'SNMP trap отправляется устройством асинхронно при событии (порт 162/UDP).'},
+  {topic:'diagnostics',level:'advanced',q:'Что такое LLDP на практике?',opts:['Помогает определить, к какому порту подключено устройство','Шифрование','Маршрутизация','NAT'],a:0,explain:'LLDP показывает соседей, их порты, VLAN — полезно для топологии.'},
+  {topic:'diagnostics',level:'advanced',q:'Что показывает dig +trace?',opts:['Пошаговый путь DNS-запросов от корня','Пинг','Маршруты','ARP'],a:0,explain:'dig +trace показывает итеративные запросы от корневых серверов до авторитативного.'},
+  {topic:'diagnostics',level:'advanced',q:'Как найти MTU пути?',opts:['ping с флагом «не фрагментировать» и разными размерами','nslookup','traceroute','netstat'],a:0,explain:'Например, ping -M do -s 1472 <host> в Linux; в Windows — ping -f -l <size>.'}
 ];
 
 /* ============================================================
@@ -641,32 +966,36 @@ const QUESTIONS = [
    ============================================================ */
 const ACHIEVEMENTS = [
   {id:'first-test',icon:'🎬',t:'Первый шаг',d:'Пройти первый тест'},
-  {id:'perfect',icon:'💯',t:'Идеально!',d:'100% в любом тесте (≥10 вопросов)'},
+  {id:'perfect',icon:'💯',t:'Идеально!',d:'100% в тесте (≥10 вопросов)'},
   {id:'streak-3',icon:'🔥',t:'В ударе',d:'3 дня занятий подряд'},
   {id:'streak-7',icon:'⚡',t:'Неделя силы',d:'7 дней подряд'},
   {id:'night-owl',icon:'🦉',t:'Ночная сова',d:'Тест после 2:00'},
   {id:'subnet-master',icon:'🔢',t:'Мастер подсетей',d:'10 правильных подряд по подсетям'},
-  {id:'bgp-pro',icon:'🌍',t:'BGP-профи',d:'≥90% на продвинутом тесте'},
+  {id:'bgp-pro',icon:'🌍',t:'BGP-профи',d:'≥90% на продвинутом'},
+  {id:'sec-expert',icon:'🔒',t:'Специалист по ИБ',d:'≥90% по теме «Безопасность»'},
+  {id:'wifi-master',icon:'📡',t:'Wi-Fi-инженер',d:'≥90% по теме «Беспроводные»'},
   {id:'flash-50',icon:'📖',t:'Книжный червь',d:'50 просмотренных карточек'},
   {id:'marathon',icon:'🏃',t:'Марафонец',d:'Пройти экзамен'},
   {id:'calc-10',icon:'🧮',t:'Счётчик',d:'10 расчётов в калькуляторе'},
-  {id:'term-30',icon:'🔍',t:'Любознательный',d:'Открыть 30 определений терминов'},
-  {id:'all-topics',icon:'🎓',t:'Энциклопедист',d:'Пройти тесты по всем уровням'}
+  {id:'term-30',icon:'🔍',t:'Любознательный',d:'30 определений терминов'},
+  {id:'all-topics',icon:'🎓',t:'Энциклопедист',d:'Пройти тест по каждой теме'},
+  {id:'topics-5',icon:'🧠',t:'Пятиборец',d:'Пройти тесты по 5+ темам'},
+  {id:'topic-complete',icon:'🏅',t:'Тема закрыта',d:'100% по любой теме (мин. 5 вопросов)'}
 ];
 
 /* ============================================================
    ХРАНИЛИЩЕ
    ============================================================ */
-const STORAGE_KEY = 'netquiz.v1';
+const STORAGE_KEY = 'netquiz.v2';
 
 const defaultData = () => ({
-  progress: {},   // hash -> {ok,wrong,streak,lastSeen,nextReview,difficulty,bookmarked}
+  progress: {},
   stats: {
     totalAnswered: 0, totalCorrect: 0,
-    byTopic: {},   // topic -> {ok,n}
+    byTopic: {},
     dayStreak: 0, lastVisit: null,
     flashViewed: 0, calcCount: 0, termOpened: 0,
-    levelsDone: {},   // level -> true
+    topicsDone: {},
     subnetStreak: 0
   },
   achievements: [],
@@ -680,14 +1009,12 @@ function loadData(){
     const raw = localStorage.getItem(STORAGE_KEY);
     if(!raw) return defaultData();
     const d = JSON.parse(raw);
-    return Object.assign(defaultData(), d, {
-      stats: Object.assign(defaultData().stats, d.stats || {})
-    });
+    return Object.assign(defaultData(), d, {stats: Object.assign(defaultData().stats, d.stats || {})});
   }catch(e){ return defaultData(); }
 }
 function saveData(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(DATA)); }catch(e){} }
 
-function qHash(q){ return q.q; }   // текст уникален
+function qHash(q){ return q.q; }
 
 function getProg(q){
   const h = qHash(q);
@@ -695,19 +1022,11 @@ function getProg(q){
   return DATA.progress[h];
 }
 
-/* ============================================================
-   SRS (упрощённый SM-2)
-   ============================================================ */
 function srsSchedule(q, correct, difficulty){
   const p = getProg(q);
   p.lastSeen = Date.now();
   if(difficulty) p.difficulty = difficulty;
-
-  if(!correct){
-    p.streak = 0;
-    p.nextReview = Date.now();   // сразу
-    return;
-  }
+  if(!correct){ p.streak = 0; p.nextReview = Date.now(); return; }
   p.streak = (p.streak || 0) + 1;
   const days = [1, 2, 4, 8, 14, 30, 60][Math.min(p.streak-1, 6)];
   p.nextReview = Date.now() + days*86400000;
@@ -721,7 +1040,6 @@ function dueQuestions(){
     return p.nextReview && p.nextReview <= now && (p.wrong > 0 || p.ok > 0);
   });
 }
-
 function wrongQuestions(){
   return QUESTIONS.filter(q => {
     const p = DATA.progress[qHash(q)];
@@ -729,14 +1047,10 @@ function wrongQuestions(){
     return (p.wrong||0) > (p.ok||0);
   });
 }
-
 function bookmarkedQuestions(){
   return QUESTIONS.filter(q => DATA.progress[qHash(q)] && DATA.progress[qHash(q)].bookmarked);
 }
 
-/* ============================================================
-   СУТОЧНАЯ СЕРИЯ
-   ============================================================ */
 function checkDayStreak(){
   const today = new Date().toISOString().slice(0,10);
   const s = DATA.stats;
@@ -746,18 +1060,13 @@ function checkDayStreak(){
     const diff = Math.floor((new Date(today) - last)/86400000);
     if(diff === 1) s.dayStreak = (s.dayStreak||0) + 1;
     else if(diff > 1) s.dayStreak = 1;
-  } else {
-    s.dayStreak = 1;
-  }
+  } else s.dayStreak = 1;
   s.lastVisit = today;
   saveData();
   if(s.dayStreak >= 3) unlock('streak-3');
   if(s.dayStreak >= 7) unlock('streak-7');
 }
 
-/* ============================================================
-   ДОСТИЖЕНИЯ
-   ============================================================ */
 function unlock(id){
   if(DATA.achievements.includes(id)) return;
   DATA.achievements.push(id);
@@ -765,7 +1074,6 @@ function unlock(id){
   const a = ACHIEVEMENTS.find(x => x.id === id);
   if(a) toast(`${a.icon} Достижение: ${a.t}`);
 }
-
 function toast(text){
   const el = document.createElement('div');
   el.className = 'toast';
@@ -775,7 +1083,7 @@ function toast(text){
 }
 
 /* ============================================================
-   ГЛОССАРИЙ — linkify + popup
+   LINKIFY
    ============================================================ */
 const _keys = Object.keys(GLOSSARY).sort((a,b)=>b.length-a.length);
 const _lookup = {};
@@ -785,7 +1093,6 @@ const _rx = new RegExp('\\b(' + _keys.map(t => t.replace(/[.*+?^${}()|[\]\\]/g,'
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
 function linkify(text){
   if(!text) return '';
   const out = []; let last = 0; let m;
@@ -796,13 +1103,12 @@ function linkify(text){
     if(!key) continue;
     if(m.index > last) out.push(escapeHtml(text.slice(last, m.index)));
     out.push('<span class="term" data-term="'+escapeHtml(key)+'">'+escapeHtml(matched)+
-      '<span class="term-icon" role="button" tabindex="0" aria-label="Определение: '+escapeHtml(key)+'">?</span></span>');
+      '<span class="term-icon" role="button" tabindex="0">?</span></span>');
     last = m.index + matched.length;
   }
   if(last < text.length) out.push(escapeHtml(text.slice(last)));
   return out.join('');
 }
-
 function relatedTerms(text){
   if(!text) return [];
   const found = new Set(); let m;
@@ -816,7 +1122,6 @@ function relatedTerms(text){
 
 const popupEl = document.getElementById('termPopup');
 popupEl.querySelector('.term-popup-close').addEventListener('click', hideTermPopup);
-
 function showTermPopup(termEl){
   if(!termEl) return;
   const key = termEl.dataset.term;
@@ -846,9 +1151,12 @@ function hideTermPopup(){ popupEl.hidden = true; }
    УТИЛИТЫ
    ============================================================ */
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
-
-function poolFor(level){ return level==='all' ? QUESTIONS.slice() : QUESTIONS.filter(q=>q.level===level); }
-
+function poolFor(level, topics){
+  let pool = QUESTIONS.slice();
+  if(level !== 'all') pool = pool.filter(q => q.level === level);
+  if(topics && topics.length) pool = pool.filter(q => topics.includes(q.topic));
+  return pool;
+}
 function makeQuestion(src){
   const q = {
     level:src.level, topic:src.topic, type:src.type||'choice',
@@ -860,20 +1168,10 @@ function makeQuestion(src){
   } else {
     q.opts = shuffle(src.opts.map((t,i)=>({text:t, correct:i===src.a})));
   }
-  q.answered = false;
-  q.chosen = -1;
-  q.userInput = '';
+  q.answered = false; q.chosen = -1; q.userInput = '';
   q.userDifficulty = null;
-  q.correctFlag = false;
   return q;
 }
-
-function buildQuestions(level, count){
-  let pool = shuffle(poolFor(level));
-  if(count > 0 && count < pool.length) pool = pool.slice(0, count);
-  return pool.map(makeQuestion);
-}
-
 function isCorrectQ(q){
   if(!q.answered) return false;
   if(q.type === 'input'){
@@ -883,16 +1181,12 @@ function isCorrectQ(q){
   }
   return q.chosen >= 0 && q.opts[q.chosen] && q.opts[q.chosen].correct === true;
 }
-
 function checkInput(q, val){
   const v = (val||'').trim().toLowerCase().replace(/\s+/g,'');
   if(!v) return false;
   return q.accept.some(a => a.toLowerCase().replace(/\s+/g,'') === v);
 }
 
-/* ============================================================
-   КАЛЬКУЛЯТОР ПОДСЕТЕЙ
-   ============================================================ */
 function ipToUint(ip){
   const p = ip.trim().split('.').map(Number);
   if(p.length !== 4 || p.some(x => isNaN(x) || x<0 || x>255)) return null;
@@ -908,46 +1202,34 @@ function prefixToMask(p){
 }
 
 /* ============================================================
-   ТЕРМИНАЛ — СЦЕНАРИИ
+   ТЕРМИНАЛ
    ============================================================ */
 const TERMINAL_SCENARIOS = {
   no_internet: {
     title: 'Нет доступа в интернет',
-    brief: 'Пользователь жалуется, что не открываются сайты, хотя Wi-Fi подключён. Разберитесь с помощью команд.',
+    brief: 'Пользователь жалуется: сайты не открываются, хотя Wi-Fi подключён.',
     commands: {
       'ipconfig': 'Ethernet adapter:\n   IPv4 Address. . . : 192.168.1.50\n   Subnet Mask . . . : 255.255.255.0\n   Default Gateway . : 192.168.1.1',
-      'ping 192.168.1.1': 'Обмен пакетами с 192.168.1.1:\nОтвет от 192.168.1.1: число байт=32 время<1мс TTL=64\nОтвет от 192.168.1.1: число байт=32 время<1мс TTL=64\n\nСтатистика: отправлено=2, получено=2, потеря=0%',
-      'ping 8.8.8.8': 'Обмен пакетами с 8.8.8.8:\nПревышен интервал ожидания для запроса.\nПревышен интервал ожидания для запроса.\n\nСтатистика: отправлено=2, получено=0, потеря=100%',
-      'nslookup ya.ru': 'DNS request timed out.\n    timeout was 2 seconds.\n*** Can\'t find server name for address 8.8.8.8: Timed out'
+      'ping 192.168.1.1': 'Обмен пакетами с 192.168.1.1:\nОтвет от 192.168.1.1: время<1мс TTL=64\nОтвет от 192.168.1.1: время<1мс TTL=64\n\nСтатистика: отправлено=2, получено=2, потеря=0%',
+      'ping 8.8.8.8': 'Обмен пакетами с 8.8.8.8:\nПревышен интервал ожидания.\nПревышен интервал ожидания.\n\nСтатистика: отправлено=2, получено=0, потеря=100%'
     },
     question: 'Что, скорее всего, не так?',
-    options: [
-      'Не работает DNS-сервер, но маршрутизация в порядке',
-      'Локальная сеть недоступна полностью',
-      'Проблема с маршрутизацией за шлюзом (или провайдером)',
-      'Неверная маска подсети'
-    ],
+    options: ['DNS не работает','Локальная сеть недоступна','Проблема с маршрутизацией за шлюзом','Неверная маска'],
     correct: 2,
-    explain: 'Шлюз пингуется — значит, локальная сеть и L2/L3 до него в порядке. Но наружу (8.8.8.8) пакеты не идут, и DNS не отвечает. Проблема в маршрутизации за шлюзом или у провайдера.'
+    explain: 'Шлюз пингуется — локальная сеть в порядке. Наружу пакеты не идут — проблема в маршрутизации за шлюзом или у провайдера.'
   },
   dns_fail: {
     title: 'Сайты не открываются по имени',
-    brief: 'Сайты по имени не открываются, но по IP всё работает. Найдите причину.',
+    brief: 'По IP работает, по имени — нет.',
     commands: {
-      'ipconfig': 'Ethernet adapter:\n   IPv4 Address. . . : 192.168.0.100\n   Subnet Mask . . . : 255.255.255.0\n   Default Gateway . : 192.168.0.1\n   DNS Servers . . . : 192.168.0.99',
-      'ping 8.8.8.8': 'Ответ от 8.8.8.8: число байт=32 время=14мс TTL=117\nОтвет от 8.8.8.8: число байт=32 время=13мс TTL=117\n\nСтатистика: отправлено=2, получено=2, потеря=0%',
-      'ping 192.168.0.99': 'Превышен интервал ожидания для запроса.\n\nСтатистика: отправлено=1, получено=0, потеря=100%',
-      'nslookup google.com': 'DNS request timed out.\n*** Can\'t find server name for address 192.168.0.99: Timed out'
+      'ipconfig': '   IPv4 Address. . . : 192.168.0.100\n   Subnet Mask . . . : 255.255.255.0\n   Default Gateway . : 192.168.0.1\n   DNS Servers . . . : 192.168.0.99',
+      'ping 8.8.8.8': 'Ответ от 8.8.8.8: время=14мс TTL=117\nОтвет от 8.8.8.8: время=13мс TTL=117',
+      'ping 192.168.0.99': 'Превышен интервал ожидания.\nПотеря=100%'
     },
     question: 'В чём проблема?',
-    options: [
-      'Шлюз по умолчанию недоступен',
-      'DNS-сервер 192.168.0.99 не отвечает',
-      'Неверная маска подсети',
-      'Провайдер блокирует ICMP'
-    ],
+    options: ['Шлюз недоступен','DNS-сервер 192.168.0.99 не отвечает','Неверная маска','Провайдер блокирует ICMP'],
     correct: 1,
-    explain: 'IP-связность в порядке (8.8.8.8 пингуется), но DNS-сервер 192.168.0.99 не отвечает — вероятно, выключен или сломан. Нужно указать другой DNS (например, 8.8.8.8 или 1.1.1.1).'
+    explain: 'IP-связность в порядке, но DNS-сервер не отвечает. Нужно указать другой DNS (8.8.8.8, 1.1.1.1).'
   }
 };
 
@@ -955,11 +1237,11 @@ const TERMINAL_SCENARIOS = {
    СОСТОЯНИЕ
    ============================================================ */
 const TIME_LIMIT = 30;
-
 const state = {
   screen: 'home',
   mode: 'classic',
   level: 'all',
+  selectedTopics: [],
   count: 10,
   timed: false,
   questions: [],
@@ -977,8 +1259,7 @@ const state = {
   calcPrefix: 24,
   flashDeck: [],
   flashIdx: 0,
-  flashFlipped: false,
-  resultTopics: []
+  flashFlipped: false
 };
 
 const LEVEL_META = {
@@ -986,6 +1267,11 @@ const LEVEL_META = {
   middle:{name:'Средний',cls:'middle'},
   advanced:{name:'Продвинутый',cls:'advanced'}
 };
+function topicMeta(id){
+  return TOPICS.find(t=>t.id===id) || {name:id, icon:'📌'};
+}
+function topicName(id){ return topicMeta(id).name; }
+function topicIcon(id){ return topicMeta(id).icon; }
 
 const app = document.getElementById('app');
 
@@ -1006,9 +1292,8 @@ function renderHome(){
     <button class="mode" data-go="resume" style="grid-column:1/-1;border-color:rgba(52,211,153,.5);background:linear-gradient(120deg,rgba(52,211,153,.1),rgba(34,211,238,.06))">
       <span class="ico">▶️</span>
       <div class="t">Продолжить тест</div>
-      <div class="d">Вы остановились на вопросе ${DATA.session.idx+1} из ${DATA.session.questions.length}</div>
-    </button>
-  ` : '';
+      <div class="d">Остановились на вопросе ${DATA.session.idx+1} из ${DATA.session.questions.length}</div>
+    </button>` : '';
 
   app.innerHTML = `
     <div class="card">
@@ -1016,7 +1301,7 @@ function renderHome(){
         <div style="font-size:38px">🌐</div>
         <div style="flex:1;min-width:180px">
           <h1>NetQuiz</h1>
-          <div style="color:var(--muted);font-size:13.5px">От основ OSI до BGP, VXLAN и контроля перегрузки TCP</div>
+          <div style="color:var(--muted);font-size:13.5px">${QUESTIONS.length} вопросов · ${TOPICS.length} тем · от основ до облаков и безопасности</div>
         </div>
       </div>
 
@@ -1032,32 +1317,32 @@ function renderHome(){
 
         <button class="mode" data-go="classic">
           <span class="ico">🎯</span>
-          <div class="t">Классический тест</div>
-          <div class="d">Выбор уровня, числа вопросов и таймера</div>
+          <div class="t">Тест по темам</div>
+          <div class="d">Выбор тем, уровня, количества и таймера</div>
         </button>
 
         <button class="mode ${wrongN?'':'disabled'}" data-go="wrong">
           <span class="ico">🔁</span>
           <div class="t">Мои ошибки ${wrongN?`<span class="badge">${wrongN}</span>`:''}</div>
-          <div class="d">${wrongN ? 'Прогнать вопросы, где ты ошибался' : 'Пока нет ошибок — молодец!'}</div>
+          <div class="d">${wrongN?'Прогнать вопросы, где ошибался':'Пока нет ошибок'}</div>
         </button>
 
         <button class="mode ${dueN?'':'disabled'}" data-go="due">
           <span class="ico">📅</span>
           <div class="t">Повторение сегодня ${dueN?`<span class="badge" style="background:rgba(56,189,248,.18);color:#7dd3fc">${dueN}</span>`:''}</div>
-          <div class="d">${dueN ? 'Интервальное повторение по SRS' : 'Пока ничего не пора повторять'}</div>
+          <div class="d">${dueN?'Интервальное повторение (SRS)':'Нечего повторять'}</div>
         </button>
 
         <button class="mode" data-go="bookmarks">
           <span class="ico">⭐</span>
           <div class="t">Закладки</div>
-          <div class="d">Отмеченные вопросы для повторения</div>
+          <div class="d">Отмеченные вопросы</div>
         </button>
 
         <button class="mode" data-go="exam">
           <span class="ico">🎓</span>
           <div class="t">Экзамен</div>
-          <div class="d">40 вопросов · 40 минут · без подсказок</div>
+          <div class="d">40 вопросов · 40 минут</div>
         </button>
 
         <button class="mode" data-go="flashcards">
@@ -1069,13 +1354,13 @@ function renderHome(){
         <button class="mode" data-go="glossary">
           <span class="ico">📚</span>
           <div class="t">Глоссарий</div>
-          <div class="d">Все термины с поиском</div>
+          <div class="d">${Object.keys(GLOSSARY).length} терминов с поиском</div>
         </button>
 
         <button class="mode" data-go="progress">
           <span class="ico">📊</span>
           <div class="t">Прогресс по темам</div>
-          <div class="d">Что уже освоено, а что нет</div>
+          <div class="d">Что освоено, а что нет</div>
         </button>
 
         <button class="mode" data-go="achievements">
@@ -1093,13 +1378,13 @@ function renderHome(){
         <button class="mode" data-go="terminal">
           <span class="ico">💻</span>
           <div class="t">Симулятор команд</div>
-          <div class="d">Диагностика сети в терминале</div>
+          <div class="d">Диагностика сети</div>
         </button>
 
         <button class="mode" data-go="settings">
           <span class="ico">⚙️</span>
           <div class="t">Экспорт / Импорт</div>
-          <div class="d">Сохранить или перенести прогресс</div>
+          <div class="d">Сохранить прогресс</div>
         </button>
       </div>
     </div>
@@ -1107,41 +1392,85 @@ function renderHome(){
 }
 
 /* ============================================================
-   ЭКРАН: НАСТРОЙКА КЛАССИЧЕСКОГО ТЕСТА
+   ЭКРАН: НАСТРОЙКА ТЕСТА ПО ТЕМАМ
    ============================================================ */
 function renderClassicSetup(){
-  const avail = poolFor(state.level).length;
-  const n = state.count === 0 ? avail : Math.min(state.count, avail);
+  // статистика по темам
+  const topicStats = {};
+  TOPICS.forEach(t => {
+    const qs = QUESTIONS.filter(q=>q.topic===t.id);
+    const done = qs.filter(q=>DATA.progress[qHash(q)]).length;
+    const ok = qs.filter(q=>{
+      const p = DATA.progress[qHash(q)];
+      return p && p.ok > 0;
+    }).length;
+    topicStats[t.id] = {total:qs.length, done, ok};
+  });
+
+  const selectedCount = state.selectedTopics.length;
+  const available = poolFor(state.level, selectedCount ? state.selectedTopics : null).length;
+  const n = state.count === 0 ? available : Math.min(state.count, available);
+
   app.innerHTML = `
     <div class="card">
-      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Классический тест</span></div>
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Тест по темам</span></div>
+
       <div class="section">
-        <div class="label">Уровень</div>
+        <div class="label">1. Выберите темы ${selectedCount ? `(${selectedCount})` : '(все, если не выбрано)'}</div>
+        <div class="chips" style="margin-bottom:10px">
+          <button class="chip sm" data-topic-action="all">Все темы</button>
+          <button class="chip sm" data-topic-action="clear">Сбросить</button>
+        </div>
+        <div class="topic-grid">
+          ${TOPICS.map(t => {
+            const s = topicStats[t.id];
+            const p = s.total ? Math.round((s.done/s.total)*100) : 0;
+            return `
+              <button class="topic-card ${state.selectedTopics.includes(t.id)?'selected':''}" data-topic-toggle="${t.id}">
+                <span class="check">✓</span>
+                <span class="ico">${t.icon}</span>
+                <div class="t">${escapeHtml(t.name)}</div>
+                <div class="d">${escapeHtml(t.desc)}</div>
+                <div class="stat-mini">
+                  <span>${s.done}/${s.total}</span>
+                  <div class="bar"><span style="width:${p}%"></span></div>
+                </div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">2. Уровень</div>
         <div class="chips">
           <button class="chip ${state.level==='basic'?'active':''}" data-set-level="basic">Базовый</button>
           <button class="chip mid ${state.level==='middle'?'active mid':''}" data-set-level="middle">Средний</button>
           <button class="chip adv ${state.level==='advanced'?'active adv':''}" data-set-level="advanced">Продвинутый</button>
-          <button class="chip ${state.level==='all'?'active':''}" data-set-level="all">Все уровни</button>
+          <button class="chip ${state.level==='all'?'active':''}" data-set-level="all">Любой</button>
         </div>
       </div>
+
       <div class="section">
-        <div class="label">Количество</div>
+        <div class="label">3. Количество</div>
         <div class="chips">
           <button class="chip ${state.count===10?'active':''}" data-set-count="10">10</button>
           <button class="chip ${state.count===20?'active':''}" data-set-count="20">20</button>
-          <button class="chip ${state.count===30?'active':''}" data-set-count="30">30</button>
+          <button class="chip ${state.count===40?'active':''}" data-set-count="40">40</button>
           <button class="chip ${state.count===0?'active':''}" data-set-count="0">Все</button>
         </div>
       </div>
+
       <label class="switch"><input type="checkbox" id="timedToggle" ${state.timed?'checked':''}><span>Ограничение времени — ${TIME_LIMIT} секунд на вопрос</span></label>
-      <button class="btn primary wide" id="startClassic">Начать тест</button>
-      <div class="hint">Будет задано <b>${n}</b> из ${avail} доступных</div>
+
+      <button class="btn primary wide" id="startClassic" ${available===0?'disabled':''}>Начать тест</button>
+      <div class="hint">Будет задано <b>${n}</b> из ${available} доступных${selectedCount ? ' по выбранным темам' : ''}</div>
     </div>
   `;
 }
 
 /* ============================================================
-   ЭКРАН: ТЕСТ (общая логика)
+   ТЕСТ
    ============================================================ */
 function startQuizQuestions(questions, mode, opts){
   opts = opts || {};
@@ -1153,16 +1482,12 @@ function startQuizQuestions(questions, mode, opts){
   state.timed = !!opts.timed;
   state.timeLeft = TIME_LIMIT;
   state.examSecondsLeft = opts.examSeconds || 0;
-  state.examDuration = state.examSecondsLeft;
   clearInterval(state.examTimer);
   if(state.examSecondsLeft > 0){
     state.examTimer = setInterval(()=>{
       state.examSecondsLeft--;
       updateExamBanner();
-      if(state.examSecondsLeft <= 0){
-        clearInterval(state.examTimer);
-        finishQuiz(true);
-      }
+      if(state.examSecondsLeft <= 0){ clearInterval(state.examTimer); finishQuiz(true); }
     }, 1000);
   }
   renderQuiz();
@@ -1181,9 +1506,7 @@ function renderQuiz(){
   const isExam = state.mode === 'exam';
 
   let bodyHtml = '';
-  if(q.diagram && DIAGRAMS[q.diagram]){
-    bodyHtml += `<div class="diagram">${DIAGRAMS[q.diagram]}</div>`;
-  }
+  if(q.diagram && DIAGRAMS[q.diagram]) bodyHtml += `<div class="diagram">${DIAGRAMS[q.diagram]}</div>`;
 
   let answerHtml = '';
   if(q.type === 'input'){
@@ -1206,16 +1529,10 @@ function renderQuiz(){
     }).join('')}</div>`;
   }
 
-  let explainHtml = '';
-  let relatedHtml = '';
-  let diffHtml = '';
+  let explainHtml = '', relatedHtml = '', diffHtml = '';
   if(q.answered){
     const ok = isCorrectQ(q);
-    const correctText = q.type === 'input'
-      ? String(q.ources || q.answer || '').trim() || '—'
-      : (q.opts.find(o=>o.correct)||{}).text || '';
-    // correctText для input-вопроса храним в объекте
-    const correctForExplain = q.type === 'input' ? q.answer : correctText;
+    const correctForExplain = q.type === 'input' ? q.answer : (q.opts.find(o=>o.correct)||{}).text;
     if(!isExam){
       const head = ok
         ? '<b>✅ Верно!</b> '
@@ -1242,15 +1559,14 @@ function renderQuiz(){
     <div class="exam-banner">
       <span>🎓 Экзамен · до конца <b id="examTimer">${formatTime(state.examSecondsLeft)}</b></span>
       <span>Отвечено: <b>${state.questions.filter(x=>x.answered).length}/${total}</b></span>
-    </div>
-  ` : '';
+    </div>` : '';
 
   app.innerHTML = `
     <div class="card">
       <div class="topbar">
         <button class="bookmark-btn ${p.bookmarked?'on':''}" data-bookmark title="В закладки">${p.bookmarked?'★':'☆'}</button>
         <span class="pill ${meta.cls}">${meta.name}</span>
-        <span class="pill topic">${q.topic}</span>
+        <span class="pill topic">${topicIcon(q.topic)} ${escapeHtml(topicName(q.topic))}</span>
         <span class="qcount">${state.idx+1} / ${total}</span>
         <div class="right-meta">
           <span class="score-mini">✓ ${correctCount}</span>
@@ -1259,7 +1575,6 @@ function renderQuiz(){
       </div>
 
       ${examBanner}
-
       <div class="progress"><div class="progress-fill" style="width:${((state.idx + (q.answered?1:0))/total)*100}%"></div></div>
 
       <h2 class="question">${linkify(q.text)}</h2>
@@ -1279,11 +1594,8 @@ function renderQuiz(){
   const inp = document.getElementById('inputAnswer');
   if(inp && !q.answered){
     inp.focus();
-    inp.addEventListener('keydown', e => {
-      if(e.key === 'Enter'){ e.preventDefault(); submitInput(); }
-    });
+    inp.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); submitInput(); } });
   }
-
   if(state.timed && !q.answered) startTimer();
   else if(state.timed) updateTimerEl();
 }
@@ -1293,13 +1605,10 @@ function formatTime(s){
   const m = Math.floor(s/60), ss = s%60;
   return m + ':' + String(ss).padStart(2,'0');
 }
-
 function updateExamBanner(){
   const el = document.getElementById('examTimer');
   if(el) el.textContent = formatTime(state.examSecondsLeft);
 }
-
-/* таймер вопроса */
 function startTimer(){
   state.timeLeft = TIME_LIMIT;
   updateTimerEl();
@@ -1322,8 +1631,6 @@ function timeOut(){
   commitAnswer(q, false);
   renderQuiz();
 }
-
-/* ответ */
 function handleAnswer(i){
   const q = state.questions[state.idx];
   if(!q || q.answered || q.type === 'input') return;
@@ -1332,7 +1639,6 @@ function handleAnswer(i){
   commitAnswer(q, q.opts[i].correct);
   renderQuiz();
 }
-
 function submitInput(){
   const q = state.questions[state.idx];
   if(!q || q.answered || q.type !== 'input') return;
@@ -1341,16 +1647,13 @@ function submitInput(){
   clearInterval(state.timer);
   q.userInput = val;
   q.answered = true;
-  const ok = checkInput(q, val);
-  commitAnswer(q, ok);
+  commitAnswer(q, checkInput(q, val));
   renderQuiz();
 }
-
 function commitAnswer(q, correct){
   const p = getProg(q);
-  if(correct){ p.ok = (p.ok||0) + 1; } else { p.wrong = (p.wrong||0) + 1; }
-  const diff = q.userDifficulty || null;
-  srsSchedule(q, correct, diff);
+  if(correct) p.ok = (p.ok||0) + 1; else p.wrong = (p.wrong||0) + 1;
+  srsSchedule(q, correct, q.userDifficulty || null);
 
   DATA.stats.totalAnswered = (DATA.stats.totalAnswered||0) + 1;
   if(correct) DATA.stats.totalCorrect = (DATA.stats.totalCorrect||0) + 1;
@@ -1358,76 +1661,69 @@ function commitAnswer(q, correct){
   DATA.stats.byTopic[q.topic].n++;
   if(correct) DATA.stats.byTopic[q.topic].ok++;
 
-  if(q.topic === 'Подсети'){
+  if(q.topic === 'subnetting'){
     if(correct) DATA.stats.subnetStreak = (DATA.stats.subnetStreak||0) + 1;
     else DATA.stats.subnetStreak = 0;
     if(DATA.stats.subnetStreak >= 10) unlock('subnet-master');
   }
-
   saveData();
   saveSession();
 }
-
 function saveSession(){
   DATA.session = {
     mode: state.mode,
     questions: state.questions.map(q => ({
       level:q.level, topic:q.topic, type:q.type, text:q.text, explain:q.explain,
       diagram:q.diagram, opts:q.opts, answer:q.answer, accept:q.accept,
-      answered:q.answered, chosen:q.chosen, userInput:q.userInput,
-      userDifficulty:q.userDifficulty
+      answered:q.answered, chosen:q.chosen, userInput:q.userInput, userDifficulty:q.userDifficulty
     })),
-    idx: state.idx,
-    timed: state.timed,
-    examSecondsLeft: state.examSecondsLeft,
-    examDuration: state.examDuration
+    idx: state.idx, timed: state.timed,
+    examSecondsLeft: state.examSecondsLeft
   };
   saveData();
 }
-
 function nextQuestion(){
   clearInterval(state.timer);
-  if(state.idx < state.questions.length - 1){
-    state.idx++;
-    renderQuiz();
-    saveSession();
-  } else {
-    finishQuiz();
-  }
+  if(state.idx < state.questions.length - 1){ state.idx++; renderQuiz(); saveSession(); }
+  else finishQuiz();
 }
-
 function skipQuestion(){
-  if(state.idx < state.questions.length - 1){
-    state.idx++;
-    renderQuiz();
-  } else {
-    finishQuiz();
-  }
+  if(state.idx < state.questions.length - 1){ state.idx++; renderQuiz(); }
+  else finishQuiz();
 }
-
-/* ============================================================
-   ЗАВЕРШЕНИЕ
-   ============================================================ */
 function finishQuiz(force){
   clearInterval(state.timer); clearInterval(state.examTimer);
+  DATA.session = null;
   const total = state.questions.length;
   const correct = state.questions.filter(isCorrectQ).length;
   const pct = total ? Math.round((correct/total)*100) : 0;
-  const isExam = state.mode === 'exam';
 
-  DATA.session = null;
-  DATA.stats.levelsDone = DATA.stats.levelsDone || {};
-  const usedLevels = new Set(state.questions.map(q=>q.level));
-  usedLevels.forEach(l => DATA.stats.levelsDone[l] = true);
-  if(['basic','middle','advanced'].every(l=>DATA.stats.levelsDone[l])) unlock('all-topics');
+  // по темам
+  const byTopic = {};
+  state.questions.forEach(q => {
+    if(!byTopic[q.topic]) byTopic[q.topic] = {ok:0,n:0};
+    byTopic[q.topic].n++;
+    if(isCorrectQ(q)) byTopic[q.topic].ok++;
+  });
+  // достижения по темам
+  Object.entries(byTopic).forEach(([t, s])=>{
+    if(s.n >= 5 && s.ok === s.n){
+      const topicPool = QUESTIONS.filter(q=>q.topic===t).length;
+      if(topicPool >= 5) unlock('topic-complete');
+    }
+    if(t === 'security' && s.n >= 5 && s.ok/s.n >= 0.9) unlock('sec-expert');
+    if(t === 'wireless' && s.n >= 5 && s.ok/s.n >= 0.9) unlock('wifi-master');
+  });
+  // пройденные темы
+  Object.keys(byTopic).forEach(t => DATA.stats.topicsDone[t] = true);
+  if(Object.keys(DATA.stats.topicsDone).length >= 5) unlock('topics-5');
+  if(TOPICS.every(t => DATA.stats.topicsDone[t])) unlock('all-topics');
 
   unlock('first-test');
   if(pct === 100 && total >= 10) unlock('perfect');
-  if(isExam) unlock('marathon');
-
+  if(state.mode === 'exam') unlock('marathon');
   const hour = new Date().getHours();
   if(hour >= 2 && hour < 5) unlock('night-owl');
-
   if(state.mode === 'classic' && state.level === 'advanced' && pct >= 90) unlock('bgp-pro');
 
   saveData();
@@ -1437,7 +1733,7 @@ function finishQuiz(force){
 }
 
 /* ============================================================
-   ЭКРАН: РЕЗУЛЬТАТ
+   РЕЗУЛЬТАТ
    ============================================================ */
 function renderResult(force){
   const total = state.questions.length;
@@ -1447,11 +1743,10 @@ function renderResult(force){
 
   let verdict, color, note;
   if(pct >= 90){ verdict='Отличный результат!'; color='#34d399'; note='Уровень уверенного сетевого инженера.'; }
-  else if(pct >= 75){ verdict='Хороший результат'; color='#38bdf8'; note='База крепкая. Просмотрите разбор ниже.'; }
-  else if(pct >= 50){ verdict='Неплохо, но есть куда расти'; color='#fbbf24'; note='Повторите отдельные темы и попробуйте снова.'; }
-  else { verdict='Стоит повторить материал'; color='#f87171'; note='Разберите объяснения — и попробуйте ещё раз.'; }
+  else if(pct >= 75){ verdict='Хороший результат'; color='#38bdf8'; note='Просмотрите разбор, чтобы закрыть пробелы.'; }
+  else if(pct >= 50){ verdict='Неплохо, но есть куда расти'; color='#fbbf24'; note='Повторите слабые темы.'; }
+  else { verdict='Стоит повторить материал'; color='#f87171'; note='Разберите объяснения — и попробуйте снова.'; }
 
-  // статистика по темам
   const byTopic = {};
   state.questions.forEach(q=>{
     if(!byTopic[q.topic]) byTopic[q.topic] = {ok:0,n:0};
@@ -1460,36 +1755,32 @@ function renderResult(force){
   });
   const topicRows = Object.entries(byTopic).map(([t,s])=>{
     const p = Math.round((s.ok/s.n)*100);
-    const color = p >= 80 ? '#34d399' : p >= 50 ? '#fbbf24' : '#f87171';
+    const c = p >= 80 ? '#34d399' : p >= 50 ? '#fbbf24' : '#f87171';
     return `<div class="topic-row">
-      <span class="name">${escapeHtml(t)}</span>
-      <div class="bar"><span style="width:${p}%;background:${color}"></span></div>
+      <span class="name">${topicIcon(t)} ${escapeHtml(topicName(t))}</span>
+      <div class="bar"><span style="width:${p}%;background:${c}"></span></div>
       <span class="frac">${s.ok}/${s.n}</span>
-      ${p<80 ? `<button class="run" data-topic-run="${escapeHtml(t)}">Прогнать</button>` : ''}
+      ${p<80 ? `<button class="run" data-topic-run="${t}">Прогнать</button>` : ''}
     </div>`;
   }).join('');
 
   const wrongCount = state.questions.filter(q => !isCorrectQ(q)).length;
-  const list = state.reviewFilter === 'wrong'
-    ? state.questions.filter(q => !isCorrectQ(q))
-    : state.questions;
+  const list = state.reviewFilter === 'wrong' ? state.questions.filter(q => !isCorrectQ(q)) : state.questions;
 
   const reviewHtml = list.length === 0
-    ? `<div class="explain good">Ошибок нет — все ответы верные! 🎉</div>`
+    ? `<div class="explain good">Ошибок нет! 🎉</div>`
     : list.map(q => {
         const ok = isCorrectQ(q);
         const correctText = q.type==='input' ? q.answer : (q.opts.find(o=>o.correct)||{}).text;
-        const chosenText = q.type==='input'
-          ? (q.userInput || '— пусто —')
-          : (q.chosen>=0 ? q.opts[q.chosen].text : '— не отвечено —');
+        const chosenText = q.type==='input' ? (q.userInput || '— пусто —') : (q.chosen>=0 ? q.opts[q.chosen].text : '— не отвечено —');
         return `
           <div class="review-item ${ok?'':'bad'}">
             <div class="ri-q">
               <span class="ri-mark ${ok?'ok':'no'}">${ok?'✓':'✕'}</span>
-              <span>${linkify(q.text)} <span style="color:#6b7a94;font-weight:400;font-size:11.5px">· ${LEVEL_META[q.level].name} · ${q.topic}</span></span>
+              <span>${linkify(q.text)} <span style="color:#6b7a94;font-weight:400;font-size:11.5px">· ${LEVEL_META[q.level].name} · ${topicName(q.topic)}</span></span>
             </div>
             <div class="ri-line">Ваш ответ: <span class="${ok?'ok':'no'}">${linkify(chosenText)}</span></div>
-            ${ok ? '' : `<div class="ri-line">Правильный ответ: <span class="ok">${linkify(correctText)}</span></div>`}
+            ${ok?'':`<div class="ri-line">Правильный ответ: <span class="ok">${linkify(correctText)}</span></div>`}
             <div class="ri-exp">${linkify(q.explain)}</div>
           </div>`;
       }).join('');
@@ -1513,4 +1804,604 @@ function renderResult(force){
         </div>
       </div>
 
-      <div class="label">Разбор по тема
+      <div class="label">Разбор по темам</div>
+      <div class="topic-bar">${topicRows || '<div class="hint">Нет данных</div>'}</div>
+
+      <div class="divider"></div>
+
+      <div class="filters">
+        <button class="chip ${state.reviewFilter==='all'?'active':''}" data-filter="all">Все (${total})</button>
+        <button class="chip ${state.reviewFilter==='wrong'?'active':''}" data-filter="wrong">Ошибки (${wrongCount})</button>
+      </div>
+
+      <div class="review">${reviewHtml}</div>
+
+      <div class="actions">
+        <button class="btn primary" data-restart="same">Ещё раз</button>
+        <button class="btn" data-go="home">На главную</button>
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   ФЛЕШ-КАРТОЧКИ
+   ============================================================ */
+function renderFlashcards(){
+  if(!state.flashDeck.length){ state.flashDeck = shuffle(Object.keys(GLOSSARY)); state.flashIdx = 0; state.flashFlipped = false; }
+  const term = state.flashDeck[state.flashIdx];
+  const def = GLOSSARY[term];
+  const total = state.flashDeck.length;
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Карточка ${state.flashIdx+1} / ${total}</span></div>
+      <div class="flash-wrap">
+        <div class="flash ${state.flashFlipped?'flipped':''}" id="flashCard">
+          <div class="flash-face flash-front">
+            <div class="flash-term">${escapeHtml(term)}</div>
+            <div class="flash-hint">Нажмите, чтобы увидеть определение</div>
+          </div>
+          <div class="flash-face flash-back">
+            <div class="flash-def">${escapeHtml(def)}</div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" data-flash="prev" ${state.flashIdx===0?'disabled':''}>← Назад</button>
+        <button class="btn primary" data-flash="flip">Перевернуть</button>
+        <button class="btn" data-flash="next">${state.flashIdx===total-1?'Сначала':'Далее →'}</button>
+      </div>
+      <div class="hint">Просмотрено: <b>${DATA.stats.flashViewed||0}</b> / 50 для достижения</div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   ГЛОССАРИЙ
+   ============================================================ */
+function renderGlossary(){
+  const q = (state.glossarySearch||'').toLowerCase();
+  const items = Object.entries(GLOSSARY)
+    .filter(([k,v]) => !q || k.toLowerCase().includes(q) || v.toLowerCase().includes(q))
+    .sort((a,b)=>a[0].localeCompare(b[0]));
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Глоссарий · ${Object.keys(GLOSSARY).length} терминов</span></div>
+      <input class="search" type="text" id="glossarySearch" value="${escapeHtml(state.glossarySearch)}" placeholder="Поиск термина или определения…">
+      <div class="gloss-list">
+        ${items.length ? items.map(([k,v])=>`
+          <div class="gloss-item"><div class="t">${escapeHtml(k)}</div><div class="d">${escapeHtml(v)}</div></div>
+        `).join('') : '<div class="hint">Ничего не найдено</div>'}
+      </div>
+    </div>
+  `;
+  const inp = document.getElementById('glossarySearch');
+  if(inp) inp.addEventListener('input', e=>{ state.glossarySearch = e.target.value; renderGlossary(); });
+}
+
+/* ============================================================
+   ПРОГРЕСС
+   ============================================================ */
+function renderProgress(){
+  const rows = TOPICS.map(t => {
+    const qs = QUESTIONS.filter(q=>q.topic===t.id);
+    const done = qs.filter(q=>DATA.progress[qHash(q)]).length;
+    const ok = qs.filter(q=>{const p=DATA.progress[qHash(q)]; return p && p.ok>0;}).length;
+    const p = qs.length ? Math.round((ok/qs.length)*100) : 0;
+    const c = p >= 80 ? '#34d399' : p >= 50 ? '#fbbf24' : '#f87171';
+    return `<div class="topic-row">
+      <span class="name">${t.icon} ${escapeHtml(t.name)}</span>
+      <div class="bar"><span style="width:${p}%;background:${c}"></span></div>
+      <span class="frac">${ok}/${qs.length}</span>
+      ${p<80 && done>0 ? `<button class="run" data-topic-run="${t.id}">Прогнать</button>` : ''}
+    </div>`;
+  }).join('');
+
+  const total = DATA.stats.totalAnswered || 0;
+  const acc = total ? Math.round((DATA.stats.totalCorrect/total)*100) : 0;
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Прогресс по темам</span></div>
+      <div class="stat-row">
+        <div class="stat"><div class="v">🔥 ${DATA.stats.dayStreak||0}</div><div class="l">Дней подряд</div></div>
+        <div class="stat"><div class="v">${acc}%</div><div class="l">Точность</div></div>
+        <div class="stat"><div class="v">${total}</div><div class="l">Всего ответов</div></div>
+      </div>
+      <div class="topic-bar">${rows}</div>
+      <div class="actions">
+        <button class="btn primary" data-go="classic">Пройти тест</button>
+        <button class="btn" data-go="due">Повторение сегодня</button>
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   ДОСТИЖЕНИЯ
+   ============================================================ */
+function renderAchievements(){
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">${DATA.achievements.length} / ${ACHIEVEMENTS.length}</span></div>
+      <div class="ach-grid">
+        ${ACHIEVEMENTS.map(a=>{
+          const on = DATA.achievements.includes(a.id);
+          return `<div class="ach ${on?'unlocked':'locked'}">
+            <div class="ico">${on?a.icon:'🔒'}</div>
+            <div class="t">${escapeHtml(a.t)}</div>
+            <div class="d">${escapeHtml(a.d)}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   КАЛЬКУЛЯТОР ПОДСЕТЕЙ
+   ============================================================ */
+function renderSubnet(){
+  const ip = state.calcIp, pfx = state.calcPrefix;
+  const ipInt = ipToUint(ip);
+  const mask = prefixToMask(pfx);
+  let resultHtml = '';
+  if(ipInt !== null && mask !== null){
+    const net = (ipInt & mask) >>> 0;
+    const bcast = (net | (~mask >>> 0)) >>> 0;
+    const hosts = pfx >= 31 ? 0 : Math.max(0, (bcast - net - 1));
+    resultHtml = `
+      <div class="calc-out">
+        <div class="calc-cell"><div class="l">Адрес сети</div><div class="v">${uintToIp(net)}</div></div>
+        <div class="calc-cell"><div class="l">Широковещательный</div><div class="v">${uintToIp(bcast)}</div></div>
+        <div class="calc-cell"><div class="l">Маска</div><div class="v">${uintToIp(mask)}</div></div>
+        <div class="calc-cell"><div class="l">Первый хост</div><div class="v">${hosts>0?uintToIp(net+1):'—'}</div></div>
+        <div class="calc-cell"><div class="l">Последний хост</div><div class="v">${hosts>0?uintToIp(bcast-1):'—'}</div></div>
+        <div class="calc-cell"><div class="l">Всего адресов</div><div class="v">${Math.pow(2, 32-pfx)}</div></div>
+        <div class="calc-cell"><div class="l">Хостов</div><div class="v">${hosts}</div></div>
+        <div class="calc-cell"><div class="l">Префикс</div><div class="v">/${pfx}</div></div>
+      </div>`;
+  } else {
+    resultHtml = '<div class="hint">Введите корректный IP-адрес и префикс (0–32)</div>';
+  }
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Калькулятор подсетей</span></div>
+      <div class="calc-inputs">
+        <input class="ip" type="text" id="calcIp" value="${escapeHtml(ip)}" placeholder="IP-адрес (например, 192.168.1.10)">
+        <input class="pfx" type="number" id="calcPfx" value="${pfx}" min="0" max="32" placeholder="Префикс">
+      </div>
+      ${resultHtml}
+      <div class="hint" style="text-align:left;margin-top:14px">💡 Префикс — число единичных бит в маске. /24 = 255.255.255.0.</div>
+    </div>
+  `;
+  const ipInp = document.getElementById('calcIp');
+  const pfxInp = document.getElementById('calcPfx');
+  if(ipInp) ipInp.addEventListener('input', e=>{
+    state.calcIp = e.target.value;
+    DATA.stats.calcCount = (DATA.stats.calcCount||0) + 1;
+    if(DATA.stats.calcCount >= 10) unlock('calc-10');
+    saveData();
+    renderSubnet();
+    const el = document.getElementById('calcIp');
+    el.focus(); el.setSelectionRange(state.calcIp.length, state.calcIp.length);
+  });
+  if(pfxInp) pfxInp.addEventListener('input', e=>{
+    let v = parseInt(e.target.value, 10);
+    if(isNaN(v)) v = 0;
+    state.calcPrefix = Math.max(0, Math.min(32, v));
+    renderSubnet();
+    document.getElementById('calcPfx').focus();
+  });
+}
+
+/* ============================================================
+   ТЕРМИНАЛ
+   ============================================================ */
+function renderTerminal(){
+  if(!state.termScenario){
+    app.innerHTML = `
+      <div class="card">
+        <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Симулятор команд</span></div>
+        <div class="sub">Выберите сценарий диагностики. Вводите команды — получите вывод, как в реальном терминале.</div>
+        <div class="grid">
+          ${Object.entries(TERMINAL_SCENARIOS).map(([id,s])=>`
+            <button class="mode" data-term-start="${id}">
+              <span class="ico">💻</span>
+              <div class="t">${escapeHtml(s.title)}</div>
+              <div class="d">${escapeHtml(s.brief)}</div>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    return;
+  }
+  const s = TERMINAL_SCENARIOS[state.termScenario];
+  const hist = state.termHistory;
+  const done = state.termTaskDone;
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-term-exit>← К сценариям</button><span class="title">${escapeHtml(s.title)}</span></div>
+      <div class="sub" style="margin-bottom:14px">${escapeHtml(s.brief)}</div>
+
+      <div class="terminal" id="term">
+        <div class="term-line term-info"># Сценарий: ${escapeHtml(s.title)}</div>
+        <div class="term-line term-info"># Доступно: ${Object.keys(s.commands).join(', ')}</div>
+        <div class="term-line">&nbsp;</div>
+        ${hist.map(h=>h.output.split('\n').map(line=>`<div class="term-line">${escapeHtml(line)}</div>`).join('')).join('')}
+      </div>
+
+      ${!done ? `
+        <div class="term-input"><span class="prompt">&gt;</span><input type="text" id="termInput" placeholder="Введите команду" autocomplete="off"></div>
+        <div class="actions"><button class="btn" data-term-finish>Завершить и ответить на вопрос →</button></div>
+      ` : `
+        <div class="explain good" style="margin-top:0">
+          <b>${escapeHtml(s.question)}</b>
+          <div class="options" style="margin-top:12px">
+            ${s.options.map((o,i)=>`<button class="option" data-term-ans="${i}"><span class="letter">${['A','B','C','D'][i]}</span><span>${escapeHtml(o)}</span></button>`).join('')}
+          </div>
+        </div>
+      `}
+    </div>
+  `;
+  const termEl = document.getElementById('term');
+  if(termEl) termEl.scrollTop = termEl.scrollHeight;
+  const inp = document.getElementById('termInput');
+  if(inp){
+    inp.focus();
+    inp.addEventListener('keydown', e=>{
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        const v = inp.value.trim();
+        if(!v) return;
+        let output;
+        if(s.commands[v]) output = s.commands[v];
+        else if(s.commands[v.toLowerCase()]) output = s.commands[v.toLowerCase()];
+        else output = `'${v}' не является командой.\nДоступные: ${Object.keys(s.commands).join(', ')}`;
+        state.termHistory.push({cmd:v, output:output});
+        inp.value = '';
+        renderTerminal();
+      }
+    });
+  }
+}
+
+/* ============================================================
+   НАСТРОЙКИ
+   ============================================================ */
+function renderSettings(){
+  app.innerHTML = `
+    <div class="card">
+      <div class="topnav"><button class="back" data-go="home">← На главную</button><span class="title">Экспорт / Импорт</span></div>
+      <div class="sub">Сохраните прогресс в JSON-файл — сможете перенести на другое устройство.</div>
+      <div class="actions" style="flex-direction:column;align-items:stretch">
+        <button class="btn primary" id="exportBtn">⬇️ Скачать прогресс</button>
+        <label class="btn" style="cursor:pointer;position:relative">
+          ⬆️ Загрузить из файла
+          <input type="file" id="importInput" accept=".json" style="position:absolute;inset:0;opacity:0;cursor:pointer">
+        </label>
+        <button class="btn" id="resetBtn" style="border-color:rgba(248,113,113,.4);color:#fca5a5">🗑️ Сбросить прогресс</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('exportBtn').addEventListener('click', ()=>{
+    const blob = new Blob([JSON.stringify(DATA, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'netquiz-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+  document.getElementById('importInput').addEventListener('change', e=>{
+    const f = e.target.files[0];
+    if(!f) return;
+    const r = new FileReader();
+    r.onload = ev => {
+      try{
+        const d = JSON.parse(ev.target.result);
+        DATA = Object.assign(defaultData(), d, {stats: Object.assign(defaultData().stats, d.stats||{})});
+        saveData();
+        toast('✅ Прогресс загружен');
+        renderHome();
+      }catch(err){ alert('Не удалось прочитать файл'); }
+    };
+    r.readAsText(f);
+  });
+  document.getElementById('resetBtn').addEventListener('click', ()=>{
+    if(confirm('Точно сбросить весь прогресс?')){
+      localStorage.removeItem(STORAGE_KEY);
+      DATA = defaultData();
+      saveData();
+      toast('Прогресс сброшен');
+      renderHome();
+    }
+  });
+}
+
+/* ============================================================
+   РЕНДЕР
+   ============================================================ */
+function render(){
+  if(state.screen === 'home') renderHome();
+  else if(state.screen === 'classicSetup') renderClassicSetup();
+  else if(state.screen === 'quiz') renderQuiz();
+  else if(state.screen === 'result') renderResult();
+  else if(state.screen === 'flashcards') renderFlashcards();
+  else if(state.screen === 'glossary') renderGlossary();
+  else if(state.screen === 'progress') renderProgress();
+  else if(state.screen === 'achievements') renderAchievements();
+  else if(state.screen === 'subnet') renderSubnet();
+  else if(state.screen === 'terminal') renderTerminal();
+  else if(state.screen === 'settings') renderSettings();
+}
+
+/* ============================================================
+   ОБРАБОТЧИКИ
+   ============================================================ */
+app.addEventListener('click', (e)=>{
+  const termIcon = e.target.closest('.term-icon');
+  if(termIcon){ e.preventDefault(); e.stopPropagation(); showTermPopup(termIcon.closest('.term')); return; }
+
+  const termOpen = e.target.closest('[data-term-open]');
+  if(termOpen){
+    const key = termOpen.dataset.termOpen;
+    const fake = document.createElement('span');
+    fake.dataset.term = key;
+    fake.getBoundingClientRect = () => termOpen.getBoundingClientRect();
+    showTermPopup(fake);
+    return;
+  }
+
+  const optBtn = e.target.closest('[data-opt]');
+  if(optBtn){ handleAnswer(Number(optBtn.dataset.opt)); return; }
+
+  if(e.target.closest('#submitInput')){ submitInput(); return; }
+  if(e.target.closest('[data-next]')){ nextQuestion(); return; }
+  if(e.target.closest('[data-skip]')){ skipQuestion(); return; }
+
+  if(e.target.closest('[data-bookmark]')){
+    const q = state.questions[state.idx];
+    if(!q) return;
+    const p = getProg(q);
+    p.bookmarked = !p.bookmarked;
+    saveData(); renderQuiz(); return;
+  }
+
+  const dbtn = e.target.closest('[data-diff]');
+  if(dbtn){
+    const q = state.questions[state.idx];
+    if(!q) return;
+    q.userDifficulty = dbtn.dataset.diff;
+    const p = getProg(q);
+    p.difficulty = q.userDifficulty;
+    if(q.userDifficulty === 'easy') p.nextReview = (p.nextReview||Date.now()) + 2*86400000;
+    else if(q.userDifficulty === 'hard') p.nextReview = Date.now() + 3600000;
+    saveData(); renderQuiz(); return;
+  }
+
+  if(e.target.closest('#startClassic')){
+    const topics = state.selectedTopics.length ? state.selectedTopics : null;
+    const pool = poolFor(state.level, topics);
+    const qs = shuffle(pool).slice(0, state.count === 0 ? pool.length : state.count);
+    startQuizQuestions(qs, 'classic', {timed: state.timed});
+    return;
+  }
+
+  const topicToggle = e.target.closest('[data-topic-toggle]');
+  if(topicToggle){
+    const id = topicToggle.dataset.topicToggle;
+    const idx = state.selectedTopics.indexOf(id);
+    if(idx >= 0) state.selectedTopics.splice(idx,1);
+    else state.selectedTopics.push(id);
+    renderClassicSetup(); return;
+  }
+
+  const topicAction = e.target.closest('[data-topic-action]');
+  if(topicAction){
+    const a = topicAction.dataset.topicAction;
+    if(a === 'all') state.selectedTopics = TOPICS.map(t=>t.id);
+    if(a === 'clear') state.selectedTopics = [];
+    renderClassicSetup(); return;
+  }
+
+  const topicRun = e.target.closest('[data-topic-run]');
+  if(topicRun){
+    const topic = topicRun.dataset.topicRun;
+    const pool = shuffle(QUESTIONS.filter(x=>x.topic===topic)).slice(0, 15);
+    if(!pool.length){ alert('Нет вопросов по теме'); return; }
+    startQuizQuestions(pool, 'topic');
+    return;
+  }
+
+  const filterBtn = e.target.closest('[data-filter]');
+  if(filterBtn){ state.reviewFilter = filterBtn.dataset.filter; renderResult(); return; }
+
+  const restartBtn = e.target.closest('[data-restart]');
+  if(restartBtn){
+    const sameQs = state.questions.map(q=>{
+      const orig = QUESTIONS.find(x=>x.q===q.text);
+      return makeQuestion(orig || q);
+    });
+    startQuizQuestions(sameQs, state.mode, {examSeconds: state.mode==='exam'?40*60:0});
+    return;
+  }
+
+  const lvlBtn = e.target.closest('[data-set-level]');
+  if(lvlBtn){ state.level = lvlBtn.dataset.setLevel; renderClassicSetup(); return; }
+
+  const cntBtn = e.target.closest('[data-set-count]');
+  if(cntBtn){ state.count = Number(cntBtn.dataset.setCount); renderClassicSetup(); return; }
+
+  const flash = e.target.closest('[data-flash]');
+  if(flash){
+    const a = flash.dataset.flash;
+    if(a === 'flip'){
+      state.flashFlipped = !state.flashFlipped;
+      if(state.flashFlipped){
+        DATA.stats.flashViewed = (DATA.stats.flashViewed||0) + 1;
+        if(DATA.stats.flashViewed >= 50) unlock('flash-50');
+        saveData();
+      }
+      renderFlashcards();
+    } else if(a === 'next'){
+      if(state.flashIdx === state.flashDeck.length-1){ state.flashDeck = shuffle(Object.keys(GLOSSARY)); state.flashIdx = 0; }
+      else state.flashIdx++;
+      state.flashFlipped = false;
+      renderFlashcards();
+    } else if(a === 'prev'){
+      if(state.flashIdx > 0){ state.flashIdx--; state.flashFlipped = false; renderFlashcards(); }
+    }
+    return;
+  }
+  if(e.target.closest('#flashCard')){
+    state.flashFlipped = !state.flashFlipped;
+    if(state.flashFlipped){
+      DATA.stats.flashViewed = (DATA.stats.flashViewed||0) + 1;
+      if(DATA.stats.flashViewed >= 50) unlock('flash-50');
+      saveData();
+    }
+    renderFlashcards(); return;
+  }
+
+  const termStart = e.target.closest('[data-term-start]');
+  if(termStart){
+    state.termScenario = termStart.dataset.termStart;
+    state.termHistory = []; state.termTaskDone = false;
+    renderTerminal(); return;
+  }
+  if(e.target.closest('[data-term-exit]')){
+    state.termScenario = null; state.termHistory = []; state.termTaskDone = false;
+    renderTerminal(); return;
+  }
+  if(e.target.closest('[data-term-finish]')){ state.termTaskDone = true; renderTerminal(); return; }
+
+  const tans = e.target.closest('[data-term-ans]');
+  if(tans){
+    const s = TERMINAL_SCENARIOS[state.termScenario];
+    const i = Number(tans.dataset.termAns);
+    if(i === s.correct){ toast('✅ Правильно!'); }
+    else { toast('❌ Неверно'); }
+    app.querySelectorAll('[data-term-ans]').forEach(b=>{
+      const k = Number(b.dataset.termAns);
+      b.disabled = true;
+      if(k === s.correct) b.classList.add('correct');
+      else if(k === i) b.classList.add('wrong');
+    });
+    const ex = document.createElement('div');
+    ex.className = 'explain good'; ex.style.marginTop = '12px';
+    ex.innerHTML = '<b>Разбор:</b> ' + linkify(s.explain);
+    app.querySelector('.explain').appendChild(ex);
+    return;
+  }
+
+  const go = e.target.closest('[data-go]');
+  if(go){
+    const dest = go.dataset.go;
+    if(dest === 'home'){ state.screen='home'; render(); return; }
+    if(dest === 'classic'){ state.screen='classicSetup'; render(); return; }
+    if(dest === 'flashcards'){
+      state.flashDeck = shuffle(Object.keys(GLOSSARY));
+      state.flashIdx = 0; state.flashFlipped = false;
+      state.screen = 'flashcards'; render(); return;
+    }
+    if(dest === 'glossary'){ state.screen='glossary'; render(); return; }
+    if(dest === 'progress'){ state.screen='progress'; render(); return; }
+    if(dest === 'achievements'){ state.screen='achievements'; render(); return; }
+    if(dest === 'subnet'){ state.screen='subnet'; render(); return; }
+    if(dest === 'terminal'){
+      state.termScenario = null; state.termHistory = []; state.termTaskDone = false;
+      state.screen = 'terminal'; render(); return;
+    }
+    if(dest === 'settings'){ state.screen='settings'; render(); return; }
+
+    if(dest === 'wrong'){
+      const qs = wrongQuestions().map(makeQuestion);
+      if(!qs.length){ alert('Пока нет ошибок'); return; }
+      startQuizQuestions(qs, 'wrong'); return;
+    }
+    if(dest === 'due'){
+      const qs = dueQuestions().map(makeQuestion);
+      if(!qs.length){ alert('Сейчас нечего повторять'); return; }
+      startQuizQuestions(qs, 'due'); return;
+    }
+    if(dest === 'bookmarks'){
+      const qs = bookmarkedQuestions().map(makeQuestion);
+      if(!qs.length){ alert('Нет закладок. Отмечайте вопросы кнопкой ☆.'); return; }
+      startQuizQuestions(qs, 'bookmarks'); return;
+    }
+    if(dest === 'exam'){
+      const all = shuffle(QUESTIONS).slice(0, 40).map(makeQuestion);
+      startQuizQuestions(all, 'exam', {examSeconds: 40*60}); return;
+    }
+    if(dest === 'resume'){
+      const s = DATA.session;
+      if(!s) return;
+      state.mode = s.mode;
+      state.questions = s.questions.map(q => Object.assign(makeQuestion({
+        level:q.level, topic:q.topic, type:q.type, q:q.text, explain:q.explain,
+        diagram:q.diagram, opts:q.opts, answer:q.answer, accept:q.accept
+      }), {answered:q.answered, chosen:q.chosen, userInput:q.userInput, userDifficulty:q.userDifficulty}));
+      state.idx = s.idx;
+      state.timed = s.timed;
+      state.examSecondsLeft = s.examSecondsLeft || 0;
+      state.screen = 'quiz';
+      if(state.examSecondsLeft > 0){
+        state.examTimer = setInterval(()=>{
+          state.examSecondsLeft--; updateExamBanner();
+          if(state.examSecondsLeft <= 0){ clearInterval(state.examTimer); finishQuiz(true); }
+        }, 1000);
+      }
+      render(); return;
+    }
+  }
+});
+
+app.addEventListener('change', (e)=>{
+  if(e.target.id === 'timedToggle'){ state.timed = e.target.checked; }
+});
+
+document.addEventListener('click', (e)=>{
+  if(popupEl.hidden) return;
+  if(e.target.closest('#termPopup')) return;
+  if(e.target.closest('.term-icon')) return;
+  if(e.target.closest('[data-term-open]')) return;
+  hideTermPopup();
+});
+
+document.addEventListener('keydown', (e)=>{
+  if((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('term-icon')){
+    e.preventDefault(); showTermPopup(e.target.closest('.term')); return;
+  }
+  if(e.key === 'Escape'){ if(!popupEl.hidden){ hideTermPopup(); return; } }
+  if(e.target && e.target.closest && (e.target.closest('.term-icon') || e.target.tagName === 'INPUT')) return;
+  if(state.screen !== 'quiz') return;
+  const q = state.questions[state.idx];
+  if(!q) return;
+  if(!q.answered){
+    if(q.type === 'choice'){
+      const n = parseInt(e.key, 10);
+      if(n >= 1 && n <= q.opts.length){ e.preventDefault(); handleAnswer(n-1); return; }
+    }
+    if(e.key === 's' || e.key === 'S'){ e.preventDefault(); skipQuestion(); return; }
+  } else if(e.key === 'Enter' || e.key === ' '){
+    e.preventDefault(); nextQuestion();
+  }
+  if(e.key === 'b' || e.key === 'B'){
+    const btn = app.querySelector('[data-bookmark]');
+    if(btn) btn.click();
+  }
+});
+
+window.addEventListener('resize', ()=>{ if(!popupEl.hidden) hideTermPopup(); });
+window.addEventListener('scroll', ()=>{ if(!popupEl.hidden) hideTermPopup(); }, true);
+
+render();
+</script>
+</body>
+</html>
