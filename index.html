@@ -395,26 +395,12 @@
   .topic-card.selected .check{display:flex}
 
   /* ===== Интерактивное обучение ===== */
-  .learn-header{
-    display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;
-  }
-  .learn-step-label{
-    font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
-    font-weight:700;
-  }
-  .learn-progress{
-    height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:24px;
-  }
-  .learn-progress span{
-    display:block;height:100%;background:linear-gradient(90deg,#34d399,var(--accent));
-    transition:width .35s ease;
-  }
-  .learn-title{
-    font-size:20px;font-weight:700;margin:0 0 16px;letter-spacing:-.3px;line-height:1.4;
-  }
-  .learn-body{
-    font-size:14.5px;line-height:1.8;color:#d0dbea;
-  }
+  .learn-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+  .learn-step-label{font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .learn-progress{height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:24px}
+  .learn-progress span{display:block;height:100%;background:linear-gradient(90deg,#34d399,var(--accent));transition:width .35s ease}
+  .learn-title{font-size:20px;font-weight:700;margin:0 0 16px;letter-spacing:-.3px;line-height:1.4}
+  .learn-body{font-size:14.5px;line-height:1.8;color:#d0dbea}
   .learn-body p{margin:0 0 12px}
   .learn-body ul,.learn-body ol{margin:8px 0 14px;padding-left:22px}
   .learn-body li{margin-bottom:8px}
@@ -427,13 +413,8 @@
   .learn-body .hl{color:#6ee7b7;font-weight:700}
   .learn-body .warn{color:#fcd34d;font-weight:700}
 
-  .learn-task{
-    padding:16px 18px;border-radius:14px;border:1px solid var(--border);
-    background:rgba(255,255,255,.022);margin-bottom:16px;
-  }
-  .learn-task-prompt{
-    font-size:15.5px;line-height:1.7;color:#e9eefb;margin:0 0 16px;font-weight:500;
-  }
+  .learn-task{padding:16px 18px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.022);margin-bottom:16px}
+  .learn-task-prompt{font-size:15.5px;line-height:1.7;color:#e9eefb;margin:0 0 16px;font-weight:500}
   .learn-task-prompt code{font-size:14px}
 
   .learn-hint{
@@ -448,54 +429,27 @@
   }
   .learn-hint-trigger:hover{border-color:var(--warn);color:var(--warn);background:rgba(251,191,36,.05)}
 
-  .learn-feedback{
-    margin-top:14px;padding:14px 16px;border-radius:12px;
-    font-size:13.5px;line-height:1.7;animation:fadeIn .25s ease both;
-  }
-  .learn-feedback.ok{
-    border-left:3px solid var(--ok);background:rgba(52,211,153,.08);color:#c9f5e3;
-  }
-  .learn-feedback.no{
-    border-left:3px solid var(--bad);background:rgba(248,113,113,.08);color:#fccfcf;
-  }
+  .learn-feedback{margin-top:14px;padding:14px 16px;border-radius:12px;font-size:13.5px;line-height:1.7;animation:fadeIn .25s ease both}
+  .learn-feedback.ok{border-left:3px solid var(--ok);background:rgba(52,211,153,.08);color:#c9f5e3}
+  .learn-feedback.no{border-left:3px solid var(--bad);background:rgba(248,113,113,.08);color:#fccfcf}
   .learn-feedback b{color:#fff}
 
-  .binary-viz{
-    display:flex;justify-content:center;gap:12px;margin:22px 0 14px;flex-wrap:wrap;
-  }
-  .binary-octet{
-    text-align:center;padding:11px 9px;border-radius:12px;border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-  }
-  .binary-octet .dec{
-    font-family:'SF Mono',Menlo,Consolas,monospace;font-size:15px;font-weight:800;
-    margin-bottom:8px;color:#e9eefb;letter-spacing:.02em;
-  }
-  .binary-octet .bits{
-    display:flex;gap:2px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px;
-  }
-  .binary-octet .bit{
-    width:17px;height:22px;display:grid;place-items:center;border-radius:4px;
-    background:rgba(255,255,255,.04);color:#8b98b0;font-weight:700;transition:.2s;
-  }
+  .binary-viz{display:flex;justify-content:center;gap:12px;margin:22px 0 14px;flex-wrap:wrap}
+  .binary-octet{text-align:center;padding:11px 9px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.025)}
+  .binary-octet .dec{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:15px;font-weight:800;margin-bottom:8px;color:#e9eefb;letter-spacing:.02em}
+  .binary-octet .bits{display:flex;gap:2px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:13px}
+  .binary-octet .bit{width:17px;height:22px;display:grid;place-items:center;border-radius:4px;background:rgba(255,255,255,.04);color:#8b98b0;font-weight:700;transition:.2s}
   .binary-octet .bit.net-bit{background:rgba(56,189,248,.15);color:#7dd3fc}
   .binary-octet .bit.net-bit.on{background:rgba(56,189,248,.5);color:#fff;box-shadow:0 0 8px rgba(56,189,248,.5)}
   .binary-octet .bit.host-bit{background:rgba(251,191,36,.12);color:#fcd34d}
   .binary-octet .bit.host-bit.on{background:rgba(251,191,36,.45);color:#fff;box-shadow:0 0 8px rgba(251,191,36,.4)}
 
-  .binary-legend{
-    display:flex;justify-content:center;gap:18px;font-size:12.5px;color:var(--muted);
-    margin-bottom:22px;flex-wrap:wrap;
-  }
-  .binary-legend .dot{
-    display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:middle;
-  }
+  .binary-legend{display:flex;justify-content:center;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:22px;flex-wrap:wrap}
+  .binary-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:middle}
   .binary-legend .dot.net{background:#38bdf8}
   .binary-legend .dot.host{background:#fbbf24}
 
-  .learn-done{
-    text-align:center;padding:26px 16px 10px;
-  }
+  .learn-done{text-align:center;padding:26px 16px 10px}
   .learn-done .big{font-size:64px;margin-bottom:12px;display:block}
   .learn-done h2{margin:0 0 8px;font-size:24px}
   .learn-done p{color:var(--muted);margin:0 0 22px;line-height:1.6;font-size:14.5px}
@@ -1808,7 +1762,7 @@ function renderHome(){
 }
 
 /* ============================================================
-   ОБЩИЙ ТЕСТ
+   ОБЩИЙ ТЕСТ — настройка
    ============================================================ */
 function renderGeneralSetup(){
   const total = QUESTIONS.length;
@@ -1856,7 +1810,7 @@ function renderGeneralSetup(){
 }
 
 /* ============================================================
-   НАСТРОЙКА ТЕСТА ПО ТЕМАМ
+   ТЕСТ ПО ТЕМАМ — настройка
    ============================================================ */
 function renderClassicSetup(){
   const topicStats = {};
@@ -1929,11 +1883,12 @@ function renderClassicSetup(){
 /* ============================================================
    ТЕСТ
    ============================================================ */
-function startQuizQuestions(questions, mode, opts){
+function startQuizQuestions(rawQuestions, mode, opts){
   opts = opts || {};
-  if(!questions.length){ alert('Нет подходящих вопросов.'); return; }
+  if(!rawQuestions.length){ alert('Нет подходящих вопросов.'); return; }
   state.mode = mode;
-  state.questions = questions.map(makeQuestion);
+  // Единственная точка конвертации сырых вопросов в игровые объекты
+  state.questions = rawQuestions.map(makeQuestion);
   state.idx = 0;
   state.screen = 'quiz';
   state.timed = !!opts.timed;
@@ -3006,6 +2961,7 @@ app.addEventListener('click', (e)=>{
     saveData(); renderQuiz(); return;
   }
 
+  // === Запуск тестов ===
   if(e.target.closest('#startClassic')){
     const topics = state.selectedTopics.length ? state.selectedTopics : null;
     const pool = poolFor(state.level, topics);
@@ -3015,7 +2971,8 @@ app.addEventListener('click', (e)=>{
   }
 
   if(e.target.closest('[data-start-general]')){
-    const qs = shuffle(QUESTIONS).map(makeQuestion);
+    // ВАЖНО: передаём сырые вопросы, конвертация — внутри startQuizQuestions
+    const qs = shuffle(QUESTIONS);
     startQuizQuestions(qs, 'general', {timed: state.timed});
     return;
   }
@@ -3049,12 +3006,13 @@ app.addEventListener('click', (e)=>{
   const filterBtn = e.target.closest('[data-filter]');
   if(filterBtn){ state.reviewFilter = filterBtn.dataset.filter; renderResult(); return; }
 
+  // === «Ещё раз» из результата — ищем исходные сырые вопросы ===
   const restartBtn = e.target.closest('[data-restart]');
   if(restartBtn){
-    const sameQs = state.questions.map(q=>{
-      const orig = QUESTIONS.find(x=>x.q===q.text);
-      return makeQuestion(orig || q);
-    });
+    const sameQs = state.questions
+      .map(q => QUESTIONS.find(x => x.q === q.text))
+      .filter(Boolean);
+    if(!sameQs.length){ alert('Не удалось найти исходные вопросы'); return; }
     startQuizQuestions(sameQs, state.mode, {examSeconds: state.mode==='exam'?40*60:0});
     return;
   }
@@ -3150,22 +3108,22 @@ app.addEventListener('click', (e)=>{
     if(dest === 'settings'){ state.screen='settings'; render(); return; }
 
     if(dest === 'wrong'){
-      const qs = wrongQuestions().map(makeQuestion);
+      const qs = wrongQuestions();
       if(!qs.length){ alert('Пока нет ошибок'); return; }
       startQuizQuestions(qs, 'wrong'); return;
     }
     if(dest === 'due'){
-      const qs = dueQuestions().map(makeQuestion);
+      const qs = dueQuestions();
       if(!qs.length){ alert('Сейчас нечего повторять'); return; }
       startQuizQuestions(qs, 'due'); return;
     }
     if(dest === 'bookmarks'){
-      const qs = bookmarkedQuestions().map(makeQuestion);
+      const qs = bookmarkedQuestions();
       if(!qs.length){ alert('Нет закладок. Отмечайте вопросы кнопкой ☆.'); return; }
       startQuizQuestions(qs, 'bookmarks'); return;
     }
     if(dest === 'exam'){
-      const all = shuffle(QUESTIONS).slice(0, 40).map(makeQuestion);
+      const all = shuffle(QUESTIONS).slice(0, 40);
       startQuizQuestions(all, 'exam', {examSeconds: 40*60}); return;
     }
     if(dest === 'resume'){
